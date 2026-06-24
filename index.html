@@ -1,60 +1,4 @@
 <!DOCTYPE html>
-<?php
-
-$success = "";
-$error = "";
-
-if (!empty($_POST['name'])) {
-
-  $name            = trim($_POST['name'] ?? '');
-  $email           = trim($_POST['email'] ?? '');
-  $company         = trim($_POST['company'] ?? '');
-  $service         = trim($_POST['service'] ?? '');
-  $company_size    = trim($_POST['company_size'] ?? '');
-  $preferred_date  = trim($_POST['preferred_date'] ?? '');
-  $preferred_time  = trim($_POST['preferred_time'] ?? '');
-  
-  
-
-  $to = "armaantp@gmail.com";
-
-  $subject = "New Book A Call Request";
-
-  $body = "
-New Book A Call Request
-
-Name:
-$name
-
-Email:
-$email
-
-Company:
-$company
-
-Service:
-$service
-
-Company Size:
-$company_size
-
-Preferred Date:
-$preferred_date
-
-Preferred Time:
-$preferred_time";
-
-  $headers = "From: TFT Website <no-reply@tftus.com>\r\n";
-  $headers .= "Reply-To: $email\r\n";
-  $headers .= "Content-Type: text/plain; charset=UTF-8";
-
-  if (mail($to, $subject, $body, $headers)) {
-    $success = "Thank you! Your request has been submitted successfully.";
-  } else {
-    $error = "Something went wrong. Please try again.";
-  }
-}
-?>
 <html lang="en">
 
 <head>
@@ -813,18 +757,24 @@ $preferred_time";
             </div>
           </div>
           <div class="micro-form">
-            <?php if ($success) { ?>
-              <div class="success-message">
-                <?php echo $success; ?>
-              </div>
-            <?php } ?>
+            <div id="form-success" class="success-message" style="display:none">
+              Thank you! Your request has been submitted successfully.
+            </div>
+            <div id="form-error" class="error-message" style="display:none">
+              Something went wrong. Please try again.
+            </div>
 
-            <?php if ($error) { ?>
-              <div class="error-message">
-                <?php echo $error; ?>
-              </div>
-            <?php } ?>
-            <form  method="post" action="">
+            <!-- FormSubmit: free, no signup. Sends to the address in the action URL. -->
+            <form id="bookCallForm" method="post" action="https://formsubmit.co/ajax/armaantp@gmail.com">
+
+              <!-- FormSubmit settings -->
+              <input type="hidden" name="_subject" value="New Book A Call Request">
+              <input type="hidden" name="_template" value="box">
+              <input type="hidden" name="_captcha" value="false">
+              <!-- our custom-composed email body (filled by JS on submit) -->
+              <input type="hidden" name="message" id="composedBody">
+              <!-- honeypot spam trap (leave empty) -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="ff-label">NAME / FULL NAME *</div>
               <input type="text" name="name" placeholder="Max Mustermann" required>
@@ -836,75 +786,34 @@ $preferred_time";
               <input type="text" name="company" placeholder="Company Name" required>
 
               <div class="ff-label">WHAT ARE YOU LOOKING FOR? *</div>
-
               <div class="tag-group">
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="QA & Test Automation" required>
-                  <span>QA & Test Automation</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="AI / ML Engineering">
-                  <span>AI / ML Engineering</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="Computer Vision">
-                  <span>Computer Vision</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="Product Engineering">
-                  <span>Product Engineering</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="Cloud & DevOps">
-                  <span>Cloud & DevOps</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="Industry 4.0 / RPA">
-                  <span>Industry 4.0 / RPA</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="service" value="General enquiry">
-                  <span>General enquiry</span>
-                </label>
-
+                <label class="tag-option"><input type="radio" name="service" value="QA & Test Automation"
+                    required><span>QA & Test Automation</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="AI / ML Engineering"><span>AI / ML
+                    Engineering</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="Computer Vision"><span>Computer
+                    Vision</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="Product Engineering"><span>Product
+                    Engineering</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="Cloud & DevOps"><span>Cloud &
+                    DevOps</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="Industry 4.0 / RPA"><span>Industry
+                    4.0 / RPA</span></label>
+                <label class="tag-option"><input type="radio" name="service" value="General enquiry"><span>General
+                    enquiry</span></label>
               </div>
 
               <div class="ff-label">COMPANY SIZE *</div>
-
               <div class="tag-group">
-
-                <label class="tag-option">
-                  <input type="radio" name="company_size" value="1-10" required>
-                  <span>1–10</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="company_size" value="11-50">
-                  <span>11–50</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="company_size" value="51-200">
-                  <span>51–200</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="company_size" value="201-500">
-                  <span>201–500</span>
-                </label>
-
-                <label class="tag-option">
-                  <input type="radio" name="company_size" value="500+">
-                  <span>500+</span>
-                </label>
-
+                <label class="tag-option"><input type="radio" name="company_size" value="1-10"
+                    required><span>1–10</span></label>
+                <label class="tag-option"><input type="radio" name="company_size"
+                    value="11-50"><span>11–50</span></label>
+                <label class="tag-option"><input type="radio" name="company_size"
+                    value="51-200"><span>51–200</span></label>
+                <label class="tag-option"><input type="radio" name="company_size"
+                    value="201-500"><span>201–500</span></label>
+                <label class="tag-option"><input type="radio" name="company_size" value="500+"><span>500+</span></label>
               </div>
 
               <div class="ff-label">PREFERRED DATE *</div>
@@ -916,7 +825,6 @@ $preferred_time";
               <button type="submit" class="btn btn-primary" name="book_call">
                 Termin buchen / Book a time →
               </button>
-
             </form>
           </div>
         </div>
@@ -973,6 +881,47 @@ $preferred_time";
       <div>Berlin · Gurugram</div>
     </div>
   </footer>
+
+  <!-- ===== BOOK A CALL — email via FormSubmit (free, no backend) ===== -->
+  <script>
+    const form = document.getElementById('jobForm');
+    const ok = document.getElementById('ok');
+    const err = document.getElementById('err');
+
+    // attach the chosen file under the name the PHP expects
+    const fileInput = document.getElementById('resumeFile');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      ok.style.display = err.style.display = 'none';
+      const btn = form.querySelector('button');
+      const txt = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      const fd = new FormData(form);
+      if (fileInput.files[0]) fd.set('resume', fileInput.files[0]); // file -> 'resume'
+
+      try {
+        const res = await fetch('https://prod.tftus.com/wp-json/tft/v1/job-apply', {
+          method: 'POST',
+          body: fd               // do NOT set Content-Type; browser sets multipart boundary
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          form.reset();
+          ok.style.display = 'block';
+          ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(data.message || 'failed');
+        }
+      } catch (e2) {
+        err.style.display = 'block';
+        console.error(e2);
+      } finally {
+        btn.disabled = false; btn.textContent = txt;
+      }
+    });
+  </script>
 </body>
 
 </html>
