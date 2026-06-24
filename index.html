@@ -765,14 +765,8 @@
             </div>
 
             <!-- FormSubmit: free, no signup. Sends to the address in the action URL. -->
-            <form id="bookCallForm" method="post" action="https://formsubmit.co/ajax/armaantp@gmail.com">
+            <form id="bookCallForm">
 
-              <!-- FormSubmit settings -->
-              <input type="hidden" name="_subject" value="New Book A Call Request">
-              <input type="hidden" name="_template" value="box">
-              <input type="hidden" name="_captcha" value="false">
-              <!-- our custom-composed email body (filled by JS on submit) -->
-              <input type="hidden" name="message" id="composedBody">
               <!-- honeypot spam trap (leave empty) -->
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -882,45 +876,44 @@
     </div>
   </footer>
 
-  <!-- ===== BOOK A CALL — email via FormSubmit (free, no backend) ===== -->
+  <!-- ===== BOOK A CALL — email via WordPress plugin ===== -->
   <script>
-    const form = document.getElementById('jobForm');
-    const ok = document.getElementById('ok');
-    const err = document.getElementById('err');
+    (function () {
+      const form = document.getElementById('bookCallForm');
+      const okBox = document.getElementById('form-success');
+      const errBox = document.getElementById('form-error');
+      if (!form) return;
 
-    // attach the chosen file under the name the PHP expects
-    const fileInput = document.getElementById('resumeFile');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        okBox.style.display = errBox.style.display = 'none';
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      ok.style.display = err.style.display = 'none';
-      const btn = form.querySelector('button');
-      const txt = btn.textContent;
-      btn.disabled = true; btn.textContent = 'Sending…';
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.disabled = true; btn.textContent = 'Sending…';
 
-      const fd = new FormData(form);
-      if (fileInput.files[0]) fd.set('resume', fileInput.files[0]); // file -> 'resume'
+        try {
+          const res = await fetch('https://prod.tftus.com/wp-json/tft/v1/book-call', {
+            method: 'POST',
+            body: new FormData(form)   // no Content-Type header; browser sets it
+          });
+          const data = await res.json();
 
-      try {
-        const res = await fetch('https://prod.tftus.com/wp-json/tft/v1/job-apply', {
-          method: 'POST',
-          body: fd               // do NOT set Content-Type; browser sets multipart boundary
-        });
-        const data = await res.json();
-        if (res.ok && data.success) {
-          form.reset();
-          ok.style.display = 'block';
-          ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          throw new Error(data.message || 'failed');
+          if (res.ok && data.success) {
+            form.reset();
+            okBox.style.display = 'block';
+            okBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error(data.message || 'Submission failed');
+          }
+        } catch (err) {
+          errBox.style.display = 'block';
+          console.error(err);
+        } finally {
+          btn.disabled = false; btn.textContent = originalText;
         }
-      } catch (e2) {
-        err.style.display = 'block';
-        console.error(e2);
-      } finally {
-        btn.disabled = false; btn.textContent = txt;
-      }
-    });
+      });
+    })();
   </script>
 </body>
 
