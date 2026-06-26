@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../admin/includes/db.php';
+require __DIR__ . '/../admin/includes/mail.php';
 
 header('Content-Type: application/json');
 
@@ -51,6 +52,12 @@ try {
         $sourceLang,
         $_SERVER['REMOTE_ADDR'] ?? null,
     ]);
+
+    sendLeadNotification([
+        'name' => $name, 'email' => $email, 'company' => $company,
+        'message' => $message, 'lead_type' => $leadType,
+    ]);
+
     echo json_encode(['ok' => true]);
 } catch (PDOException $e) {
     http_response_code(500);
