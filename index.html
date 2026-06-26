@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,20 +17,43 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
+<style>
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1c1a1b;color:#fff;padding:16px 20px;display:none;}
+.cookie-banner.show{display:block;}
+.cookie-banner-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cookie-banner-text{font-size:13px;line-height:1.5;flex:1 1 360px;}
+.cookie-banner-text a{color:#9fd1ff;text-decoration:underline;}
+.cookie-banner-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.cookie-btn{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid #fff;background:transparent;color:#fff;}
+.cookie-btn.primary{background:#fff;color:#1c1a1b;}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-text" data-i18n-html="cookies.text">
+      Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Weitere Informationen finden Sie in unserer <a href="legal/cookie-policy.html">Cookie-Richtlinie</a> und <a href="legal/privacy-policy.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-banner-actions">
+      <button type="button" id="cookieReject" class="cookie-btn" data-i18n="cookies.reject">Nur notwendige</button>
+      <button type="button" id="cookieAccept" class="cookie-btn primary" data-i18n="cookies.accept">Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="https://tftus.com/"> <img src="images/TFT-logo.png" alt=""> </a>
     <nav class="links">
-      <a href="#problem">Herausforderung</a>
-      <a href="#solution">Lösung</a>
-      <a href="#comparison">Vergleich</a>
-      <a href="#proof">Referenzen</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#problem" data-i18n="nav.problem">Herausforderung</a>
+      <a href="#solution" data-i18n="nav.solution">Lösung</a>
+      <a href="#comparison" data-i18n="nav.comparison">Vergleich</a>
+      <a href="#proof" data-i18n="nav.proof">Referenzen</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
-    <a href="#contact" class="nav-cta">Demo anfragen</a>
+    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Demo anfragen</a>
+    <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
   </div>
 </header>
 <main id="main">
@@ -43,22 +66,22 @@
         <!-- Left Content -->
         <div>
           <div class="hero-top-row">
-            <div class="eyebrow">Computer Vision für die deutsche Fertigung</div>
+            <div class="eyebrow" data-i18n="hero.eyebrow">Computer Vision für die deutsche Fertigung</div>
             <div class="giic-pill">
               <span class="dot"></span>
-              20+ Jahre Engineering — jetzt in Deutschland
+              <span data-i18n="hero.pill">20+ Jahre Engineering — jetzt in Deutschland</span>
             </div>
           </div>
-          <h1>Sieht, was Ihren Prüfern <span class="hl">entgeht.</span></h1>
-          <p class="sub">
+          <h1 data-i18n-html="hero.title">Sieht, was Ihren Prüfern <span class="hl">entgeht.</span></h1>
+          <p class="sub" data-i18n="hero.sub">
             TFT setzt Fehlererkennung, Sicherheitsüberwachung und
             Produktionstransparenz auf den Kameras und Anlagen ein, die Sie
             bereits haben — getragen von über 20 Jahren globaler
             Engineering-Erfahrung, jetzt mit lokalem Team in Berlin.
           </p>
           <div class="cta-row">
-            <input type="email" id="heroEmail" placeholder="Ihre geschäftliche E-Mail" required>
-            <button type="button" id="heroCta" class="btn btn-primary">Demo anfragen</button>
+            <input type="email" id="heroEmail" data-i18n-placeholder="hero.emailPlaceholder" placeholder="Ihre geschäftliche E-Mail" required>
+            <button type="button" id="heroCta" class="btn btn-primary" data-i18n="hero.cta">Demo anfragen</button>
           </div>
         </div>
 
@@ -78,20 +101,20 @@
             </div>
             <div class="demo-readout">
               <div>
-                <div class="k">Geprüft heute</div>
+                <div class="k" data-i18n="hero.demo.checked">Geprüft heute</div>
                 <div class="v">14,203</div>
               </div>
               <div>
-                <div class="k">Fehler erkannt</div>
+                <div class="k" data-i18n="hero.demo.detected">Fehler erkannt</div>
                 <div class="v flag">38</div>
               </div>
               <div>
-                <div class="k">Reaktionszeit</div>
+                <div class="k" data-i18n="hero.demo.reaction">Reaktionszeit</div>
                 <div class="v">0.4s</div>
               </div>
             </div>
           </div>
-          <div class="demo-caption">
+          <div class="demo-caption" data-i18n="hero.demo.caption">
             ↳ Illustrative Darstellung. Läuft auf Ihrer vorhandenen Kamera-
             und Netzwerkinfrastruktur — kein neuer Hardware-Rollout nötig.
           </div>
@@ -130,7 +153,7 @@
   <section class="certs" id="certs">
     <div class="wrap">
       <div class="certs-inner">
-        <div class="certs-label">Geprüfte Standards</div>
+        <div class="certs-label" data-i18n="certs.label">Geprüfte Standards</div>
         <div class="certs-row">
           <div class="cert-badge"><div class="cert-mark">ISO</div><div class="cert-text">ISO 27001</div></div>
           <div class="cert-badge"><div class="cert-mark">ISO</div><div class="cert-text">ISO 9001</div></div>
@@ -144,32 +167,32 @@
   <!-- ============ PROBLEM ============ -->
   <section class="problem" id="problem">
     <div class="wrap">
-      <div class="eyebrow">Die Herausforderung</div>
+      <div class="eyebrow" data-i18n="problem.eyebrow">Die Herausforderung</div>
       <div class="problem-top">
         <div class="problem-stat">
           <div class="big-stat">&gt; 1 in 3</div>
-          <div class="big-stat-lbl">Jedes dritte deutsche Industrieunternehmen hat Schwierigkeiten, technische Stellen zu besetzen. Der Mangel wirkt sich bereits auf Produktion, Qualität und Effizienz aus.</div>
+          <div class="big-stat-lbl" data-i18n="problem.stat">Jedes dritte deutsche Industrieunternehmen hat Schwierigkeiten, technische Stellen zu besetzen. Der Mangel wirkt sich bereits auf Produktion, Qualität und Effizienz aus.</div>
         </div>
         <div class="problem-copy">
-          <h2>Der Fachkräftemangel ist längst auf dem Shopfloor angekommen.</h2>
-          <p>Qualitätsprobleme. Sicherheitsrisiken. Verzögerungen. Nicht weil Fertigungsunternehmen keine Technologie haben — sondern weil erfahrene Fachkräfte immer schwerer zu ersetzen sind.</p>
+          <h2 data-i18n="problem.title">Der Fachkräftemangel ist längst auf dem Shopfloor angekommen.</h2>
+          <p data-i18n="problem.lead">Qualitätsprobleme. Sicherheitsrisiken. Verzögerungen. Nicht weil Fertigungsunternehmen keine Technologie haben — sondern weil erfahrene Fachkräfte immer schwerer zu ersetzen sind.</p>
         </div>
       </div>
       <div class="pain-grid">
         <div class="pain-card">
           <div class="pain-icon">👷</div>
-          <h3>Erfahrene Augen werden knapp</h3>
-          <p>Prüf- und Überwachungsaufgaben gehören zu den am schwersten zu besetzenden Positionen.</p>
+          <h3 data-i18n="problem.card1.title">Erfahrene Augen werden knapp</h3>
+          <p data-i18n="problem.card1.text">Prüf- und Überwachungsaufgaben gehören zu den am schwersten zu besetzenden Positionen.</p>
         </div>
         <div class="pain-card">
           <div class="pain-icon">🧠</div>
-          <h3>Know-how verlässt das Unternehmen</h3>
-          <p>Mit jeder Pensionierung verschwinden Jahre praktischen Wissens aus dem Betrieb.</p>
+          <h3 data-i18n="problem.card2.title">Know-how verlässt das Unternehmen</h3>
+          <p data-i18n="problem.card2.text">Mit jeder Pensionierung verschwinden Jahre praktischen Wissens aus dem Betrieb.</p>
         </div>
         <div class="pain-card">
           <div class="pain-icon">💶</div>
-          <h3>Jede Investition muss sich rechnen</h3>
-          <p>Fertigungsunternehmen brauchen messbare Ergebnisse — keine jahrelangen Transformationsprojekte.</p>
+          <h3 data-i18n="problem.card3.title">Jede Investition muss sich rechnen</h3>
+          <p data-i18n="problem.card3.text">Fertigungsunternehmen brauchen messbare Ergebnisse — keine jahrelangen Transformationsprojekte.</p>
         </div>
       </div>
     </div>
@@ -725,60 +748,60 @@ function selInd(prefix, id, btn){
   <!-- ============ COMPARISON ============ -->
   <section class="comparison" id="comparison">
     <div class="wrap">
-      <div class="eyebrow">Warum TFT</div>
-      <h2>Computer Vision: TFT im Vergleich zu den Alternativen</h2>
-      <p class="lead">So schneidet TFT im Vergleich zu den Optionen ab, die ein Werksleiter typischerweise prüft, bevor er sich für einen Computer-Vision-Piloten entscheidet.</p>
+      <div class="eyebrow" data-i18n="comparison.eyebrow">Warum TFT</div>
+      <h2 data-i18n="comparison.title">Computer Vision: TFT im Vergleich zu den Alternativen</h2>
+      <p class="lead" data-i18n="comparison.lead">So schneidet TFT im Vergleich zu den Optionen ab, die ein Werksleiter typischerweise prüft, bevor er sich für einen Computer-Vision-Piloten entscheidet.</p>
       <div class="cmp-table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
-              <th>Kriterium</th>
+              <th data-i18n="comparison.th.criterion">Kriterium</th>
               <th class="tft-col">TFT</th>
-              <th>Allgemeiner Automatisierungsanbieter</th>
-              <th>Interne Lösung</th>
+              <th data-i18n="comparison.th.generic">Allgemeiner Automatisierungsanbieter</th>
+              <th data-i18n="comparison.th.internal">Interne Lösung</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Läuft auf vorhandener Kamera-Infrastruktur</td>
-              <td class="tft-col yes">✓ Ja, kein Hardware-Austausch</td>
-              <td class="warn">⚠ Oft neue Hardware erforderlich</td>
-              <td class="warn">⚠ Abhängig vom Team</td>
+              <td data-i18n="comparison.r1.label">Läuft auf vorhandener Kamera-Infrastruktur</td>
+              <td class="tft-col yes" data-i18n="comparison.r1.tft">✓ Ja, kein Hardware-Austausch</td>
+              <td class="warn" data-i18n="comparison.r1.generic">⚠ Oft neue Hardware erforderlich</td>
+              <td class="warn" data-i18n="comparison.r1.internal">⚠ Abhängig vom Team</td>
             </tr>
             <tr>
-              <td>Zeit bis zum ersten Piloten</td>
-              <td class="tft-col yes">Wenige Wochen</td>
-              <td>2–4 Monate</td>
-              <td class="no">6+ Monate</td>
+              <td data-i18n="comparison.r2.label">Zeit bis zum ersten Piloten</td>
+              <td class="tft-col yes" data-i18n="comparison.r2.tft">Wenige Wochen</td>
+              <td data-i18n="comparison.r2.generic">2–4 Monate</td>
+              <td class="no" data-i18n="comparison.r2.internal">6+ Monate</td>
             </tr>
             <tr>
-              <td>Lokaler Ansprechpartner in Berlin</td>
-              <td class="tft-col yes">✓ Via NLND</td>
-              <td class="warn">⚠ Teilweise</td>
-              <td class="yes">✓ Intern</td>
+              <td data-i18n="comparison.r3.label">Lokaler Ansprechpartner in Berlin</td>
+              <td class="tft-col yes" data-i18n="comparison.r3.tft">✓ Via NLND</td>
+              <td class="warn" data-i18n="comparison.r3.generic">⚠ Teilweise</td>
+              <td class="yes" data-i18n="comparison.r3.internal">✓ Intern</td>
             </tr>
             <tr>
-              <td>Engineering-Tiefe bei Bedarf</td>
-              <td class="tft-col yes">400+ Ingenieure</td>
-              <td class="warn">⚠ Begrenzt auf Projektteam</td>
-              <td class="no">✗ Durch Hiring begrenzt</td>
+              <td data-i18n="comparison.r4.label">Engineering-Tiefe bei Bedarf</td>
+              <td class="tft-col yes" data-i18n="comparison.r4.tft">400+ Ingenieure</td>
+              <td class="warn" data-i18n="comparison.r4.generic">⚠ Begrenzt auf Projektteam</td>
+              <td class="no" data-i18n="comparison.r4.internal">✗ Durch Hiring begrenzt</td>
             </tr>
             <tr>
-              <td>Liefererfahrung in mehreren Märkten</td>
-              <td class="tft-col yes">✓ 5 Märkte, 20+ Jahre</td>
-              <td class="warn">⚠ Überwiegend DACH</td>
-              <td class="no">✗ Nicht zutreffend</td>
+              <td data-i18n="comparison.r5.label">Liefererfahrung in mehreren Märkten</td>
+              <td class="tft-col yes" data-i18n="comparison.r5.tft">✓ 5 Märkte, 20+ Jahre</td>
+              <td class="warn" data-i18n="comparison.r5.generic">⚠ Überwiegend DACH</td>
+              <td class="no" data-i18n="comparison.r5.internal">✗ Nicht zutreffend</td>
             </tr>
             <tr>
-              <td>Transparente Pilotpreise</td>
-              <td class="tft-col yes">✓ Klar definierter Scope</td>
-              <td class="warn">⚠ Oft Plattform-Lock-in</td>
-              <td class="no">✗ Versteckte Personalkosten</td>
+              <td data-i18n="comparison.r6.label">Transparente Pilotpreise</td>
+              <td class="tft-col yes" data-i18n="comparison.r6.tft">✓ Klar definierter Scope</td>
+              <td class="warn" data-i18n="comparison.r6.generic">⚠ Oft Plattform-Lock-in</td>
+              <td class="no" data-i18n="comparison.r6.internal">✗ Versteckte Personalkosten</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="cmp-note">Einschätzung Stand Juni 2026. Individuelle Ergebnisse können abweichen — die konkrete Bewertung eines Anbieters kann im Einzelfall unterschiedlich ausfallen.</div>
+      <div class="cmp-note" data-i18n="comparison.note">Einschätzung Stand Juni 2026. Individuelle Ergebnisse können abweichen — die konkrete Bewertung eines Anbieters kann im Einzelfall unterschiedlich ausfallen.</div>
     </div>
   </section>
 
@@ -786,8 +809,8 @@ function selInd(prefix, id, btn){
   <section class="giic" id="cta-strip">
     <div class="wrap">
       <div class="giic-inner">
-        <div class="giic-text"><strong>Bereit für einen ersten Blick auf Ihre Linie?</strong> Wir zeigen Ihnen in einem kurzen Gespräch, wie eine Demo mit Ihrem eigenen Kamera- oder Bildmaterial aussehen könnte.</div>
-        <a href="#contact" class="btn">Gespräch vereinbaren →</a>
+        <div class="giic-text" data-i18n-html="ctaStrip.text"><strong>Bereit für einen ersten Blick auf Ihre Linie?</strong> Wir zeigen Ihnen in einem kurzen Gespräch, wie eine Demo mit Ihrem eigenen Kamera- oder Bildmaterial aussehen könnte.</div>
+        <a href="#contact" class="btn" data-i18n="ctaStrip.cta">Gespräch vereinbaren →</a>
       </div>
     </div>
   </section>
@@ -798,10 +821,10 @@ function selInd(prefix, id, btn){
       <div class="book-grid">
 
         <div class="book-left">
-          <div class="eyebrow">Gespräch vereinbaren / Book a Call</div>
-          <h2>20 Minuten. Kein Pitch. Ein ehrliches Gespräch.</h2>
-          <p class="lead">Schildern Sie uns Ihren Engpass — wir sagen Ihnen offen, ob und wie wir helfen können.</p>
-          <p class="book-en">20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help.</p>
+          <div class="eyebrow" data-i18n="contact.eyebrow">Gespräch vereinbaren / Book a Call</div>
+          <h2 data-i18n="contact.title">20 Minuten. Kein Pitch. Ein ehrliches Gespräch.</h2>
+          <p class="lead" data-i18n="contact.lead">Schildern Sie uns Ihren Engpass — wir sagen Ihnen offen, ob und wie wir helfen können.</p>
+          <p class="book-en" data-i18n="contact.leadEn">20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help.</p>
           <div class="book-steps">
             <div class="book-step">
               <div class="step-num">1</div>
@@ -839,6 +862,7 @@ function selInd(prefix, id, btn){
           <form id="bookCallForm">
             <!-- honeypot spam trap (leave empty) -->
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="lang" id="formLang" value="de">
 
             <div class="ff-label">NAME / FULL NAME *</div>
             <input type="text" name="name" placeholder="Max Mustermann" required>
@@ -887,10 +911,10 @@ function selInd(prefix, id, btn){
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a class="logo" href="https://tftus.com/"> <img src="images/TFT-logo.png" alt=""> </a>
-      <p>Engineering-Beschleunigung für deutsche Unternehmen — spezialisiert, zertifiziert, lokal präsent.</p>
+      <p data-i18n="footer.tagline">Engineering-Beschleunigung für deutsche Unternehmen — spezialisiert, zertifiziert, lokal präsent.</p>
     </div>
     <div class="footer-col">
-      <div class="footer-heading">Services</div>
+      <div class="footer-heading" data-i18n="footer.services">Services</div>
       <a href="#services">QA Automation</a>
       <a href="#services">Computer Vision</a>
       <a href="#services">AI/ML Engineering</a>
@@ -898,11 +922,12 @@ function selInd(prefix, id, btn){
       <a href="#services">Industry 4.0</a>
     </div>
     <div class="footer-col">
-      <div class="footer-heading">Legal</div>
-      <a href="#">Impressum</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Trust Center</a>
-      <a href="https://www.tftus.com">Global Website</a>
+      <div class="footer-heading" data-i18n="footer.legal">Legal</div>
+      <a href="legal/impressum.html" data-i18n="footer.impressum">Impressum</a>
+      <a href="legal/privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="legal/terms-and-conditions.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
+      <a href="legal/cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
+      <a href="https://www.tftus.com" data-i18n="footer.global">Global Website</a>
     </div>
   </div>
   <div class="wrap footer-bottom">
@@ -911,47 +936,121 @@ function selInd(prefix, id, btn){
   </div>
 </footer>
 
-<!-- ===== BOOK A CALL — email via WordPress plugin ===== -->
+<!-- ===== BOOK A CALL — submits to local PHP/MySQL backend ===== -->
 <script>
-(function () {
-  var form = document.getElementById('bookCallForm');
-  var okBox = document.getElementById('form-success');
-  var errBox = document.getElementById('form-error');
-  if (!form) return;
+document.addEventListener("DOMContentLoaded", function () {
+  var heroBtn       = document.getElementById("heroCta");
+  var heroEmail     = document.getElementById("heroEmail");
+  var contactSection= document.getElementById("contact");
+  var form          = document.getElementById("bookCallForm");
+  var contactEmail  = form ? form.querySelector('input[name="email"]') : null;
+  var successBox    = document.getElementById("form-success");
+  var errorBox      = document.getElementById("form-error");
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    okBox.style.display = errBox.style.display = 'none';
+  var ENDPOINT = 'api/submit.php';
+  var IDLE_MS  = 10000;          // 10s with no typing → send partial lead
 
-    var btn = form.querySelector('button[type="submit"]');
-    var originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+  var idleTimer = null;
+  var armed     = false;         // abandonment watch active
+  var engaged   = false;         // user started filling the form
+  var leadSent  = false;         // partial OR full lead already sent (send once)
 
-    try {
-      var res = await fetch('https://prod.tftus.com/wp-json/tft/v1/book-call', {
-        method: 'POST',
-        body: new FormData(form)
-      });
-      var data = await res.json();
+  // ---- send the partial lead (whatever we have so far) -------------------
+  function sendPartialLead(reason) {
+    if (leadSent || engaged || !form) return;
+    var email = (contactEmail && contactEmail.value.trim()) ||
+                (heroEmail && heroEmail.value.trim());
+    if (!email) return;
+    leadSent = true;
 
-      if (res.ok && data.success) {
-        form.reset();
-        okBox.style.display = 'block';
-        okBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
-    } catch (err) {
-      errBox.style.display = 'block';
-      console.error(err);
-    } finally {
-      btn.disabled = false;
-      btn.textContent = originalText;
+    var fd = new FormData();
+    fd.append('email',   email);
+    fd.append('name',    (form.querySelector('[name="name"]')    || {}).value || '');
+    fd.append('company', (form.querySelector('[name="company"]') || {}).value || '');
+    fd.append('message', (form.querySelector('[name="message"]') || {}).value || '');
+    fd.append('lead_type', 'partial');     // backend can flag/segment these
+    fd.append('capture_reason', reason);   // 'idle' | 'left'
+
+    // sendBeacon survives tab close / navigation; fetch keepalive is the fallback
+    var ok = navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, fd);
+    if (!ok) {
+      fetch(ENDPOINT, { method: 'POST', body: fd, keepalive: true }).catch(function(){});
     }
-  });
-})();
+  }
+
+  // ---- teardown ----------------------------------------------------------
+  function disarm() {
+    armed = false;
+    if (idleTimer) { clearTimeout(idleTimer); idleTimer = null; }
+    document.removeEventListener('visibilitychange', onVisibility);
+    window.removeEventListener('pagehide', onLeave);
+  }
+  function onEngage()    { engaged = true; disarm(); }          // user is filling → hands off
+  function onLeave()     { sendPartialLead('left'); }           // tab closing / navigating away
+  function onVisibility(){ if (document.visibilityState === 'hidden') sendPartialLead('left'); }
+
+  // ---- arm the watch (called the moment we scroll to the form) -----------
+  function arm(email) {
+    if (armed || leadSent || !form) return;
+    armed = true;
+    if (contactEmail && email) contactEmail.value = email;
+
+    idleTimer = setTimeout(function () { sendPartialLead('idle'); }, IDLE_MS);
+
+    // first real keystroke in any field cancels everything
+    form.addEventListener('input', onEngage, { once: true });
+
+    // leaving the window (tab switch / minimize) or closing it
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pagehide', onLeave);
+  }
+
+  // ---- hero CTA: validate → copy email → scroll → arm --------------------
+  if (heroBtn) {
+    heroBtn.addEventListener("click", function () {
+      var email = heroEmail.value.trim();
+      if (email === "") { heroEmail.focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+        heroEmail.focus();
+        return;
+      }
+      if (contactEmail)   contactEmail.value = email;
+      if (contactSection) contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      arm(email);
+    });
+  }
+
+  // ---- full form submit ---------------------------------------------------
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (errorBox) errorBox.style.display = "none";
+      if (successBox) successBox.style.display = "none";
+
+      var fd = new FormData(form);
+      fd.set('lead_type', 'full');
+      leadSent = true; // prevent the idle/partial beacon from also firing
+      disarm();
+
+      fetch(ENDPOINT, { method: 'POST', body: fd })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data && data.ok) {
+            if (successBox) successBox.style.display = "block";
+            form.reset();
+          } else if (errorBox) {
+            errorBox.style.display = "block";
+          }
+        })
+        .catch(function () {
+          if (errorBox) errorBox.style.display = "block";
+        });
+    });
+  }
+});
 </script>
 
+<script src="i18n.js"></script>
 </body>
 </html>

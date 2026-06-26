@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "problem": "Challenge",
+    "solution": "Solution",
+    "comparison": "Comparison",
+    "proof": "Proof",
+    "contact": "Contact",
+    "cta": "Request demo"
+  },
+  "hero": {
+    "eyebrow": "Computer vision for German manufacturing",
+    "pill": "20+ years of engineering — now in Germany",
+    "title": "Sees what your inspectors <span class=\"hl\">miss.</span>",
+    "sub": "TFT deploys defect detection, safety monitoring, and production transparency on the cameras and systems you already have — backed by over 20 years of global engineering experience, now with a local team in Berlin.",
+    "emailPlaceholder": "Your business email",
+    "cta": "Request demo",
+    "demo": {
+      "checked": "Inspected today",
+      "detected": "Defects detected",
+      "reaction": "Response time",
+      "caption": "↳ Illustrative representation. Runs on your existing camera and network infrastructure — no new hardware rollout required."
+    }
+  },
+  "certs": {
+    "label": "Certified standards"
+  },
+  "problem": {
+    "eyebrow": "The Challenge",
+    "stat": "One in three German manufacturing companies struggles to fill technical positions. The shortage is already affecting production, quality, and efficiency.",
+    "title": "The skilled-labor shortage has already reached the shop floor.",
+    "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology — but because experienced specialists are increasingly hard to replace.",
+    "card1": { "title": "Experienced eyes are running short", "text": "Inspection and monitoring roles are among the hardest positions to fill." },
+    "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of hands-on knowledge disappear from the operation." },
+    "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results — not years-long transformation projects." }
+  },
+  "comparison": {
+    "eyebrow": "Why TFT",
+    "title": "Computer Vision: TFT vs. the alternatives",
+    "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to a computer vision pilot.",
+    "th": { "criterion": "Criterion", "generic": "Generic automation provider", "internal": "In-house solution" },
+    "r1": { "label": "Runs on existing camera infrastructure", "tft": "✓ Yes, no hardware swap", "generic": "⚠ New hardware often required", "internal": "⚠ Depends on the team" },
+    "r2": { "label": "Time to first pilot", "tft": "A few weeks", "generic": "2–4 months", "internal": "6+ months" },
+    "r3": { "label": "Local point of contact in Berlin", "tft": "✓ Via NLND", "generic": "⚠ Partially", "internal": "✓ In-house" },
+    "r4": { "label": "Engineering depth on demand", "tft": "400+ engineers", "generic": "⚠ Limited to project team", "internal": "✗ Limited by hiring" },
+    "r5": { "label": "Delivery experience across markets", "tft": "✓ 5 markets, 20+ years", "generic": "⚠ Mostly DACH", "internal": "✗ Not applicable" },
+    "r6": { "label": "Transparent pilot pricing", "tft": "✓ Clearly defined scope", "generic": "⚠ Often platform lock-in", "internal": "✗ Hidden staffing costs" },
+    "note": "Assessment as of June 2026. Individual results may vary — a given vendor's actual rating may differ on a case-by-case basis."
+  },
+  "ctaStrip": {
+    "text": "<strong>Ready for a first look at your line?</strong> In a short conversation, we'll show you what a demo using your own camera or image footage could look like.",
+    "cta": "Schedule a conversation →"
+  },
+  "contact": {
+    "eyebrow": "Book a Call",
+    "title": "20 minutes. No pitch. Just an honest conversation.",
+    "lead": "Tell us where your bottleneck is — we'll tell you honestly whether and how we can help.",
+    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help."
+  },
+  "footer": {
+    "tagline": "Engineering acceleration for German companies — specialized, certified, locally present.",
+    "services": "Services",
+    "legal": "Legal",
+    "impressum": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "cookies": "Cookie Policy",
+    "trust": "Trust Center",
+    "global": "Global Website"
+  },
+  "cookies": {
+    "text": "We use cookies to operate and improve our website. See our <a href=\"legal/cookie-policy.html\">Cookie Policy</a> and <a href=\"legal/privacy-policy.html\">Privacy Policy</a> for more information.",
+    "reject": "Necessary only",
+    "accept": "Accept all"
+  }
+}

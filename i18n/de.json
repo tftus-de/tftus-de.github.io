@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "problem": "Herausforderung",
+    "solution": "Lösung",
+    "comparison": "Vergleich",
+    "proof": "Referenzen",
+    "contact": "Kontakt",
+    "cta": "Demo anfragen"
+  },
+  "hero": {
+    "eyebrow": "Computer Vision für die deutsche Fertigung",
+    "pill": "20+ Jahre Engineering — jetzt in Deutschland",
+    "title": "Sieht, was Ihren Prüfern <span class=\"hl\">entgeht.</span>",
+    "sub": "TFT setzt Fehlererkennung, Sicherheitsüberwachung und Produktionstransparenz auf den Kameras und Anlagen ein, die Sie bereits haben — getragen von über 20 Jahren globaler Engineering-Erfahrung, jetzt mit lokalem Team in Berlin.",
+    "emailPlaceholder": "Ihre geschäftliche E-Mail",
+    "cta": "Demo anfragen",
+    "demo": {
+      "checked": "Geprüft heute",
+      "detected": "Fehler erkannt",
+      "reaction": "Reaktionszeit",
+      "caption": "↳ Illustrative Darstellung. Läuft auf Ihrer vorhandenen Kamera- und Netzwerkinfrastruktur — kein neuer Hardware-Rollout nötig."
+    }
+  },
+  "certs": {
+    "label": "Geprüfte Standards"
+  },
+  "problem": {
+    "eyebrow": "Die Herausforderung",
+    "stat": "Jedes dritte deutsche Industrieunternehmen hat Schwierigkeiten, technische Stellen zu besetzen. Der Mangel wirkt sich bereits auf Produktion, Qualität und Effizienz aus.",
+    "title": "Der Fachkräftemangel ist längst auf dem Shopfloor angekommen.",
+    "lead": "Qualitätsprobleme. Sicherheitsrisiken. Verzögerungen. Nicht weil Fertigungsunternehmen keine Technologie haben — sondern weil erfahrene Fachkräfte immer schwerer zu ersetzen sind.",
+    "card1": { "title": "Erfahrene Augen werden knapp", "text": "Prüf- und Überwachungsaufgaben gehören zu den am schwersten zu besetzenden Positionen." },
+    "card2": { "title": "Know-how verlässt das Unternehmen", "text": "Mit jeder Pensionierung verschwinden Jahre praktischen Wissens aus dem Betrieb." },
+    "card3": { "title": "Jede Investition muss sich rechnen", "text": "Fertigungsunternehmen brauchen messbare Ergebnisse — keine jahrelangen Transformationsprojekte." }
+  },
+  "comparison": {
+    "eyebrow": "Warum TFT",
+    "title": "Computer Vision: TFT im Vergleich zu den Alternativen",
+    "lead": "So schneidet TFT im Vergleich zu den Optionen ab, die ein Werksleiter typischerweise prüft, bevor er sich für einen Computer-Vision-Piloten entscheidet.",
+    "th": { "criterion": "Kriterium", "generic": "Allgemeiner Automatisierungsanbieter", "internal": "Interne Lösung" },
+    "r1": { "label": "Läuft auf vorhandener Kamera-Infrastruktur", "tft": "✓ Ja, kein Hardware-Austausch", "generic": "⚠ Oft neue Hardware erforderlich", "internal": "⚠ Abhängig vom Team" },
+    "r2": { "label": "Zeit bis zum ersten Piloten", "tft": "Wenige Wochen", "generic": "2–4 Monate", "internal": "6+ Monate" },
+    "r3": { "label": "Lokaler Ansprechpartner in Berlin", "tft": "✓ Via NLND", "generic": "⚠ Teilweise", "internal": "✓ Intern" },
+    "r4": { "label": "Engineering-Tiefe bei Bedarf", "tft": "400+ Ingenieure", "generic": "⚠ Begrenzt auf Projektteam", "internal": "✗ Durch Hiring begrenzt" },
+    "r5": { "label": "Liefererfahrung in mehreren Märkten", "tft": "✓ 5 Märkte, 20+ Jahre", "generic": "⚠ Überwiegend DACH", "internal": "✗ Nicht zutreffend" },
+    "r6": { "label": "Transparente Pilotpreise", "tft": "✓ Klar definierter Scope", "generic": "⚠ Oft Plattform-Lock-in", "internal": "✗ Versteckte Personalkosten" },
+    "note": "Einschätzung Stand Juni 2026. Individuelle Ergebnisse können abweichen — die konkrete Bewertung eines Anbieters kann im Einzelfall unterschiedlich ausfallen."
+  },
+  "ctaStrip": {
+    "text": "<strong>Bereit für einen ersten Blick auf Ihre Linie?</strong> Wir zeigen Ihnen in einem kurzen Gespräch, wie eine Demo mit Ihrem eigenen Kamera- oder Bildmaterial aussehen könnte.",
+    "cta": "Gespräch vereinbaren →"
+  },
+  "contact": {
+    "eyebrow": "Gespräch vereinbaren / Book a Call",
+    "title": "20 Minuten. Kein Pitch. Ein ehrliches Gespräch.",
+    "lead": "Schildern Sie uns Ihren Engpass — wir sagen Ihnen offen, ob und wie wir helfen können.",
+    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help."
+  },
+  "footer": {
+    "tagline": "Engineering-Beschleunigung für deutsche Unternehmen — spezialisiert, zertifiziert, lokal präsent.",
+    "services": "Services",
+    "legal": "Legal",
+    "impressum": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "terms": "AGB",
+    "cookies": "Cookie-Richtlinie",
+    "trust": "Trust Center",
+    "global": "Global Website"
+  },
+  "cookies": {
+    "text": "Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Weitere Informationen finden Sie in unserer <a href=\"legal/cookie-policy.html\">Cookie-Richtlinie</a> und <a href=\"legal/privacy-policy.html\">Datenschutzerklärung</a>.",
+    "reject": "Nur notwendige",
+    "accept": "Alle akzeptieren"
+  }
+}
