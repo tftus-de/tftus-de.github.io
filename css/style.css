@@ -601,7 +601,7 @@
 .map-ind-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
 .map-ind-tab{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:20px;border:0.5px solid var(--border);cursor:pointer;background:var(--light);color:var(--mid);font-family:var(--fh);}
 .map-ind-tab.sel{background:#eaf8fd;color:var(--blue-d);border-color:var(--blue);}
-.map-ind-uc{display:none;}
+.map-ind-uc{display:none; margin-top: 15px;}
 .map-ind-uc.active{display:grid;}
 
 /* ===== FACILITY MAP — HTML/CSS zones (replaces SVG) ===== */
@@ -609,7 +609,7 @@
 .fmap-row{ display:grid; gap:10px; }
 .fmap-row--top{ grid-template-columns:repeat(5,1fr); }
 @media (max-width:1000px){ .fmap-row--top{ grid-template-columns:repeat(3,1fr); } }
-@media (max-width:620px){ .fmap-row--top{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:620px){ .fmap-row--top{ grid-template-columns:repeat(2,1fr); display: grid !important;} .fmap-side{width: 100% !important;}}
 .fzone{
   border-radius:10px; padding:14px 14px 12px; cursor:pointer;
   transition:transform .15s, box-shadow .15s; min-width:0;
