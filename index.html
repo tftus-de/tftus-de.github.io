@@ -44,7 +44,7 @@
 </div>
 <header class="nav">
   <div class="nav-inner">
-    <a class="logo" href="https://tftus.com/"> <img src="images/TFT-logo.png" alt=""> </a>
+    <a class="logo" href="https://tftus.de/"> <img src="images/TFT-logo.png" alt=""> </a>
     <nav class="links">
       <a href="#problem" data-i18n="nav.problem">Herausforderung</a>
       <a href="#solution" data-i18n="nav.solution">Lösung</a>
@@ -267,6 +267,37 @@ html{ scroll-behavior:smooth; }
 .fint-main{font-family:var(--fh);font-size:12.5px;font-weight:700;color:var(--black);margin-bottom:4px;}
 .fint-sub{font-size:11px;color:var(--mid);line-height:1.6;}
 .fint-compliance{font-size:10.5px;color:var(--mid);line-height:1.6;margin-top:4px;opacity:.85;}
+.fzone--office{
+  margin-top:12px;
+  width:100%;
+  cursor:pointer;
+  background:#E0F5F7;
+  border:1.5px solid #0C8599;
+  border-radius:10px;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  transition:transform .15s,box-shadow .15s;
+}
+.fzone--office:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(12,133,153,.15);}
+.fzone--office .fzone-office-text{flex:1 1 320px;min-width:0;}
+.fzone--office .fzone-title{
+  font-family:var(--fh);font-size:15px;font-weight:700;color:#0C8599;
+  margin-bottom:4px;display:block;text-align:left;
+}
+.fzone--office .fzone-sub{
+  font-size:12px;color:#0A6B7A;text-align:left;margin-bottom:0;
+}
+.fzone--office .fzone-office-cta{
+  flex:0 0 auto;
+  font-family:var(--fh);font-size:12.5px;font-weight:700;
+  color:#fff;background:#0C8599;
+  padding:9px 16px;border-radius:7px;white-space:nowrap;
+}
+.badge-office{background:#E0F5F7;color:#0C8599;}
 </style>
 
 <div class="map-wrap">
@@ -275,6 +306,7 @@ html{ scroll-behavior:smooth; }
     <span class="leg"><span class="leg-dot d-industry"></span><span data-i18n="solution.legend.industry">Production floor (industry-specific)</span></span>
     <span class="leg"><span class="leg-dot d-support"></span><span data-i18n="solution.legend.support">Support zones</span></span>
     <span class="leg"><span class="leg-dot d-erp"></span><span data-i18n="solution.legend.erp">ERP / integration layer</span></span>
+    <span class="leg"><span class="leg-dot d-office" style="background:#0C8599"></span><span data-i18n="solution.legend.office">Office — Agentic / LLM layer</span></span>
   </div>
 
   <div class="fmap">
@@ -323,6 +355,14 @@ html{ scroll-behavior:smooth; }
       <div class="fint-main" data-i18n="solution.erp.main">ERP / MES / WMS / TMS integration layer — all vision data flows here</div>
       <div class="fint-sub" data-i18n="solution.erp.sub">SAP · Odoo &nbsp;|&nbsp; Real-time alerts &nbsp;|&nbsp; Automated reporting &nbsp;|&nbsp; OEE / OTIF dashboards &nbsp;|&nbsp; Audit / traceability &nbsp;|&nbsp; AI agents</div>
       <div class="fint-compliance" data-i18n="solution.erp.compliance">IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan</div>
+    </div>
+
+    <div class="fzone fzone--office" onclick="showPanel('office')">
+      <div class="fzone-office-text">
+        <span class="fzone-title">Office layer — Agentic / LLM</span>
+        <div class="fzone-sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div>
+      </div>
+      <div class="fzone-office-cta">Tap to explore →</div>
     </div>
   </div>
 
@@ -703,6 +743,27 @@ html{ scroll-behavior:smooth; }
           <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.14.label">Robotic pick / place guidance</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.14.desc">Vision-guides robotic handling for picking and placing parcels or items.</div></div>
           <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.15.label">Forklift / MHE safety</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.15.desc">Detects pedestrian proximity, speeding, and near-misses around MHE.</div></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Office layer panel -->
+    <div class="panel" id="p-office">
+      <div class="panel-header">
+        <div><div class="panel-title">Office layer — Agentic / LLM</div><div class="panel-sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div></div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <span class="panel-badge badge-office">Agentic / LLM</span>
+          <button class="close-btn" onclick="closePanel()">✕ close</button>
+        </div>
+      </div>
+      <div class="map-uc-grid">
+        <div class="uc-item"><div class="uc-item-label">AI Production Copilot</div><div class="uc-item-desc">Summarises production KPIs, bottlenecks and shift performance using live vision data.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Executive Dashboard</div><div class="uc-item-desc">Natural-language insights for plant leadership with real-time operational visibility.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Procurement Intelligence</div><div class="uc-item-desc">Predicts shortages and recommends purchasing actions based on inventory and vision events.</div></div>
+        <div class="uc-item"><div class="uc-item-label">HR & Workforce Analytics</div><div class="uc-item-desc">Analyses attendance, PPE compliance and workforce utilisation trends.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Finance Automation</div><div class="uc-item-desc">Validates production counts against ERP and supports automated reconciliation.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Quality Assistant</div><div class="uc-item-desc">Explains recurring defects and recommends corrective actions.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Maintenance Copilot</div><div class="uc-item-desc">Converts predictive maintenance alerts into work orders and priorities.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Compliance Assistant</div><div class="uc-item-desc">Generates audit-ready reports using vision events and ERP records.</div></div>
       </div>
     </div>
   </div>
