@@ -64,7 +64,8 @@
       "common": "Common across all facilities",
       "industry": "Production floor (industry-specific)",
       "support": "Support zones",
-      "erp": "ERP / integration layer"
+      "erp": "ERP / integration layer",
+      "office": "Office — Agentic / LLM layer"
     },
     "divider": "Production floor — select industry below",
     "zones": {

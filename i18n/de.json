@@ -64,7 +64,8 @@
       "common": "Gemeinsam in allen Anlagen",
       "industry": "Produktionsboden (branchenspezifisch)",
       "support": "Supportbereiche",
-      "erp": "ERP / Integrationsschicht"
+      "erp": "ERP / Integrationsschicht",
+      "office": "Office – Agenten-/LLM-Schicht"
     },
     "divider": "Produktionsboden — Branche auswählen",
     "zones": {
