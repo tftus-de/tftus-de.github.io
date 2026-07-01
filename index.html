@@ -44,7 +44,7 @@
 </div>
 <header class="nav">
   <div class="nav-inner">
-    <a class="logo" href="https://tftus.com/"> <img src="images/TFT-logo.png" alt=""> </a>
+    <a class="logo" href="https://tftus.de/"> <img src="images/TFT-logo.png" alt=""> </a>
     <nav class="links">
       <a href="#problem" data-i18n="nav.problem">Herausforderung</a>
       <a href="#solution" data-i18n="nav.solution">Lösung</a>
@@ -203,9 +203,9 @@
   <!-- ============ SOLUTION ============ -->
   <section class="solution" id="solution">
     <div class="wrap">
-      <div class="eyebrow">The Solution</div>
-      <h2>One Facility. Fully Visible.</h2>
-      <p class="lead">See how computer vision works across your facility — from entry gates to production lines — using the cameras and systems you already have.</p>
+      <div class="eyebrow" data-i18n="solution.eyebrow">The Solution</div>
+      <h2 data-i18n="solution.title">One Facility. Fully Visible.</h2>
+      <p class="lead" data-i18n="solution.lead">See how computer vision works across your facility — from entry gates to production lines — using the cameras and systems you already have.</p>
       <h2 class="sr-only">Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries</h2>
 
 <style>
@@ -267,99 +267,139 @@ html{ scroll-behavior:smooth; }
 .fint-main{font-family:var(--fh);font-size:12.5px;font-weight:700;color:var(--black);margin-bottom:4px;}
 .fint-sub{font-size:11px;color:var(--mid);line-height:1.6;}
 .fint-compliance{font-size:10.5px;color:var(--mid);line-height:1.6;margin-top:4px;opacity:.85;}
+.fzone--office{
+  margin-top:12px;
+  width:100%;
+  cursor:pointer;
+  background:#E0F5F7;
+  border:1.5px solid #0C8599;
+  border-radius:10px;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  transition:transform .15s,box-shadow .15s;
+}
+.fzone--office:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(12,133,153,.15);}
+.fzone--office .fzone-office-text{flex:1 1 320px;min-width:0;}
+.fzone--office .fzone-title{
+  font-family:var(--fh);font-size:15px;font-weight:700;color:#0C8599;
+  margin-bottom:4px;display:block;text-align:left;
+}
+.fzone--office .fzone-sub{
+  font-size:12px;color:#0A6B7A;text-align:left;margin-bottom:0;
+}
+.fzone--office .fzone-office-cta{
+  flex:0 0 auto;
+  font-family:var(--fh);font-size:12.5px;font-weight:700;
+  color:#fff;background:#0C8599;
+  padding:9px 16px;border-radius:7px;white-space:nowrap;
+}
+.badge-office{background:#E0F5F7;color:#0C8599;}
 </style>
 
 <div class="map-wrap">
   <div class="legend-bar">
-    <span class="leg"><span class="leg-dot d-common"></span>Common across all facilities</span>
-    <span class="leg"><span class="leg-dot d-industry"></span>Production floor (industry-specific)</span>
-    <span class="leg"><span class="leg-dot d-support"></span>Support zones</span>
-    <span class="leg"><span class="leg-dot d-erp"></span>ERP / integration layer</span>
+    <span class="leg"><span class="leg-dot d-common"></span><span data-i18n="solution.legend.common">Common across all facilities</span></span>
+    <span class="leg"><span class="leg-dot d-industry"></span><span data-i18n="solution.legend.industry">Production floor (industry-specific)</span></span>
+    <span class="leg"><span class="leg-dot d-support"></span><span data-i18n="solution.legend.support">Support zones</span></span>
+    <span class="leg"><span class="leg-dot d-erp"></span><span data-i18n="solution.legend.erp">ERP / integration layer</span></span>
+    <span class="leg"><span class="leg-dot d-office" style="background:#0C8599"></span><span data-i18n="solution.legend.office">Office — Agentic / LLM layer</span></span>
   </div>
 
   <div class="fmap">
     <div class="fmap-row fmap-row--top">
       <div class="fzone fzone--common" onclick="showPanel('entry')">
-        <div class="fzone-title"><em class="fa fa-road-barrier"></em> Entry / Exit Gate</div>
+        <div class="fzone-title"><em class="fa fa-road-barrier"></em> <span data-i18n="solution.zones.entry">Entry / Exit Gate</span></div>
       </div>
       <div class="fzone fzone--common" onclick="showPanel('worker')">
-        <div class="fzone-title"><em class="fa fa-lock-open"></em> Worker entry / locker</div>
+        <div class="fzone-title"><em class="fa fa-lock-open"></em> <span data-i18n="solution.zones.worker">Worker entry / locker</span></div>
       </div>
       <div class="fzone fzone--common" onclick="showPanel('canteen')">
-        <div class="fzone-title"><em class="fa fa-utensils"></em> Canteen / break area</div>
+        <div class="fzone-title"><em class="fa fa-utensils"></em> <span data-i18n="solution.zones.canteen">Canteen / break area</span></div>
       </div>
       <div class="fzone fzone--common" onclick="showPanel('security')">
-        <div class="fzone-title"><em class="fa fa-shield-halved"></em> Security / Control Room</div>
+        <div class="fzone-title"><em class="fa fa-shield-halved"></em> <span data-i18n="solution.zones.security">Security / Control Room</span></div>
       </div>
       <div class="fzone fzone--common" onclick="showPanel('dispatch')">
-        <div class="fzone-title"><em class="fa fa-truck-ramp-box"></em> Goods in / dispatch dock</div>
+        <div class="fzone-title"><em class="fa fa-truck-ramp-box"></em> <span data-i18n="solution.zones.dispatch">Goods in / dispatch dock</span></div>
       </div>
     </div>
 
-    <div class="fmap-divider"><span>Production floor — select industry below</span></div>
+    <div class="fmap-divider"><span data-i18n="solution.divider">Production floor — select industry below</span></div>
 
     <div class="fmap-row fmap-row--bottom">
       <div class="fzone fzone--production" onclick="showPanel('production')">
-        <div class="fzone-title">Production Floor</div>
-        <div class="fzone-sub">Industry-specific vision use cases — tap to explore</div>
+        <div class="fzone-title" data-i18n="solution.zones.production">Production Floor</div>
+        <div class="fzone-sub" data-i18n="solution.zones.productionSub">Industry-specific vision use cases — tap to explore</div>
         <div class="fprod-grid">
-          <div class="fprod-item">Defect detection</div>
-          <div class="fprod-item">Assembly verification</div>
-          <div class="fprod-item">Counting / weighing</div>
-          <div class="fprod-item">Predictive maintenance</div>
+          <div class="fprod-item" data-i18n="solution.prodGrid.defect">Defect detection</div>
+          <div class="fprod-item" data-i18n="solution.prodGrid.assembly">Assembly verification</div>
+          <div class="fprod-item" data-i18n="solution.prodGrid.counting">Counting / weighing</div>
+          <div class="fprod-item" data-i18n="solution.prodGrid.predictive">Predictive maintenance</div>
         </div>
       </div>
       <div class="fmap-side">
         <div class="fzone fzone--support" onclick="showPanel('warehouse')">
-          <div class="fzone-title">Warehouse / Storage</div>
+          <div class="fzone-title" data-i18n="solution.zones.warehouse">Warehouse / Storage</div>
         </div>
         <div class="fzone fzone--cleaning" onclick="showPanel('cleaning')">
-          <div class="fzone-title">Cleaning / Maintenance</div>
+          <div class="fzone-title" data-i18n="solution.zones.cleaning">Cleaning / Maintenance</div>
         </div>
       </div>
     </div>
 
     <div class="fmap-integration">
-      <div class="fint-main">ERP / MES / WMS / TMS integration layer — all vision data flows here</div>
-      <div class="fint-sub">SAP · Odoo &nbsp;|&nbsp; Real-time alerts &nbsp;|&nbsp; Automated reporting &nbsp;|&nbsp; OEE / OTIF dashboards &nbsp;|&nbsp; Audit / traceability &nbsp;|&nbsp; AI agents</div>
-      <div class="fint-compliance">IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan</div>
+      <div class="fint-main" data-i18n="solution.erp.main">ERP / MES / WMS / TMS integration layer — all vision data flows here</div>
+      <div class="fint-sub" data-i18n="solution.erp.sub">SAP · Odoo &nbsp;|&nbsp; Real-time alerts &nbsp;|&nbsp; Automated reporting &nbsp;|&nbsp; OEE / OTIF dashboards &nbsp;|&nbsp; Audit / traceability &nbsp;|&nbsp; AI agents</div>
+      <div class="fint-compliance" data-i18n="solution.erp.compliance">IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan</div>
+    </div>
+
+    <div class="fzone fzone--office" onclick="showPanel('office')">
+      <div class="fzone-office-text">
+        <span class="fzone-title">Office layer — Agentic / LLM</span>
+        <div class="fzone-sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div>
+      </div>
+      <div class="fzone-office-cta">Tap to explore →</div>
     </div>
   </div>
 
   <div class="panel-wrap" id="panel-wrap">
-    <div class="hint" id="hint-msg">Tap any zone on the map to explore its computer vision use cases.</div>
+    <div class="hint" id="hint-msg" data-i18n="solution.hint">Tap any zone on the map to explore its computer vision use cases.</div>
 
     <!-- Entry gate panel -->
     <div class="panel" id="p-entry">
       <div class="panel-header">
-        <div><div class="panel-title">Entry / Exit gate</div><div class="panel-sub">Common across all facility types</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.entry.title">Entry / Exit gate</div><div class="panel-sub" data-i18n="solution.panels.entry.sub">Common across all facility types</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-ind-tabs">
-        <button class="map-ind-tab sel" onclick="selInd('entry','gen',this)">General / Automotive</button>
-        <button class="map-ind-tab" onclick="selInd('entry','logistics',this)">Logistics</button>
+        <button class="map-ind-tab sel" onclick="selInd('entry','gen',this)" data-i18n="solution.panels.entry.tabs.gen">General / Automotive</button>
+        <button class="map-ind-tab" onclick="selInd('entry','logistics',this)" data-i18n="solution.panels.entry.tabs.logistics">Logistics</button>
       </div>
       <div id="entry-gen" class="map-ind-uc active">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">ANPR — plate read</div><div class="uc-item-desc">Auto-reads plates of incoming/outgoing trucks. Logs entry/exit times and verifies against expected deliveries.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Boom-barrier automation</div><div class="uc-item-desc">Opens/closes only for authorised, matched vehicles. No manual guard action needed.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Vehicle type classification</div><div class="uc-item-desc">Distinguishes car-carriers, reefer trucks, trailers, and vans. Routes to the correct dock or lane automatically.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Tailgating detection</div><div class="uc-item-desc">Flags an unauthorised vehicle following an authorised one through the gate.</div></div>
-          <div class="uc-item"><div class="uc-item-label">JIT / time-slot check</div><div class="uc-item-desc">Verifies supplier trucks arrive within their booked delivery window. Flags early or late arrivals.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Inbound damage glance</div><div class="uc-item-desc">Quick visual scan of incoming part loads or packages for visible damage at the gate.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Finished-goods dispatch count</div><div class="uc-item-desc">Counts finished vehicles or pallets leaving. Reconciles against the dispatch manifest.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Cold-chain vehicle check</div><div class="uc-item-desc">Confirms reefer/cold-chain trucks are running and seals are intact before entry. (Food/Pharma)</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.0.label">ANPR — plate read</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.0.desc">Auto-reads plates of incoming/outgoing trucks. Logs entry/exit times and verifies against expected deliveries.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.1.label">Boom-barrier automation</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.1.desc">Opens/closes only for authorised, matched vehicles. No manual guard action needed.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.2.label">Vehicle type classification</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.2.desc">Distinguishes car-carriers, reefer trucks, trailers, and vans. Routes to the correct dock or lane automatically.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.3.label">Tailgating detection</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.3.desc">Flags an unauthorised vehicle following an authorised one through the gate.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.4.label">JIT / time-slot check</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.4.desc">Verifies supplier trucks arrive within their booked delivery window. Flags early or late arrivals.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.5.label">Inbound damage glance</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.5.desc">Quick visual scan of incoming part loads or packages for visible damage at the gate.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.6.label">Finished-goods dispatch count</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.6.desc">Counts finished vehicles or pallets leaving. Reconciles against the dispatch manifest.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.gen.7.label">Cold-chain vehicle check</div><div class="uc-item-desc" data-i18n="solution.panels.entry.gen.7.desc">Confirms reefer/cold-chain trucks are running and seals are intact before entry. (Food/Pharma)</div></div>
         </div>
       </div>
       <div id="entry-logistics" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Trailer / container ID (OCR)</div><div class="uc-item-desc">Reads ISO/BIC container and trailer numbers automatically at the gate.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dock-appointment slot check</div><div class="uc-item-desc">Verifies carriers arrive within their booked time window before being waved in.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Driver / visitor verification</div><div class="uc-item-desc">Confirms driver identity against the booking and logs visitors automatically.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Seal-intact check at gate</div><div class="uc-item-desc">Confirms cargo seals are unbroken on arrival, before the trailer proceeds to dock.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.logistics.0.label">Trailer / container ID (OCR)</div><div class="uc-item-desc" data-i18n="solution.panels.entry.logistics.0.desc">Reads ISO/BIC container and trailer numbers automatically at the gate.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.logistics.1.label">Dock-appointment slot check</div><div class="uc-item-desc" data-i18n="solution.panels.entry.logistics.1.desc">Verifies carriers arrive within their booked time window before being waved in.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.logistics.2.label">Driver / visitor verification</div><div class="uc-item-desc" data-i18n="solution.panels.entry.logistics.2.desc">Confirms driver identity against the booking and logs visitors automatically.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.entry.logistics.3.label">Seal-intact check at gate</div><div class="uc-item-desc" data-i18n="solution.panels.entry.logistics.3.desc">Confirms cargo seals are unbroken on arrival, before the trailer proceeds to dock.</div></div>
         </div>
       </div>
     </div>
@@ -367,64 +407,64 @@ html{ scroll-behavior:smooth; }
     <!-- Worker entry panel -->
     <div class="panel" id="p-worker">
       <div class="panel-header">
-        <div><div class="panel-title">Worker entry / locker area</div><div class="panel-sub">PPE, gowning, headcount — tuned per industry</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.worker.title">Worker entry / locker area</div><div class="panel-sub" data-i18n="solution.panels.worker.sub">PPE, gowning, headcount — tuned per industry</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-ind-tabs">
-        <button class="map-ind-tab sel" onclick="selInd('worker','gen',this)">General / Automotive</button>
-        <button class="map-ind-tab" onclick="selInd('worker','pharma',this)">Pharma</button>
-        <button class="map-ind-tab" onclick="selInd('worker','food',this)">Food</button>
-        <button class="map-ind-tab" onclick="selInd('worker','logistics',this)">Logistics</button>
+        <button class="map-ind-tab sel" onclick="selInd('worker','gen',this)" data-i18n="solution.panels.worker.tabs.gen">General / Automotive</button>
+        <button class="map-ind-tab" onclick="selInd('worker','pharma',this)" data-i18n="solution.panels.worker.tabs.pharma">Pharma</button>
+        <button class="map-ind-tab" onclick="selInd('worker','food',this)" data-i18n="solution.panels.worker.tabs.food">Food</button>
+        <button class="map-ind-tab" onclick="selInd('worker','logistics',this)" data-i18n="solution.panels.worker.tabs.logistics">Logistics</button>
       </div>
       <div id="worker-gen" class="map-ind-uc active">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Hard hat / helmet</div><div class="uc-item-desc">Confirms head protection is worn before entry to plant areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Hi-vis vest</div><div class="uc-item-desc">Confirms high-visibility jacket in plant, warehouse, and yard areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Safety shoes</div><div class="uc-item-desc">Confirms correct steel-cap or chemical-resistant footwear.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Gloves</div><div class="uc-item-desc">Checks hand protection in machining, chemical-handling and assembly zones.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Ear protection</div><div class="uc-item-desc">Checks earmuffs or plugs before entry to press, stamping, or high-noise zones.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Loose-clothing flag</div><div class="uc-item-desc">Flags loose sleeves or clothing near rotating machinery — a caught-in-machine risk.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Headcount / attendance</div><div class="uc-item-desc">Counts and logs workers entering via face or turnstile. Cross-references against shift roster.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Tailgating</div><div class="uc-item-desc">Enforces one-badge, one-person rule at every turnstile entry point.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.0.label">Hard hat / helmet</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.0.desc">Confirms head protection is worn before entry to plant areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.1.label">Hi-vis vest</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.1.desc">Confirms high-visibility jacket in plant, warehouse, and yard areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.2.label">Safety shoes</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.2.desc">Confirms correct steel-cap or chemical-resistant footwear.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.3.label">Gloves</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.3.desc">Checks hand protection in machining, chemical-handling and assembly zones.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.4.label">Ear protection</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.4.desc">Checks earmuffs or plugs before entry to press, stamping, or high-noise zones.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.5.label">Loose-clothing flag</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.5.desc">Flags loose sleeves or clothing near rotating machinery — a caught-in-machine risk.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.6.label">Headcount / attendance</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.6.desc">Counts and logs workers entering via face or turnstile. Cross-references against shift roster.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.gen.7.label">Tailgating</div><div class="uc-item-desc" data-i18n="solution.panels.worker.gen.7.desc">Enforces one-badge, one-person rule at every turnstile entry point.</div></div>
         </div>
       </div>
       <div id="worker-pharma" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Cleanroom gowning check</div><div class="uc-item-desc">Confirms coverall, hood, goggles, mask, gloves, and overshoes are all correctly worn.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Gowning sequence</div><div class="uc-item-desc">Verifies gowning is done in the correct GMP-mandated order before entering cleanroom.</div></div>
-          <div class="uc-item"><div class="uc-item-label">No exposed skin / hair</div><div class="uc-item-desc">Flags any exposed skin or hair that could contaminate a clean or sterile area.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Double-gloving (sterile)</div><div class="uc-item-desc">Confirms second gloves are worn in Grade A/B sterile zones.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Air-shower compliance</div><div class="uc-item-desc">Confirms workers complete the full air-shower cycle before entering the cleanroom.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Zone-specific gowning</div><div class="uc-item-desc">Confirms gowning matches the grade of the cleanroom being entered (A/B/C/D).</div></div>
-          <div class="uc-item"><div class="uc-item-label">De-gowning on exit</div><div class="uc-item-desc">Confirms correct de-gowning procedure is followed when leaving controlled areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Hand sanitization</div><div class="uc-item-desc">Confirms hand hygiene is performed at designated stations before entry.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.0.label">Cleanroom gowning check</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.0.desc">Confirms coverall, hood, goggles, mask, gloves, and overshoes are all correctly worn.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.1.label">Gowning sequence</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.1.desc">Verifies gowning is done in the correct GMP-mandated order before entering cleanroom.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.2.label">No exposed skin / hair</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.2.desc">Flags any exposed skin or hair that could contaminate a clean or sterile area.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.3.label">Double-gloving (sterile)</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.3.desc">Confirms second gloves are worn in Grade A/B sterile zones.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.4.label">Air-shower compliance</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.4.desc">Confirms workers complete the full air-shower cycle before entering the cleanroom.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.5.label">Zone-specific gowning</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.5.desc">Confirms gowning matches the grade of the cleanroom being entered (A/B/C/D).</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.6.label">De-gowning on exit</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.6.desc">Confirms correct de-gowning procedure is followed when leaving controlled areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.pharma.7.label">Hand sanitization</div><div class="uc-item-desc" data-i18n="solution.panels.worker.pharma.7.desc">Confirms hand hygiene is performed at designated stations before entry.</div></div>
         </div>
       </div>
       <div id="worker-food" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Hairnet detection</div><div class="uc-item-desc">Confirms hairnet is fully covering hair before entry to production areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Beard net</div><div class="uc-item-desc">Confirms beard net where required by hygiene policy.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Food-grade gloves</div><div class="uc-item-desc">Confirms correct food-safe gloves including metal-detectable variants where required.</div></div>
-          <div class="uc-item"><div class="uc-item-label">No jewellery / watches</div><div class="uc-item-desc">Flags rings, watches, earrings, and other items that could contaminate food.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Colour-coded uniform</div><div class="uc-item-desc">Confirms uniform colour matches the zone (raw vs cooked, allergen vs allergen-free).</div></div>
-          <div class="uc-item"><div class="uc-item-label">Hand-wash compliance</div><div class="uc-item-desc">Confirms hand-washing and sanitization is completed before entry to production.</div></div>
-          <div class="uc-item"><div class="uc-item-label">No exposed bandages</div><div class="uc-item-desc">Flags uncovered wounds or bandages — a contamination and metal-detection risk.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Apron / coat check</div><div class="uc-item-desc">Confirms apron or protective coat is worn and is clean before entry.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.0.label">Hairnet detection</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.0.desc">Confirms hairnet is fully covering hair before entry to production areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.1.label">Beard net</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.1.desc">Confirms beard net where required by hygiene policy.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.2.label">Food-grade gloves</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.2.desc">Confirms correct food-safe gloves including metal-detectable variants where required.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.3.label">No jewellery / watches</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.3.desc">Flags rings, watches, earrings, and other items that could contaminate food.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.4.label">Colour-coded uniform</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.4.desc">Confirms uniform colour matches the zone (raw vs cooked, allergen vs allergen-free).</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.5.label">Hand-wash compliance</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.5.desc">Confirms hand-washing and sanitization is completed before entry to production.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.6.label">No exposed bandages</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.6.desc">Flags uncovered wounds or bandages — a contamination and metal-detection risk.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.food.7.label">Apron / coat check</div><div class="uc-item-desc" data-i18n="solution.panels.worker.food.7.desc">Confirms apron or protective coat is worn and is clean before entry.</div></div>
         </div>
       </div>
       <div id="worker-logistics" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Hi-vis vest</div><div class="uc-item-desc">Confirms high-visibility vest is worn in warehouse and yard areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">MHE-operator badge check</div><div class="uc-item-desc">Confirms forklift and MHE operators hold a valid, current certification badge.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Cold-store PPE</div><div class="uc-item-desc">Confirms thermal gear is worn before entry to cold-chain or freezer zones.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Safety shoes</div><div class="uc-item-desc">Confirms correct steel-cap footwear before entry to dock and yard areas.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Hard hat</div><div class="uc-item-desc">Confirms head protection near racking and MHE operating zones.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Gloves</div><div class="uc-item-desc">Checks hand protection is worn where required during handling tasks.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Headcount / attendance</div><div class="uc-item-desc">Counts and logs workers entering via face or turnstile recognition.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Tailgating</div><div class="uc-item-desc">Enforces one-badge, one-person rule at every turnstile entry point.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.0.label">Hi-vis vest</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.0.desc">Confirms high-visibility vest is worn in warehouse and yard areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.1.label">MHE-operator badge check</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.1.desc">Confirms forklift and MHE operators hold a valid, current certification badge.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.2.label">Cold-store PPE</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.2.desc">Confirms thermal gear is worn before entry to cold-chain or freezer zones.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.3.label">Safety shoes</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.3.desc">Confirms correct steel-cap footwear before entry to dock and yard areas.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.4.label">Hard hat</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.4.desc">Confirms head protection near racking and MHE operating zones.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.5.label">Gloves</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.5.desc">Checks hand protection is worn where required during handling tasks.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.6.label">Headcount / attendance</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.6.desc">Counts and logs workers entering via face or turnstile recognition.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.worker.logistics.7.label">Tailgating</div><div class="uc-item-desc" data-i18n="solution.panels.worker.logistics.7.desc">Enforces one-badge, one-person rule at every turnstile entry point.</div></div>
         </div>
       </div>
     </div>
@@ -432,76 +472,76 @@ html{ scroll-behavior:smooth; }
     <!-- Canteen panel -->
     <div class="panel" id="p-canteen">
       <div class="panel-header">
-        <div><div class="panel-title">Canteen / break area</div><div class="panel-sub">Hygiene continuity and cross-contamination prevention</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.canteen.title">Canteen / break area</div><div class="panel-sub" data-i18n="solution.panels.canteen.sub">Hygiene continuity and cross-contamination prevention</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-uc-grid">
-        <div class="uc-item"><div class="uc-item-label">Crowd density / occupancy</div><div class="uc-item-desc">Monitors overcrowding at shift peaks. Alerts facility management to manage flow.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Queue length tracking</div><div class="uc-item-desc">Tracks canteen queue build-up and alerts when queues exceed acceptable thresholds.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Spill / slip detection</div><div class="uc-item-desc">Flags wet floors and spills before they become slip hazards. Auto-alerts cleaning team.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Hand hygiene at re-entry</div><div class="uc-item-desc">Confirms sanitization is completed before workers return to production areas.</div></div>
-        <div class="uc-item"><div class="uc-item-label">De-gown before canteen (Pharma/Food)</div><div class="uc-item-desc">Confirms cleanroom or food-zone wear is removed before eating. Flags violations.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Re-gown after canteen</div><div class="uc-item-desc">Confirms correct re-gowning before production re-entry — a GMP and food-safety requirement.</div></div>
-        <div class="uc-item"><div class="uc-item-label">No production garments in dining</div><div class="uc-item-desc">Flags production or cleanroom wear worn into the eating area — cross-contamination risk.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Pest detection (Food)</div><div class="uc-item-desc">Watches for pests in the dining zone — a critical audit point for food-safety certification.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.0.label">Crowd density / occupancy</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.0.desc">Monitors overcrowding at shift peaks. Alerts facility management to manage flow.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.1.label">Queue length tracking</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.1.desc">Tracks canteen queue build-up and alerts when queues exceed acceptable thresholds.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.2.label">Spill / slip detection</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.2.desc">Flags wet floors and spills before they become slip hazards. Auto-alerts cleaning team.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.3.label">Hand hygiene at re-entry</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.3.desc">Confirms sanitization is completed before workers return to production areas.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.4.label">De-gown before canteen (Pharma/Food)</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.4.desc">Confirms cleanroom or food-zone wear is removed before eating. Flags violations.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.5.label">Re-gown after canteen</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.5.desc">Confirms correct re-gowning before production re-entry — a GMP and food-safety requirement.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.6.label">No production garments in dining</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.6.desc">Flags production or cleanroom wear worn into the eating area — cross-contamination risk.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.canteen.7.label">Pest detection (Food)</div><div class="uc-item-desc" data-i18n="solution.panels.canteen.7.desc">Watches for pests in the dining zone — a critical audit point for food-safety certification.</div></div>
       </div>
     </div>
 
     <!-- Security panel -->
     <div class="panel" id="p-security">
       <div class="panel-header">
-        <div><div class="panel-title">Security / control room</div><div class="panel-sub">Perimeter, asset protection, incident detection</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.security.title">Security / control room</div><div class="panel-sub" data-i18n="solution.panels.security.sub">Perimeter, asset protection, incident detection</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-uc-grid">
-        <div class="uc-item"><div class="uc-item-label">Perimeter intrusion detection</div><div class="uc-item-desc">Detects fence climbing or boundary crossing. Triggers immediate alert to guards.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Camera-tamper detection</div><div class="uc-item-desc">Alerts if a camera is blocked, angled away, or physically moved.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Fire / smoke detection</div><div class="uc-item-desc">AI-enhanced early fire and smoke detection — especially critical in paint shops and solvent stores.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Restricted area monitoring</div><div class="uc-item-desc">Flags entry into unauthorised zones — R&D, formulation, vaults, sterile corridors.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Asset / scrap monitoring</div><div class="uc-item-desc">Watches for removal of materials, finished goods, or scrap outside authorised processes.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Finished-vehicle yard (Auto)</div><div class="uc-item-desc">Monitors high-value vehicle storage areas for damage or unauthorised access.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Cargo monitoring (Logistics)</div><div class="uc-item-desc">Watches high-value cargo and trailer areas for unauthorised handling or removal.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Unauthorized trailer movement</div><div class="uc-item-desc">Flags trailers moved from the yard or dock without dispatch authorisation.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.0.label">Perimeter intrusion detection</div><div class="uc-item-desc" data-i18n="solution.panels.security.0.desc">Detects fence climbing or boundary crossing. Triggers immediate alert to guards.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.1.label">Camera-tamper detection</div><div class="uc-item-desc" data-i18n="solution.panels.security.1.desc">Alerts if a camera is blocked, angled away, or physically moved.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.2.label">Fire / smoke detection</div><div class="uc-item-desc" data-i18n="solution.panels.security.2.desc">AI-enhanced early fire and smoke detection — especially critical in paint shops and solvent stores.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.3.label">Restricted area monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.security.3.desc">Flags entry into unauthorised zones — R&D, formulation, vaults, sterile corridors.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.4.label">Asset / scrap monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.security.4.desc">Watches for removal of materials, finished goods, or scrap outside authorised processes.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.5.label">Finished-vehicle yard (Auto)</div><div class="uc-item-desc" data-i18n="solution.panels.security.5.desc">Monitors high-value vehicle storage areas for damage or unauthorised access.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.6.label">Cargo monitoring (Logistics)</div><div class="uc-item-desc" data-i18n="solution.panels.security.6.desc">Watches high-value cargo and trailer areas for unauthorised handling or removal.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.security.7.label">Unauthorized trailer movement</div><div class="uc-item-desc" data-i18n="solution.panels.security.7.desc">Flags trailers moved from the yard or dock without dispatch authorisation.</div></div>
       </div>
     </div>
 
     <!-- Dispatch panel -->
     <div class="panel" id="p-dispatch">
       <div class="panel-header">
-        <div><div class="panel-title">Goods in / dispatch dock</div><div class="panel-sub">Receipt verification, despatch accuracy, traceability</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.dispatch.title">Goods in / dispatch dock</div><div class="panel-sub" data-i18n="solution.panels.dispatch.sub">Receipt verification, despatch accuracy, traceability</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-ind-tabs">
-        <button class="map-ind-tab sel" onclick="selInd('dispatch','gen',this)">General / Automotive</button>
-        <button class="map-ind-tab" onclick="selInd('dispatch','logistics',this)">Logistics</button>
+        <button class="map-ind-tab sel" onclick="selInd('dispatch','gen',this)" data-i18n="solution.panels.dispatch.tabs.gen">General / Automotive</button>
+        <button class="map-ind-tab" onclick="selInd('dispatch','logistics',this)" data-i18n="solution.panels.dispatch.tabs.logistics">Logistics</button>
       </div>
       <div id="dispatch-gen" class="map-ind-uc active">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Label OCR</div><div class="uc-item-desc">Auto-reads supplier labels, invoices, batch numbers, and expiry dates at receipt.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Barcode / QR read</div><div class="uc-item-desc">Scans part identifiers, serialization codes, and kanban cards at belt or pallet speed.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Carton / pallet count</div><div class="uc-item-desc">Counts cartons and pallets received or shipped. Reconciles against purchase or dispatch orders.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Inbound damage detection</div><div class="uc-item-desc">Inspects incoming packages and parts for visible damage. Photo evidence auto-generated for claims.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dispatch vs order verify</div><div class="uc-item-desc">Confirms shipped items and quantities match the order before truck departure.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Tamper-evident seal check</div><div class="uc-item-desc">Confirms seals are intact on inbound and outbound goods. Flags breaches. (Pharma/Food)</div></div>
-          <div class="uc-item"><div class="uc-item-label">Batch / expiry OCR</div><div class="uc-item-desc">Reads batch and expiry data on raw materials and finished goods at receipt and dispatch.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dock-door management</div><div class="uc-item-desc">Monitors loading and unloading activity per dock. Logs timestamps and links to ERP.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.0.label">Label OCR</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.0.desc">Auto-reads supplier labels, invoices, batch numbers, and expiry dates at receipt.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.1.label">Barcode / QR read</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.1.desc">Scans part identifiers, serialization codes, and kanban cards at belt or pallet speed.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.2.label">Carton / pallet count</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.2.desc">Counts cartons and pallets received or shipped. Reconciles against purchase or dispatch orders.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.3.label">Inbound damage detection</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.3.desc">Inspects incoming packages and parts for visible damage. Photo evidence auto-generated for claims.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.4.label">Dispatch vs order verify</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.4.desc">Confirms shipped items and quantities match the order before truck departure.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.5.label">Tamper-evident seal check</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.5.desc">Confirms seals are intact on inbound and outbound goods. Flags breaches. (Pharma/Food)</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.6.label">Batch / expiry OCR</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.6.desc">Reads batch and expiry data on raw materials and finished goods at receipt and dispatch.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.gen.7.label">Dock-door management</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.gen.7.desc">Monitors loading and unloading activity per dock. Logs timestamps and links to ERP.</div></div>
         </div>
       </div>
       <div id="dispatch-logistics" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">ASN reconciliation</div><div class="uc-item-desc">Matches received goods against advance ship notices automatically.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Parcel dimensioning (DIM)</div><div class="uc-item-desc">Measures parcel dimensions on arrival for accurate billing and slotting.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Hazmat / DG placard read</div><div class="uc-item-desc">Detects and reads dangerous-goods placards on inbound and outbound loads.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Cold-chain temperature check</div><div class="uc-item-desc">Verifies temperature on temperature-sensitive receipts at the dock.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.logistics.0.label">ASN reconciliation</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.logistics.0.desc">Matches received goods against advance ship notices automatically.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.logistics.1.label">Parcel dimensioning (DIM)</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.logistics.1.desc">Measures parcel dimensions on arrival for accurate billing and slotting.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.logistics.2.label">Hazmat / DG placard read</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.logistics.2.desc">Detects and reads dangerous-goods placards on inbound and outbound loads.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.dispatch.logistics.3.label">Cold-chain temperature check</div><div class="uc-item-desc" data-i18n="solution.panels.dispatch.logistics.3.desc">Verifies temperature on temperature-sensitive receipts at the dock.</div></div>
         </div>
       </div>
     </div>
@@ -509,38 +549,38 @@ html{ scroll-behavior:smooth; }
     <!-- Warehouse panel -->
     <div class="panel" id="p-warehouse">
       <div class="panel-header">
-        <div><div class="panel-title">Warehouse / storage</div><div class="panel-sub">Inventory accuracy, pick verification, safety, compliance</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.warehouse.title">Warehouse / storage</div><div class="panel-sub" data-i18n="solution.panels.warehouse.sub">Inventory accuracy, pick verification, safety, compliance</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-support">Support zone</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-support" data-i18n="solution.badge.support">Support zone</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-ind-tabs">
-        <button class="map-ind-tab sel" onclick="selInd('wh','gen',this)">General</button>
-        <button class="map-ind-tab" onclick="selInd('wh','logistics',this)">Logistics — Fleet / Yard</button>
+        <button class="map-ind-tab sel" onclick="selInd('wh','gen',this)" data-i18n="solution.panels.warehouse.tabs.gen">General</button>
+        <button class="map-ind-tab" onclick="selInd('wh','logistics',this)" data-i18n="solution.panels.warehouse.tabs.logistics">Logistics — Fleet / Yard</button>
       </div>
       <div id="wh-gen" class="map-ind-uc active">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Inventory counting</div><div class="uc-item-desc">Overhead or drone-mounted cameras count pallets and stock on racks — continuous or scheduled.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Empty-slot detection</div><div class="uc-item-desc">Finds open rack locations and feeds the WMS for smarter putaway routing.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Pick accuracy verification</div><div class="uc-item-desc">Confirms the correct item and quantity was picked before it leaves the station.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Misplaced-item alert</div><div class="uc-item-desc">Flags stock stored in the wrong location — prevents order errors and delays.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Forklift / pedestrian safety</div><div class="uc-item-desc">Detects when pedestrians enter forklift operating zones. Alerts driver and supervisor.</div></div>
-          <div class="uc-item"><div class="uc-item-label">FEFO / FIFO enforcement</div><div class="uc-item-desc">Confirms oldest or first-expiry stock is picked first — critical in pharma and food.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Temperature-zone compliance</div><div class="uc-item-desc">Confirms goods are stored in the correct temperature zone. (Pharma / Food / Cold chain)</div></div>
-          <div class="uc-item"><div class="uc-item-label">Batch traceability</div><div class="uc-item-desc">Links stored stock visually to batch records — supports fast recall readiness.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.0.label">Inventory counting</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.0.desc">Overhead or drone-mounted cameras count pallets and stock on racks — continuous or scheduled.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.1.label">Empty-slot detection</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.1.desc">Finds open rack locations and feeds the WMS for smarter putaway routing.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.2.label">Pick accuracy verification</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.2.desc">Confirms the correct item and quantity was picked before it leaves the station.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.3.label">Misplaced-item alert</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.3.desc">Flags stock stored in the wrong location — prevents order errors and delays.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.4.label">Forklift / pedestrian safety</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.4.desc">Detects when pedestrians enter forklift operating zones. Alerts driver and supervisor.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.5.label">FEFO / FIFO enforcement</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.5.desc">Confirms oldest or first-expiry stock is picked first — critical in pharma and food.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.6.label">Temperature-zone compliance</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.6.desc">Confirms goods are stored in the correct temperature zone. (Pharma / Food / Cold chain)</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.gen.7.label">Batch traceability</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.gen.7.desc">Links stored stock visually to batch records — supports fast recall readiness.</div></div>
         </div>
       </div>
       <div id="wh-logistics" class="map-ind-uc">
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Yard / trailer location tracking</div><div class="uc-item-desc">Tracks where each trailer is parked across the yard in real time.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Trailer occupancy (loaded/empty)</div><div class="uc-item-desc">Detects whether each parked trailer is loaded or empty without manual checks.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dock-door availability</div><div class="uc-item-desc">Shows which dock doors are free or occupied to speed up trailer assignment.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Vehicle / trailer damage inspection</div><div class="uc-item-desc">Inspects vehicles in and out of the yard for visible damage, with photo evidence.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Load-securement check</div><div class="uc-item-desc">Confirms loads are properly secured before a trailer departs the yard.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Seal verification at dispatch</div><div class="uc-item-desc">Confirms seals are correctly applied at departure and logs the seal number.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Driver fatigue / distraction</div><div class="uc-item-desc">In-cab monitoring for fleet safety on outbound and inbound routes (where deployed).</div></div>
-          <div class="uc-item"><div class="uc-item-label">Drone-based stock audit</div><div class="uc-item-desc">Aerial cycle counts of high racking and yard stock for fast, accurate audits.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.0.label">Yard / trailer location tracking</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.0.desc">Tracks where each trailer is parked across the yard in real time.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.1.label">Trailer occupancy (loaded/empty)</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.1.desc">Detects whether each parked trailer is loaded or empty without manual checks.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.2.label">Dock-door availability</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.2.desc">Shows which dock doors are free or occupied to speed up trailer assignment.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.3.label">Vehicle / trailer damage inspection</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.3.desc">Inspects vehicles in and out of the yard for visible damage, with photo evidence.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.4.label">Load-securement check</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.4.desc">Confirms loads are properly secured before a trailer departs the yard.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.5.label">Seal verification at dispatch</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.5.desc">Confirms seals are correctly applied at departure and logs the seal number.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.6.label">Driver fatigue / distraction</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.6.desc">In-cab monitoring for fleet safety on outbound and inbound routes (where deployed).</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.warehouse.logistics.7.label">Drone-based stock audit</div><div class="uc-item-desc" data-i18n="solution.panels.warehouse.logistics.7.desc">Aerial cycle counts of high racking and yard stock for fast, accurate audits.</div></div>
         </div>
       </div>
     </div>
@@ -548,161 +588,182 @@ html{ scroll-behavior:smooth; }
     <!-- Cleaning panel -->
     <div class="panel" id="p-cleaning">
       <div class="panel-header">
-        <div><div class="panel-title">Cleaning / maintenance</div><div class="panel-sub">Verify activity, compliance, and audit evidence</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.cleaning.title">Cleaning / maintenance</div><div class="panel-sub" data-i18n="solution.panels.cleaning.sub">Verify activity, compliance, and audit evidence</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-common">Common — all facilities</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-common" data-i18n="solution.badge.common">Common — all facilities</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-uc-grid">
-        <div class="uc-item"><div class="uc-item-label">Cleaning-activity detection</div><div class="uc-item-desc">Confirms cleaning crews actually cleaned zones — detects mop, bucket, and movement patterns.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Schedule compliance</div><div class="uc-item-desc">Verifies cleaning is done within the required time window. Flags missed or late cleans.</div></div>
-        <div class="uc-item"><div class="uc-item-label">5S / housekeeping compliance</div><div class="uc-item-desc">Monitors workplace organisation — flags items left in wrong places or aisles blocked.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Spill cleanup verification</div><div class="uc-item-desc">Confirms spills are cleaned up after alert. Closes the loop on the incident log.</div></div>
-        <div class="uc-item"><div class="uc-item-label">CIP verification (Food)</div><div class="uc-item-desc">Confirms clean-in-place cycles ran on equipment. Visual evidence for HACCP and ISO 22000.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Line-clearance (Pharma)</div><div class="uc-item-desc">Confirms the area is cleared between batches — a GMP-critical step before next production run.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Disinfection verification</div><div class="uc-item-desc">Confirms disinfection was performed in the correct sequence and areas.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Audit-log trail</div><div class="uc-item-desc">Timestamped visual record of every cleaning event — ready for ISO, GMP, HACCP, or BG audits.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.0.label">Cleaning-activity detection</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.0.desc">Confirms cleaning crews actually cleaned zones — detects mop, bucket, and movement patterns.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.1.label">Schedule compliance</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.1.desc">Verifies cleaning is done within the required time window. Flags missed or late cleans.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.2.label">5S / housekeeping compliance</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.2.desc">Monitors workplace organisation — flags items left in wrong places or aisles blocked.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.3.label">Spill cleanup verification</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.3.desc">Confirms spills are cleaned up after alert. Closes the loop on the incident log.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.4.label">CIP verification (Food)</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.4.desc">Confirms clean-in-place cycles ran on equipment. Visual evidence for HACCP and ISO 22000.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.5.label">Line-clearance (Pharma)</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.5.desc">Confirms the area is cleared between batches — a GMP-critical step before next production run.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.6.label">Disinfection verification</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.6.desc">Confirms disinfection was performed in the correct sequence and areas.</div></div>
+        <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.cleaning.7.label">Audit-log trail</div><div class="uc-item-desc" data-i18n="solution.panels.cleaning.7.desc">Timestamped visual record of every cleaning event — ready for ISO, GMP, HACCP, or BG audits.</div></div>
       </div>
     </div>
 
     <!-- Production floor panel -->
     <div class="panel" id="p-production">
       <div class="panel-header">
-        <div><div class="panel-title">Production floor</div><div class="panel-sub">Select your industry — use cases differ significantly</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.production.title">Production floor</div><div class="panel-sub" data-i18n="solution.panels.production.sub">Select your industry — use cases differ significantly</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-industry">Industry-specific</span>
-          <button class="close-btn" onclick="closePanel()">✕ close</button>
+          <span class="panel-badge badge-industry" data-i18n="solution.badge.industry">Industry-specific</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕ close</button>
         </div>
       </div>
       <div class="map-ind-tabs">
-        <button class="map-ind-tab sel" onclick="selInd('prod','auto',this)">Automotive</button>
-        <button class="map-ind-tab" onclick="selInd('prod','pharma',this)">Pharma</button>
-        <button class="map-ind-tab" onclick="selInd('prod','food',this)">Food</button>
-        <button class="map-ind-tab" onclick="selInd('prod','gen',this)">General manufacturing</button>
-        <button class="map-ind-tab" onclick="selInd('prod','logistics',this)">Logistics</button>
+        <button class="map-ind-tab sel" onclick="selInd('prod','auto',this)" data-i18n="solution.panels.production.tabs.auto">Automotive</button>
+        <button class="map-ind-tab" onclick="selInd('prod','pharma',this)" data-i18n="solution.panels.production.tabs.pharma">Pharma</button>
+        <button class="map-ind-tab" onclick="selInd('prod','food',this)" data-i18n="solution.panels.production.tabs.food">Food</button>
+        <button class="map-ind-tab" onclick="selInd('prod','gen',this)" data-i18n="solution.panels.production.tabs.gen">General manufacturing</button>
+        <button class="map-ind-tab" onclick="selInd('prod','logistics',this)" data-i18n="solution.panels.production.tabs.logistics">Logistics</button>
       </div>
       <div id="prod-auto" class="map-ind-uc active">
-        <div class="map-section-label">Defect detection</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.auto.sec0">Defect detection</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Paint defects</div><div class="uc-item-desc">Detects orange peel, runs, drips, dust nibs, and scratches on painted bodies.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Weld quality</div><div class="uc-item-desc">Detects spatter, missing welds, and bad weld beads at every station.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Body-panel dents</div><div class="uc-item-desc">Surface dent and scratch detection on sheet metal and body panels.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Panel gap & flush</div><div class="uc-item-desc">Measures gaps and alignment between panels against spec tolerances.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.0.label">Paint defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.0.desc">Detects orange peel, runs, drips, dust nibs, and scratches on painted bodies.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.1.label">Weld quality</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.1.desc">Detects spatter, missing welds, and bad weld beads at every station.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.2.label">Body-panel dents</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.2.desc">Surface dent and scratch detection on sheet metal and body panels.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.3.label">Panel gap & flush</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.3.desc">Measures gaps and alignment between panels against spec tolerances.</div></div>
         </div>
-        <div class="map-section-label">Assembly verification</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.auto.sec1">Assembly verification</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Fastener / bolt presence</div><div class="uc-item-desc">Checks all bolts and screws are present and correctly torqued at each station.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Harness routing</div><div class="uc-item-desc">Verifies wiring harness is routed correctly and clipped in the right positions.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Variant / VIN verification</div><div class="uc-item-desc">Confirms correct trim and engine variant per build sheet. Matches VIN to order spec.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Poka-yoke error-proofing</div><div class="uc-item-desc">Catches assembly errors at the station before the car moves to the next step.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.4.label">Fastener / bolt presence</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.4.desc">Checks all bolts and screws are present and correctly torqued at each station.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.5.label">Harness routing</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.5.desc">Verifies wiring harness is routed correctly and clipped in the right positions.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.6.label">Variant / VIN verification</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.6.desc">Confirms correct trim and engine variant per build sheet. Matches VIN to order spec.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.7.label">Poka-yoke error-proofing</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.7.desc">Catches assembly errors at the station before the car moves to the next step.</div></div>
         </div>
-        <div class="map-section-label">Other automotive</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.auto.sec2">Other automotive</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Robotic bin-picking guidance</div><div class="uc-item-desc">Vision guides robots picking randomly placed parts from bins — no fixed orientation required.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dimensional measurement</div><div class="uc-item-desc">In-line measurement of part dimensions against CAD. Flags out-of-tolerance items before assembly.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Stamping-die monitoring</div><div class="uc-item-desc">Watches press-die condition for wear, crack, and misalignment — predicts failure before scrap.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Wheel / tyre fitment check</div><div class="uc-item-desc">Verifies correct wheel and tyre assembly before the vehicle leaves the line.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.8.label">Robotic bin-picking guidance</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.8.desc">Vision guides robots picking randomly placed parts from bins — no fixed orientation required.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.9.label">Dimensional measurement</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.9.desc">In-line measurement of part dimensions against CAD. Flags out-of-tolerance items before assembly.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.10.label">Stamping-die monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.10.desc">Watches press-die condition for wear, crack, and misalignment — predicts failure before scrap.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.auto.11.label">Wheel / tyre fitment check</div><div class="uc-item-desc" data-i18n="solution.panels.production.auto.11.desc">Verifies correct wheel and tyre assembly before the vehicle leaves the line.</div></div>
         </div>
       </div>
       <div id="prod-pharma" class="map-ind-uc">
-        <div class="map-section-label">Defect detection</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.pharma.sec0">Defect detection</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Tablet / capsule defects</div><div class="uc-item-desc">Detects chips, cracks, colour variation, spots, twins, and double-caps at full line speed.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Vial defects</div><div class="uc-item-desc">Detects cracks, particulates in liquid, fill-level variation, and cap/crimp faults.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Blister-pack defects</div><div class="uc-item-desc">Detects empty pockets, broken, or misformed tablets in blister packaging.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Particulate inspection</div><div class="uc-item-desc">Checks injectables and liquid products for visible particulates.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.0.label">Tablet / capsule defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.0.desc">Detects chips, cracks, colour variation, spots, twins, and double-caps at full line speed.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.1.label">Vial defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.1.desc">Detects cracks, particulates in liquid, fill-level variation, and cap/crimp faults.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.2.label">Blister-pack defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.2.desc">Detects empty pockets, broken, or misformed tablets in blister packaging.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.3.label">Particulate inspection</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.3.desc">Checks injectables and liquid products for visible particulates.</div></div>
         </div>
-        <div class="map-section-label">Pack verification</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.pharma.sec1">Pack verification</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Label correctness</div><div class="uc-item-desc">Confirms batch, expiry, and product name on labels match the batch record.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Braille verification</div><div class="uc-item-desc">Confirms required Braille text is present and correctly embossed (EU requirement).</div></div>
-          <div class="uc-item"><div class="uc-item-label">Serialization code check</div><div class="uc-item-desc">Confirms serial codes are present, scannable, and match the track-and-trace record.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Correct leaflet insertion</div><div class="uc-item-desc">Confirms the right patient information leaflet is inserted into every carton.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.4.label">Label correctness</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.4.desc">Confirms batch, expiry, and product name on labels match the batch record.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.5.label">Braille verification</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.5.desc">Confirms required Braille text is present and correctly embossed (EU requirement).</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.6.label">Serialization code check</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.6.desc">Confirms serial codes are present, scannable, and match the track-and-trace record.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.7.label">Correct leaflet insertion</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.7.desc">Confirms the right patient information leaflet is inserted into every carton.</div></div>
         </div>
-        <div class="map-section-label">GMP-specific</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.pharma.sec2">GMP-specific</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Line-clearance verification</div><div class="uc-item-desc">Confirms no leftover material from the previous batch remains on the line — a GMP-critical check.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Fill-finish / isolator monitoring</div><div class="uc-item-desc">Watches activity in sterile fill-finish areas and RABS/isolator environments.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Visual batch record</div><div class="uc-item-desc">Captures a visual record of every production step for electronic batch record and 21 CFR Part 11 audit.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Tablet-press monitoring</div><div class="uc-item-desc">Watches tablet-press condition for die wear, sticking, and compression variation.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.8.label">Line-clearance verification</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.8.desc">Confirms no leftover material from the previous batch remains on the line — a GMP-critical check.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.9.label">Fill-finish / isolator monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.9.desc">Watches activity in sterile fill-finish areas and RABS/isolator environments.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.10.label">Visual batch record</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.10.desc">Captures a visual record of every production step for electronic batch record and 21 CFR Part 11 audit.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.pharma.11.label">Tablet-press monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.production.pharma.11.desc">Watches tablet-press condition for die wear, sticking, and compression variation.</div></div>
         </div>
       </div>
       <div id="prod-food" class="map-ind-uc">
-        <div class="map-section-label">Defect & safety detection</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.food.sec0">Defect & safety detection</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Foreign-object detection</div><div class="uc-item-desc">Detects metal, plastic, glass, insects, and stones — often combined with X-ray inspection.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Appearance check</div><div class="uc-item-desc">Checks colour, shape, size, burn marks, and mould on food products at line speed.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Contamination detection</div><div class="uc-item-desc">Flags visible contamination on the product or on the line surface.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Under / over-cook detection</div><div class="uc-item-desc">Flags improperly cooked product using colour and thermal analysis.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.0.label">Foreign-object detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.0.desc">Detects metal, plastic, glass, insects, and stones — often combined with X-ray inspection.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.1.label">Appearance check</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.1.desc">Checks colour, shape, size, burn marks, and mould on food products at line speed.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.2.label">Contamination detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.2.desc">Flags visible contamination on the product or on the line surface.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.3.label">Under / over-cook detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.3.desc">Flags improperly cooked product using colour and thermal analysis.</div></div>
         </div>
-        <div class="map-section-label">Pack verification</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.food.sec1">Pack verification</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Date-code / batch legibility</div><div class="uc-item-desc">Confirms codes are present, readable, and correct before packs leave the line.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Fill level check</div><div class="uc-item-desc">Checks fill level in packs and containers — flags under and overfill.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Seal integrity</div><div class="uc-item-desc">Detects heat-seal and closure defects that could compromise shelf life.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Allergen changeover clearance</div><div class="uc-item-desc">Confirms the line is fully cleared between allergen and allergen-free product runs.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.4.label">Date-code / batch legibility</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.4.desc">Confirms codes are present, readable, and correct before packs leave the line.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.5.label">Fill level check</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.5.desc">Checks fill level in packs and containers — flags under and overfill.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.6.label">Seal integrity</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.6.desc">Detects heat-seal and closure defects that could compromise shelf life.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.7.label">Allergen changeover clearance</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.7.desc">Confirms the line is fully cleared between allergen and allergen-free product runs.</div></div>
         </div>
-        <div class="map-section-label">On-floor hygiene</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.food.sec2">On-floor hygiene</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Quality grading / sorting</div><div class="uc-item-desc">Sorts produce by ripeness, size, colour, or grade — replaces or augments manual graders.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Pest detection on line</div><div class="uc-item-desc">Flags pests in the production area — a critical control point for food-safety certification.</div></div>
-          <div class="uc-item"><div class="uc-item-label">On-floor gowning compliance</div><div class="uc-item-desc">Confirms hairnet and gloves are worn correctly by all workers on the production line.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Portion / weight estimation</div><div class="uc-item-desc">Estimates portion size or weight using vision — flags deviations before packing.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.8.label">Quality grading / sorting</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.8.desc">Sorts produce by ripeness, size, colour, or grade — replaces or augments manual graders.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.9.label">Pest detection on line</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.9.desc">Flags pests in the production area — a critical control point for food-safety certification.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.10.label">On-floor gowning compliance</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.10.desc">Confirms hairnet and gloves are worn correctly by all workers on the production line.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.food.11.label">Portion / weight estimation</div><div class="uc-item-desc" data-i18n="solution.panels.production.food.11.desc">Estimates portion size or weight using vision — flags deviations before packing.</div></div>
         </div>
       </div>
       <div id="prod-gen" class="map-ind-uc">
-        <div class="map-section-label">Defect detection</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.gen.sec0">Defect detection</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Surface defects</div><div class="uc-item-desc">Detects scratches, cracks, dents, and discolouration on finished parts.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Moulding defects</div><div class="uc-item-desc">Detects flash, short shots, and sink marks in plastic and cast components.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Print / label defects</div><div class="uc-item-desc">Detects misprints, smudges, and misalignment on packaging and product labels.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dimensional check</div><div class="uc-item-desc">Flags out-of-tolerance dimensions in-line — feeds rejection gate automatically.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.0.label">Surface defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.0.desc">Detects scratches, cracks, dents, and discolouration on finished parts.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.1.label">Moulding defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.1.desc">Detects flash, short shots, and sink marks in plastic and cast components.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.2.label">Print / label defects</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.2.desc">Detects misprints, smudges, and misalignment on packaging and product labels.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.3.label">Dimensional check</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.3.desc">Flags out-of-tolerance dimensions in-line — feeds rejection gate automatically.</div></div>
         </div>
-        <div class="map-section-label">Assembly & counting</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.gen.sec1">Assembly & counting</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Component presence check</div><div class="uc-item-desc">Confirms all parts are present and correctly oriented before the unit moves forward.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Screw / fastener count</div><div class="uc-item-desc">Checks fastener count and seating at each assembly station.</div></div>
-          <div class="uc-item"><div class="uc-item-label">In-line product count</div><div class="uc-item-desc">Counts products on the conveyor. Reconciles against production targets and ERP order.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Fill-level & weight verify</div><div class="uc-item-desc">Checks product weight and fill levels in containers against specification.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.4.label">Component presence check</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.4.desc">Confirms all parts are present and correctly oriented before the unit moves forward.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.5.label">Screw / fastener count</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.5.desc">Checks fastener count and seating at each assembly station.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.6.label">In-line product count</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.6.desc">Counts products on the conveyor. Reconciles against production targets and ERP order.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.7.label">Fill-level & weight verify</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.7.desc">Checks product weight and fill levels in containers against specification.</div></div>
         </div>
-        <div class="map-section-label">Predictive maintenance</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.gen.sec2">Predictive maintenance</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Motor / bearing thermal</div><div class="uc-item-desc">Thermal camera detects overheating motors and bearings before failure.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Conveyor belt health</div><div class="uc-item-desc">Vision spots belt wear, roller damage, and tracking issues before they cause downtime.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Vibration-by-vision</div><div class="uc-item-desc">Detects abnormal machine vibration patterns using high-speed cameras — no sensor required.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Coolant / oil leak</div><div class="uc-item-desc">Detects leaks on the floor or machine surfaces before they cause secondary damage.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.8.label">Motor / bearing thermal</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.8.desc">Thermal camera detects overheating motors and bearings before failure.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.9.label">Conveyor belt health</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.9.desc">Vision spots belt wear, roller damage, and tracking issues before they cause downtime.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.10.label">Vibration-by-vision</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.10.desc">Detects abnormal machine vibration patterns using high-speed cameras — no sensor required.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.gen.11.label">Coolant / oil leak</div><div class="uc-item-desc" data-i18n="solution.panels.production.gen.11.desc">Detects leaks on the floor or machine surfaces before they cause secondary damage.</div></div>
         </div>
       </div>
       <div id="prod-logistics" class="map-ind-uc">
-        <div class="map-section-label">Sortation & routing</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.logistics.sec0">Sortation & routing</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Sort-label / barcode read</div><div class="uc-item-desc">Reads labels on the conveyor at speed to drive sort-lane routing decisions.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Destination / address OCR</div><div class="uc-item-desc">Reads shipping addresses to support automated sort decisions.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Misrouted-parcel detection</div><div class="uc-item-desc">Flags parcels sent to the wrong sort lane before they leave the line.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Conveyor jam / blockage detection</div><div class="uc-item-desc">Detects jams and blockages on the sort line and alerts maintenance.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.0.label">Sort-label / barcode read</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.0.desc">Reads labels on the conveyor at speed to drive sort-lane routing decisions.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.1.label">Destination / address OCR</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.1.desc">Reads shipping addresses to support automated sort decisions.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.2.label">Misrouted-parcel detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.2.desc">Flags parcels sent to the wrong sort lane before they leave the line.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.3.label">Conveyor jam / blockage detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.3.desc">Detects jams and blockages on the sort line and alerts maintenance.</div></div>
         </div>
-        <div class="map-section-label">Package handling & quality</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.logistics.sec1">Package handling & quality</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Damaged / crushed parcel detection</div><div class="uc-item-desc">Flags damaged packages on the line for rework or claims.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Open / leaking package detection</div><div class="uc-item-desc">Flags burst, open, or leaking parcels before they continue downstream.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Non-conveyable / oversized detection</div><div class="uc-item-desc">Identifies irregular or oversized items that need manual handling.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Wrong-item / wrong-label detection</div><div class="uc-item-desc">Flags a mismatch between the item and the label attached to it.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.4.label">Damaged / crushed parcel detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.4.desc">Flags damaged packages on the line for rework or claims.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.5.label">Open / leaking package detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.5.desc">Flags burst, open, or leaking parcels before they continue downstream.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.6.label">Non-conveyable / oversized detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.6.desc">Identifies irregular or oversized items that need manual handling.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.7.label">Wrong-item / wrong-label detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.7.desc">Flags a mismatch between the item and the label attached to it.</div></div>
         </div>
-        <div class="map-section-label">Loading / unloading</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.logistics.sec2">Loading / unloading</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Truck-load verification</div><div class="uc-item-desc">Confirms the count and items loaded match the manifest per truck.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Trailer fill / cube utilization</div><div class="uc-item-desc">Measures how fully each trailer is loaded to optimise cube usage.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Mis-load detection</div><div class="uc-item-desc">Flags a parcel loaded onto the wrong route or truck before departure.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Dock-door activity monitoring</div><div class="uc-item-desc">Tracks loading and unloading activity at every dock door.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.8.label">Truck-load verification</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.8.desc">Confirms the count and items loaded match the manifest per truck.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.9.label">Trailer fill / cube utilization</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.9.desc">Measures how fully each trailer is loaded to optimise cube usage.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.10.label">Mis-load detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.10.desc">Flags a parcel loaded onto the wrong route or truck before departure.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.11.label">Dock-door activity monitoring</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.11.desc">Tracks loading and unloading activity at every dock door.</div></div>
         </div>
-        <div class="map-section-label">Automation & MHE</div>
+        <div class="map-section-label" data-i18n="solution.panels.production.logistics.sec3">Automation & MHE</div>
         <div class="map-uc-grid">
-          <div class="uc-item"><div class="uc-item-label">Conveyor / sorter health</div><div class="uc-item-desc">Monitors automation equipment condition to predict failures before downtime.</div></div>
-          <div class="uc-item"><div class="uc-item-label">AGV / AMR navigation & obstacle detection</div><div class="uc-item-desc">Guides autonomous vehicles around the facility and avoids collisions.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Robotic pick / place guidance</div><div class="uc-item-desc">Vision-guides robotic handling for picking and placing parcels or items.</div></div>
-          <div class="uc-item"><div class="uc-item-label">Forklift / MHE safety</div><div class="uc-item-desc">Detects pedestrian proximity, speeding, and near-misses around MHE.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.12.label">Conveyor / sorter health</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.12.desc">Monitors automation equipment condition to predict failures before downtime.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.13.label">AGV / AMR navigation & obstacle detection</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.13.desc">Guides autonomous vehicles around the facility and avoids collisions.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.14.label">Robotic pick / place guidance</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.14.desc">Vision-guides robotic handling for picking and placing parcels or items.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.production.logistics.15.label">Forklift / MHE safety</div><div class="uc-item-desc" data-i18n="solution.panels.production.logistics.15.desc">Detects pedestrian proximity, speeding, and near-misses around MHE.</div></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Office layer panel -->
+    <div class="panel" id="p-office">
+      <div class="panel-header">
+        <div><div class="panel-title">Office layer — Agentic / LLM</div><div class="panel-sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div></div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <span class="panel-badge badge-office">Agentic / LLM</span>
+          <button class="close-btn" onclick="closePanel()">✕ close</button>
+        </div>
+      </div>
+      <div class="map-uc-grid">
+        <div class="uc-item"><div class="uc-item-label">AI Production Copilot</div><div class="uc-item-desc">Summarises production KPIs, bottlenecks and shift performance using live vision data.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Executive Dashboard</div><div class="uc-item-desc">Natural-language insights for plant leadership with real-time operational visibility.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Procurement Intelligence</div><div class="uc-item-desc">Predicts shortages and recommends purchasing actions based on inventory and vision events.</div></div>
+        <div class="uc-item"><div class="uc-item-label">HR & Workforce Analytics</div><div class="uc-item-desc">Analyses attendance, PPE compliance and workforce utilisation trends.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Finance Automation</div><div class="uc-item-desc">Validates production counts against ERP and supports automated reconciliation.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Quality Assistant</div><div class="uc-item-desc">Explains recurring defects and recommends corrective actions.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Maintenance Copilot</div><div class="uc-item-desc">Converts predictive maintenance alerts into work orders and priorities.</div></div>
+        <div class="uc-item"><div class="uc-item-label">Compliance Assistant</div><div class="uc-item-desc">Generates audit-ready reports using vision events and ERP records.</div></div>
       </div>
     </div>
   </div>
@@ -891,17 +952,17 @@ function selInd(prefix, id, btn){
   <!-- ============ LOCAL PRESENCE ============ -->
   <section class="presence" id="presence">
     <div class="wrap">
-      <div class="eyebrow">Lokale Präsenz / Local Presence</div>
-      <h2>Wir sind <span class="hl">vor Ort</span> — nicht nur online.</h2>
+      <div class="eyebrow" data-i18n="presence.eyebrow">Lokale Präsenz / Local Presence</div>
+      <h2 data-i18n-html="presence.heading">Wir sind <span class="hl">vor Ort</span> — nicht nur online.</h2>
       <div class="presence-grid">
         <div class="presence-card">
           <div class="presence-flag">DE 🇩🇪</div>
-          <h3>Deutschland — eingetragene GmbH</h3>
-          <p>
+          <h3 data-i18n="presence.cardTitle">Deutschland — eingetragene GmbH</h3>
+          <p data-i18n-html="presence.cardBody">
             Think Future Technologies GmbH<br>
             Klara-Franke-Str. 16<br>
             10557 Berlin, Deutschland<br>
-            <a href="mailto:germany@tftus.com">germany@tftus.com</a>
+            <a href="mailto:info@tftus.com">info@tftus.com</a>
           </p>
         </div>
       </div>

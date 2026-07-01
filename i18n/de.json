@@ -56,6 +56,280 @@
     "lead": "Schildern Sie uns Ihren Engpass — wir sagen Ihnen offen, ob und wie wir helfen können.",
     "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help."
   },
+  "solution": {
+    "eyebrow": "Die Lösung",
+    "title": "Eine Anlage. Vollständig sichtbar.",
+    "lead": "Sehen Sie, wie Computer Vision in Ihrer gesamten Anlage funktioniert — vom Eingangstor bis zur Produktionslinie — mit den Kameras und Systemen, die Sie bereits haben.",
+    "legend": {
+      "common": "Gemeinsam in allen Anlagen",
+      "industry": "Produktionsboden (branchenspezifisch)",
+      "support": "Supportbereiche",
+      "erp": "ERP / Integrationsschicht",
+      "office": "Office – Agenten-/LLM-Schicht"
+    },
+    "divider": "Produktionsboden — Branche auswählen",
+    "zones": {
+      "entry": "Eingangs- / Ausgangstor",
+      "worker": "Mitarbeiterzugang / Umkleide",
+      "canteen": "Kantine / Pausenraum",
+      "security": "Sicherheit / Leitstand",
+      "dispatch": "Wareneingang / Versanddock",
+      "production": "Produktionsboden",
+      "productionSub": "Branchenspezifische Vision-Anwendungsfälle — zum Erkunden tippen",
+      "warehouse": "Lager / Lagerhaltung",
+      "cleaning": "Reinigung / Wartung"
+    },
+    "prodGrid": {
+      "defect": "Fehlererkennung",
+      "assembly": "Montageverifikation",
+      "counting": "Zählen / Wiegen",
+      "predictive": "Vorausschauende Wartung"
+    },
+    "erp": {
+      "main": "ERP / MES / WMS / TMS-Integrationsschicht — alle Vision-Daten laufen hier zusammen",
+      "sub": "SAP · Odoo | Echtzeit-Alarme | Automatisiertes Reporting | OEE / OTIF-Dashboards | Audit / Rückverfolgbarkeit | KI-Agenten",
+      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
+    },
+    "hint": "Tippen Sie auf eine Zone der Karte, um die Computer-Vision-Anwendungsfälle zu erkunden.",
+    "close": "✕ schließen",
+    "badge": {
+      "common": "Allgemein — alle Anlagen",
+      "industry": "Branchenspezifisch",
+      "support": "Supportbereich"
+    },
+    "panels": {
+      "entry": {
+        "title": "Eingangs- / Ausgangstor", "sub": "Gemeinsam für alle Anlagentypen",
+        "tabs": { "gen": "Allgemein / Automotive", "logistics": "Logistik" },
+        "gen": {
+          "0": { "label": "ANPR — Kennzeichenerfassung", "desc": "Liest automatisch Kennzeichen ein- und ausfahrender LKW. Protokolliert Zeiten und gleicht mit erwarteten Lieferungen ab." },
+          "1": { "label": "Schrankenautomatisierung", "desc": "Öffnet nur für autorisierte, erkannte Fahrzeuge — kein manueller Eingriff nötig." },
+          "2": { "label": "Fahrzeugtypklassifizierung", "desc": "Unterscheidet Autotransporter, Kühl-LKW, Trailer und Transporter. Leitet automatisch zum richtigen Dock oder Fahrstreifen." },
+          "3": { "label": "Tailgating-Erkennung", "desc": "Erkennt unbefugte Fahrzeuge, die einem berechtigten Fahrzeug durch das Tor folgen." },
+          "4": { "label": "JIT / Zeitfensterprüfung", "desc": "Prüft, ob Lieferanten-LKW im gebuchten Lieferfenster ankommen. Markiert Früh- oder Spätkommen." },
+          "5": { "label": "Eingehende Schadensübersicht", "desc": "Schneller Sichtscan eingehender Teileladungen oder Pakete auf sichtbare Schäden am Tor." },
+          "6": { "label": "Fertigwarenversand-Zählung", "desc": "Zählt abgehende Fertigfahrzeuge oder Paletten. Gleicht mit dem Versandmanifest ab." },
+          "7": { "label": "Kühlketten-Fahrzeugprüfung", "desc": "Prüft, ob Kühlfahrzeuge laufen und Siegel intakt sind — vor der Einfahrt. (Lebensmittel/Pharma)" }
+        },
+        "logistics": {
+          "0": { "label": "Trailer- / Container-ID (OCR)", "desc": "Liest ISO/BIC-Container- und Trailernummern automatisch am Tor." },
+          "1": { "label": "Dockterminschlitz-Prüfung", "desc": "Prüft, ob Spediteure im gebuchten Zeitfenster ankommen, bevor sie eingelassen werden." },
+          "2": { "label": "Fahrer- / Besucherverifizierung", "desc": "Bestätigt die Fahreridentität gegen die Buchung und protokolliert Besucher automatisch." },
+          "3": { "label": "Siegelprüfung am Tor", "desc": "Prüft bei Ankunft, ob Frachtsiegel unversehrt sind — vor der Weiterfahrt zum Dock." }
+        }
+      },
+      "worker": {
+        "title": "Mitarbeiterzugang / Umkleide", "sub": "PSA, Schutzkleidung, Kopfzählung — branchenspezifisch angepasst",
+        "tabs": { "gen": "Allgemein / Automotive", "pharma": "Pharma", "food": "Lebensmittel", "logistics": "Logistik" },
+        "gen": {
+          "0": { "label": "Schutzhelm", "desc": "Prüft das Tragen von Kopfschutz vor Zugang zu Produktionsbereichen." },
+          "1": { "label": "Warnweste", "desc": "Prüft hochsichtbare Jacke in Produktion, Lager und Hofbereichen." },
+          "2": { "label": "Sicherheitsschuhe", "desc": "Prüft das korrekte Schuhwerk mit Stahlkappe oder chemischer Schutzausrüstung." },
+          "3": { "label": "Handschuhe", "desc": "Prüft Handschutz in Zerspanungs-, Chemikalienhandling- und Montagebereichen." },
+          "4": { "label": "Gehörschutz", "desc": "Prüft Ohrenschützer oder -stöpsel vor Zugang zu Pressen-, Stanz- oder Lärmbereichen." },
+          "5": { "label": "Lockere Kleidung erkennen", "desc": "Markiert lockere Ärmel oder Kleidung in der Nähe rotierender Maschinen — Einzugsgefahr." },
+          "6": { "label": "Kopfzählung / Anwesenheit", "desc": "Zählt und protokolliert eintretende Mitarbeiter per Gesicht oder Drehkreuz. Gleicht mit dem Schichtplan ab." },
+          "7": { "label": "Tailgating", "desc": "Erzwingt die Ein-Ausweis-Ein-Person-Regel an jedem Drehkreuz." }
+        },
+        "pharma": {
+          "0": { "label": "Reinraum-Schutzkleidung prüfen", "desc": "Prüft, ob Overall, Haube, Brille, Maske, Handschuhe und Überschuhe korrekt getragen werden." },
+          "1": { "label": "Anziehreihenfolge", "desc": "Prüft die GMP-konforme Reihenfolge beim Anziehen vor dem Reinraum-Zutritt." },
+          "2": { "label": "Keine freiliegende Haut / Haare", "desc": "Markiert freiliegende Haut oder Haare, die einen Reinraum kontaminieren könnten." },
+          "3": { "label": "Doppelte Handschuhe (steril)", "desc": "Prüft zweite Handschuhe in Klasse A/B-Sterilbereichen." },
+          "4": { "label": "Luftdusche-Compliance", "desc": "Prüft, ob Mitarbeiter den vollständigen Luftduschenzyklus vor Reinraumzutritt abschließen." },
+          "5": { "label": "Zonenspezifische Schutzkleidung", "desc": "Prüft, ob die Schutzkleidung dem Reinraumgrad entspricht (A/B/C/D)." },
+          "6": { "label": "Ausziehen beim Verlassen", "desc": "Prüft das korrekte Ausziehverfahren beim Verlassen von Kontrollbereichen." },
+          "7": { "label": "Händedesinfektion", "desc": "Prüft die Händehygiene an Desinfektionsstationen vor dem Zutritt." }
+        },
+        "food": {
+          "0": { "label": "Haarnetz-Erkennung", "desc": "Prüft, ob das Haarnetz das Haar vollständig bedeckt — vor Zutritt zum Produktionsbereich." },
+          "1": { "label": "Bartnetz", "desc": "Prüft das Bartnetz, sofern gemäß Hygienevorschrift erforderlich." },
+          "2": { "label": "Lebensmittelechte Handschuhe", "desc": "Prüft korrekte lebensmittelsichere Handschuhe inkl. metalldetektierbarer Varianten." },
+          "3": { "label": "Kein Schmuck / Uhren", "desc": "Markiert Ringe, Uhren, Ohrringe und andere Gegenstände, die Lebensmittel kontaminieren könnten." },
+          "4": { "label": "Farbcodierte Uniform", "desc": "Prüft, ob die Uniformfarbe zur Zone passt (roh vs. gekocht, Allergen vs. allergenfrei)." },
+          "5": { "label": "Händewasch-Compliance", "desc": "Prüft das Händewaschen und die Desinfektion vor Betreten der Produktion." },
+          "6": { "label": "Keine freiliegenden Verbände", "desc": "Markiert unbedeckte Wunden oder Verbände — Kontaminationsrisiko und Metalldetektionsproblem." },
+          "7": { "label": "Schürzen- / Kittelprüfung", "desc": "Prüft, ob Schürze oder Schutzmantel getragen wird und vor Betreten sauber ist." }
+        },
+        "logistics": {
+          "0": { "label": "Warnweste", "desc": "Prüft das Tragen einer Warnweste in Lager- und Hofbereichen." },
+          "1": { "label": "MHE-Bediener-Ausweis", "desc": "Prüft, ob Gabelstapler- und MHE-Bediener einen gültigen Berechtigungsausweis haben." },
+          "2": { "label": "Kälteschutz-PSA", "desc": "Prüft Thermoschutzkleidung vor Betreten von Kühl- oder Gefrierzonen." },
+          "3": { "label": "Sicherheitsschuhe", "desc": "Prüft Stahlkappenschuhe vor Betreten von Dock- und Hofbereichen." },
+          "4": { "label": "Schutzhelm", "desc": "Prüft Kopfschutz in der Nähe von Regalen und MHE-Betriebszonen." },
+          "5": { "label": "Handschuhe", "desc": "Prüft Handschutz bei erforderlichen Handhabungsaufgaben." },
+          "6": { "label": "Kopfzählung / Anwesenheit", "desc": "Zählt und protokolliert eintretende Mitarbeiter per Gesicht oder Drehkreuz." },
+          "7": { "label": "Tailgating", "desc": "Erzwingt die Ein-Ausweis-Ein-Person-Regel an jedem Drehkreuz." }
+        }
+      },
+      "canteen": {
+        "title": "Kantine / Pausenraum", "sub": "Hygienefortführung und Kreuzkontaminationsvermeidung",
+        "0": { "label": "Besucherdichte / Belegung", "desc": "Überwacht Überfüllung bei Schichtspitzen. Alarmiert das Facility-Management." },
+        "1": { "label": "Wartezeit-Tracking", "desc": "Verfolgt Kantinenwarteschlangen und alarmiert bei Überschreitung der Schwellenwerte." },
+        "2": { "label": "Verschüttungs- / Rutschgefahr-Erkennung", "desc": "Markiert nasse Böden und Verschüttungen als Rutschgefahr. Alarmiert automatisch das Reinigungsteam." },
+        "3": { "label": "Händehygiene beim Wiedereintritt", "desc": "Prüft die Desinfektion vor Rückkehr der Mitarbeiter in die Produktion." },
+        "4": { "label": "Ausziehen vor Kantine (Pharma/Lebensmittel)", "desc": "Prüft, ob Reinraum- oder Produktionskleidung vor dem Essen abgelegt wird. Markiert Verstöße." },
+        "5": { "label": "Wiederanziehen nach Kantine", "desc": "Prüft korrektes Wiederanziehen vor Produktionsrückkehr — GMP- und Lebensmittelsicherheitsanforderung." },
+        "6": { "label": "Keine Produktionskleidung im Speisesaal", "desc": "Markiert Produktions- oder Reinraumkleidung im Essbereich — Kreuzkontaminationsrisiko." },
+        "7": { "label": "Schädlingsnachweis (Lebensmittel)", "desc": "Überwacht Schädlinge im Speisesaal — kritischer Prüfpunkt für Lebensmittelsicherheitszertifizierung." }
+      },
+      "security": {
+        "title": "Sicherheit / Leitstand", "sub": "Perimeter, Anlagenschutz, Vorfallserkennung",
+        "0": { "label": "Perimeter-Einbrucherkennung", "desc": "Erkennt Zaunübersteigen oder Grenzüberschreitungen. Löst sofortigen Alarm an Wachpersonal aus." },
+        "1": { "label": "Kamera-Manipulationserkennung", "desc": "Alarmiert, wenn eine Kamera verdeckt, weggeneigt oder physisch bewegt wird." },
+        "2": { "label": "Feuer- / Raucherkennung", "desc": "KI-gestützte Früherkennung von Feuer und Rauch — besonders kritisch in Lackierbetrieben und Lösemittellagern." },
+        "3": { "label": "Überwachung eingeschränkter Bereiche", "desc": "Markiert Zutritt zu nicht autorisierten Zonen — F&E, Abfüllung, Tresore, Sterilkorridore." },
+        "4": { "label": "Anlagen- / Schrottüberwachung", "desc": "Überwacht die Entnahme von Materialien, Fertigwaren oder Schrott außerhalb autorisierter Prozesse." },
+        "5": { "label": "Fertigfahrzeug-Hof (Auto)", "desc": "Überwacht Hochwertige-Fahrzeug-Lagerflächen auf Schäden oder unbefugten Zugang." },
+        "6": { "label": "Frachtüberwachung (Logistik)", "desc": "Überwacht hochwertige Fracht- und Trailerbereiche auf unbefugte Handhabung oder Entnahme." },
+        "7": { "label": "Unbefugte Trailerbewegung", "desc": "Markiert Trailer, die ohne Versandgenehmigung vom Hof oder Dock bewegt werden." }
+      },
+      "dispatch": {
+        "title": "Wareneingang / Versanddock", "sub": "Wareneingangsverifizierung, Versandgenauigkeit, Rückverfolgbarkeit",
+        "tabs": { "gen": "Allgemein / Automotive", "logistics": "Logistik" },
+        "gen": {
+          "0": { "label": "Etiketten-OCR", "desc": "Liest automatisch Lieferantenetiketten, Rechnungen, Chargennummern und Verfallsdaten beim Wareneingang." },
+          "1": { "label": "Barcode / QR-Lesung", "desc": "Scannt Teileidentifikatoren, Serialisierungscodes und Kanban-Karten am Band- oder Palettentakt." },
+          "2": { "label": "Karton- / Palettenzählung", "desc": "Zählt empfangene oder versandte Kartons und Paletten. Gleicht mit Bestellungen ab." },
+          "3": { "label": "Eingehende Schadenserfassung", "desc": "Prüft eingehende Pakete und Teile auf sichtbare Schäden. Fotobeweis automatisch für Reklamationen." },
+          "4": { "label": "Versand vs. Bestellverifikation", "desc": "Prüft, ob versandte Artikel und Mengen mit der Bestellung übereinstimmen — vor LKW-Abfahrt." },
+          "5": { "label": "Siegel-Unversehrtheitsprüfung", "desc": "Prüft Siegel auf ein- und ausgehenden Waren. Markiert Brüche. (Pharma/Lebensmittel)" },
+          "6": { "label": "Chargen- / Verfalls-OCR", "desc": "Liest Chargen- und Verfallsdaten auf Rohstoffen und Fertigwaren bei Eingang und Versand." },
+          "7": { "label": "Dock-Türen-Management", "desc": "Überwacht Be- und Entladeaktivitäten je Dock. Protokolliert Zeitstempel und verknüpft mit ERP." }
+        },
+        "logistics": {
+          "0": { "label": "ASN-Abstimmung", "desc": "Gleicht empfangene Waren automatisch mit Voranmeldungen ab." },
+          "1": { "label": "Paketdimensionierung (DIM)", "desc": "Misst Paketmaße bei Ankunft für genaue Abrechnung und Slotting." },
+          "2": { "label": "Gefahrgut / DG-Placard-Lesung", "desc": "Erkennt und liest Gefahrgut-Piktogramme auf ein- und ausgehenden Ladungen." },
+          "3": { "label": "Kühlketten-Temperaturprüfung", "desc": "Prüft die Temperatur temperatursensibler Wareneingänge am Dock." }
+        }
+      },
+      "warehouse": {
+        "title": "Lager / Lagerhaltung", "sub": "Bestandsgenauigkeit, Kommissionierverifizierung, Sicherheit, Compliance",
+        "tabs": { "gen": "Allgemein", "logistics": "Logistik — Fuhrpark / Hof" },
+        "gen": {
+          "0": { "label": "Bestandszählung", "desc": "Deckenmontierte oder drohnengetragene Kameras zählen Paletten und Lagerbestand — kontinuierlich oder geplant." },
+          "1": { "label": "Leerplatz-Erkennung", "desc": "Findet freie Regalplätze und speist das WMS für optimales Einlagerungsrouting." },
+          "2": { "label": "Kommissionierverifizierung", "desc": "Bestätigt den richtigen Artikel und die richtige Menge vor Verlassen der Station." },
+          "3": { "label": "Falsch gelagerter Artikel", "desc": "Markiert am falschen Ort gelagertes Material — verhindert Bestellfehler und Verzögerungen." },
+          "4": { "label": "Gabelstapler- / Fußgängersicherheit", "desc": "Erkennt, wenn Fußgänger in Gabelstapler-Betriebszonen eintreten. Alarmiert Fahrer und Vorgesetzte." },
+          "5": { "label": "FEFO / FIFO-Durchsetzung", "desc": "Prüft, ob ältester oder frühablaufender Bestand zuerst kommissioniert wird — kritisch in Pharma und Lebensmitteln." },
+          "6": { "label": "Temperaturzonen-Compliance", "desc": "Prüft, ob Waren in der richtigen Temperaturzone gelagert werden. (Pharma / Lebensmittel / Kühlkette)" },
+          "7": { "label": "Charge-Rückverfolgbarkeit", "desc": "Verbindet gelagerte Bestände visuell mit Chargenunterlagen — unterstützt schnelle Rückrufbereitschaft." }
+        },
+        "logistics": {
+          "0": { "label": "Hof- / Trailer-Standortverfolgung", "desc": "Verfolgt in Echtzeit, wo jeder Trailer auf dem Hof geparkt ist." },
+          "1": { "label": "Trailerbelegung (beladen/leer)", "desc": "Erkennt, ob jeder geparkte Trailer beladen oder leer ist — ohne manuelle Prüfungen." },
+          "2": { "label": "Dock-Tür-Verfügbarkeit", "desc": "Zeigt, welche Dock-Türen frei oder belegt sind — beschleunigt die Trailerzuweisung." },
+          "3": { "label": "Fahrzeug- / Trailer-Schadensinspektion", "desc": "Prüft Fahrzeuge bei Ein- und Ausfahrt auf sichtbare Schäden mit Fotobeweis." },
+          "4": { "label": "Ladungssicherungsprüfung", "desc": "Prüft vor Abfahrt die korrekte Ladungssicherung eines Trailers." },
+          "5": { "label": "Siegel-Verifizierung beim Versand", "desc": "Prüft bei Abfahrt korrekt angebrachte Siegel und protokolliert die Siegelnummer." },
+          "6": { "label": "Fahrermüdigkeit / Ablenkung", "desc": "Fahrerüberwachung für Fuhrparksicherheit auf ein- und ausgehenden Routen (wo eingesetzt)." },
+          "7": { "label": "Drohnengestützte Bestandsprüfung", "desc": "Luftgestützte Zykluszählung von Hochregal- und Hofbeständen für schnelle, genaue Audits." }
+        }
+      },
+      "cleaning": {
+        "title": "Reinigung / Wartung", "sub": "Aktivitäten verifizieren, Compliance und Prüfnachweise sichern",
+        "0": { "label": "Reinigungsaktivitäts-Erkennung", "desc": "Bestätigt, dass Reinigungsteams Zonen tatsächlich gereinigt haben — erkennt Mop-, Eimer- und Bewegungsmuster." },
+        "1": { "label": "Zeitplan-Compliance", "desc": "Prüft, ob Reinigung im erforderlichen Zeitfenster durchgeführt wurde. Markiert verpasste oder verspätete Reinigungen." },
+        "2": { "label": "5S / Ordnungskonformität", "desc": "Überwacht die Arbeitsplatzorganisation — markiert falsch platzierte Gegenstände oder blockierte Gänge." },
+        "3": { "label": "Verschüttungs-Reinigungsverifizierung", "desc": "Prüft, ob Verschüttungen nach dem Alarm beseitigt wurden. Schließt das Vorfallsprotokoll." },
+        "4": { "label": "CIP-Verifizierung (Lebensmittel)", "desc": "Prüft, ob CIP-Zyklen an Geräten durchgeführt wurden. Visueller Nachweis für HACCP und ISO 22000." },
+        "5": { "label": "Linienfreigabe (Pharma)", "desc": "Prüft die Flächenfreigabe zwischen Chargen — ein GMP-kritischer Schritt vor dem nächsten Produktionslauf." },
+        "6": { "label": "Desinfektionsverifizierung", "desc": "Prüft, ob Desinfektion in korrekter Reihenfolge und den richtigen Bereichen durchgeführt wurde." },
+        "7": { "label": "Prüfprotokoll", "desc": "Zeitgestempelter visueller Nachweis jedes Reinigungsvorgangs — bereit für ISO-, GMP-, HACCP- oder BG-Audits." }
+      },
+      "production": {
+        "title": "Produktionsboden", "sub": "Branche auswählen — Anwendungsfälle unterscheiden sich erheblich",
+        "tabs": { "auto": "Automotive", "pharma": "Pharma", "food": "Lebensmittel", "gen": "Allgemeine Fertigung", "logistics": "Logistik" },
+        "auto": {
+          "sec0": "Fehlererkennung", "sec1": "Montageverifizierung", "sec2": "Weitere Automotive-Anwendungen",
+          "0": { "label": "Lackmängel", "desc": "Erkennt Orangenhaut, Läufer, Tropfen, Staubnibs und Kratzer auf lackierten Karosserien." },
+          "1": { "label": "Schweißnahtqualität", "desc": "Erkennt Schweißspritzer, fehlende Schweißnähte und schlechte Schweißraupen an jeder Station." },
+          "2": { "label": "Karosserie-Dellen", "desc": "Oberflächen-Dellen- und Kratzer-Erkennung auf Blech- und Karosserieteilen." },
+          "3": { "label": "Spaltmaß & Bündigkeit", "desc": "Misst Abstände und Ausrichtung zwischen Paneelen gegen die Spezifikationstoleranzen." },
+          "4": { "label": "Befestiger / Schraubenanwesenheit", "desc": "Prüft alle Bolzen und Schrauben auf Anwesenheit und korrektes Drehmoment an jeder Station." },
+          "5": { "label": "Kabelbaum-Verlegung", "desc": "Prüft korrekte Kabelbaum-Verlegung und Clipsitze in den richtigen Positionen." },
+          "6": { "label": "Varianten- / VIN-Verifizierung", "desc": "Bestätigt korrektes Ausstattungsniveau und Motorvariante per Bauauftrag. Gleicht VIN mit Bestellspezifikation ab." },
+          "7": { "label": "Poka-Yoke Fehlervermeidung", "desc": "Erkennt Montagefehler an der Station — bevor das Fahrzeug zum nächsten Schritt fährt." },
+          "8": { "label": "Robotergestützte Bin-Picking-Führung", "desc": "Vision führt Roboter beim Greifen ungeordnet liegender Teile aus Behältern — ohne feste Ausrichtung." },
+          "9": { "label": "Dimensionsmessung", "desc": "In-Line-Messung von Teileabmessungen gegen CAD. Markiert Außertoleranzen vor der Montage." },
+          "10": { "label": "Stanzwerkzeug-Überwachung", "desc": "Überwacht den Zustand von Presswerkzeugen auf Verschleiß, Risse und Fehlausrichtung — sagt Ausfall vor Ausschuss vorher." },
+          "11": { "label": "Rad- / Reifenmontageprüfung", "desc": "Prüft korrekte Rad- und Reifenmontage vor Verlassen der Linie." }
+        },
+        "pharma": {
+          "sec0": "Fehlererkennung", "sec1": "Packungsverifizierung", "sec2": "GMP-spezifisch",
+          "0": { "label": "Tabletten- / Kapseldefekte", "desc": "Erkennt Absplitterungen, Risse, Farbabweichungen, Flecken, Zwillinge und Doppelkapseln bei voller Liniengeschwindigkeit." },
+          "1": { "label": "Vialdefekte", "desc": "Erkennt Risse, Partikel in Flüssigkeit, Füllstandsabweichungen und Kappe/Crimpe-Fehler." },
+          "2": { "label": "Blisterpackungsdefekte", "desc": "Erkennt leere Kammern, gebrochene oder fehlgeformte Tabletten in Blisterverpackungen." },
+          "3": { "label": "Partikelinspektion", "desc": "Prüft Injektionslösungen und flüssige Produkte auf sichtbare Partikel." },
+          "4": { "label": "Etikettenkorrektheit", "desc": "Prüft, ob Charge, Verfallsdatum und Produktname auf Etiketten mit dem Chargenbericht übereinstimmen." },
+          "5": { "label": "Braille-Verifizierung", "desc": "Prüft erforderlichen Braille-Text auf Anwesenheit und korrekte Prägung (EU-Anforderung)." },
+          "6": { "label": "Serialisierungscode-Prüfung", "desc": "Prüft, ob Seriennummern vorhanden, scannbar und mit dem Track-and-Trace-Datensatz übereinstimmen." },
+          "7": { "label": "Korrekte Beipackzettel-Einlage", "desc": "Prüft, ob der richtige Patientenbeipackzettel in jeden Karton eingelegt wird." },
+          "8": { "label": "Linienfreigabe-Verifizierung", "desc": "Prüft, ob kein Restmaterial der vorherigen Charge auf der Linie verbleibt — GMP-kritische Prüfung." },
+          "9": { "label": "Fill-Finish- / Isolator-Überwachung", "desc": "Überwacht Aktivitäten in sterilen Fill-Finish-Bereichen und RABS/Isolator-Umgebungen." },
+          "10": { "label": "Visuelles Chargenprotokoll", "desc": "Erstellt visuellen Nachweis jedes Produktionsschritts für elektronischen Chargennachweis und 21 CFR Part 11 Audit." },
+          "11": { "label": "Tablettierpresse-Überwachung", "desc": "Überwacht den Zustand der Tablettierpresse auf Stempelwerkzeugverschleiß, Kleben und Druckvariation." }
+        },
+        "food": {
+          "sec0": "Fehler- & Sicherheitserkennung", "sec1": "Packungsverifizierung", "sec2": "Hygiene am Shopfloor",
+          "0": { "label": "Fremdkörper-Erkennung", "desc": "Erkennt Metall, Kunststoff, Glas, Insekten und Steine — oft kombiniert mit Röntgeninspektion." },
+          "1": { "label": "Aussehens-Prüfung", "desc": "Prüft Farbe, Form, Größe, Brandflecken und Schimmel auf Lebensmitteln bei Liniengeschwindigkeit." },
+          "2": { "label": "Kontaminationserkennung", "desc": "Markiert sichtbare Kontamination am Produkt oder auf der Linienoberfläche." },
+          "3": { "label": "Unter- / Überkoch-Erkennung", "desc": "Markiert unzureichend gegartes Produkt mittels Farb- und Thermalanalyse." },
+          "4": { "label": "Datumscode / Charge-Lesbarkeit", "desc": "Prüft, ob Codes vorhanden, lesbar und korrekt sind — bevor Packungen die Linie verlassen." },
+          "5": { "label": "Füllstandskontrolle", "desc": "Prüft Füllstand in Packungen und Behältern — markiert Unter- und Überfüllung." },
+          "6": { "label": "Siegelintegrität", "desc": "Erkennt Heißsiegelungsfehler und Verschlussproblem, die die Haltbarkeit gefährden könnten." },
+          "7": { "label": "Allergenwechsel-Freigabe", "desc": "Prüft vollständige Linienentrümpelung zwischen Allergen- und allergenfreien Produktläufen." },
+          "8": { "label": "Qualitätssortierung / -klassifizierung", "desc": "Sortiert Produkte nach Reifegrad, Größe, Farbe oder Qualität — ersetzt oder ergänzt manuelle Sortierer." },
+          "9": { "label": "Schädlingsnachweis an der Linie", "desc": "Markiert Schädlinge im Produktionsbereich — kritischer Kontrollpunkt für Lebensmittelsicherheitszertifizierung." },
+          "10": { "label": "Schutzkleidungs-Compliance am Shopfloor", "desc": "Prüft korrekt getragene Haarnetze und Handschuhe aller Mitarbeiter an der Produktionslinie." },
+          "11": { "label": "Portions- / Gewichtsschätzung", "desc": "Schätzt Portionsgröße oder -gewicht per Vision — markiert Abweichungen vor dem Verpacken." }
+        },
+        "gen": {
+          "sec0": "Fehlererkennung", "sec1": "Montage & Zählung", "sec2": "Vorausschauende Wartung",
+          "0": { "label": "Oberflächendefekte", "desc": "Erkennt Kratzer, Risse, Dellen und Verfärbungen an Fertigteilen." },
+          "1": { "label": "Gussdefekte", "desc": "Erkennt Grate, Kaltläufer und Einfallstellen in Kunststoff- und Gussbauteilen." },
+          "2": { "label": "Druck- / Etikettendefekte", "desc": "Erkennt Fehldrucke, Schmierflecken und Fehlausrichtungen auf Verpackungen und Produktetiketten." },
+          "3": { "label": "Dimensionsprüfung", "desc": "Markiert Außertoleranzabmessungen in-line — speist automatisch die Ausschleusungsweiche." },
+          "4": { "label": "Bauteilanwesenheitsprüfung", "desc": "Prüft alle Teile auf Anwesenheit und korrekte Ausrichtung — bevor das Teil weiterläuft." },
+          "5": { "label": "Schrauben- / Befestigerzählung", "desc": "Prüft Befestigeranzahl und -sitz an jeder Montagestation." },
+          "6": { "label": "In-Line-Produktzählung", "desc": "Zählt Produkte auf dem Förderband. Gleicht mit Produktionszielen und ERP-Auftrag ab." },
+          "7": { "label": "Füllstand & Gewicht prüfen", "desc": "Prüft Produktgewicht und Füllstand in Behältern gegen Spezifikation." },
+          "8": { "label": "Motor- / Lager-Thermik", "desc": "Wärmekamera erkennt überhitzte Motoren und Lager — vor dem Ausfall." },
+          "9": { "label": "Förderband-Zustand", "desc": "Vision erkennt Bandverschleiß, Rollenschäden und Spurprobleme — bevor sie Stillstand verursachen." },
+          "10": { "label": "Vibration per Vision", "desc": "Erkennt abnormale Maschinenschwingungsmuster mit Hochgeschwindigkeitskameras — kein Sensor nötig." },
+          "11": { "label": "Kühlmittel- / Ölleck", "desc": "Erkennt Lecks auf Böden oder Maschinenoberflächen — bevor Folgeschäden entstehen." }
+        },
+        "logistics": {
+          "sec0": "Sortierung & Routing", "sec1": "Pakethandling & Qualität", "sec2": "Be- / Entladung", "sec3": "Automatisierung & MHE",
+          "0": { "label": "Sort-Etikett / Barcode-Lesung", "desc": "Liest Etiketten auf dem Förderband in Echtzeit für Sort-Lane-Routing-Entscheidungen." },
+          "1": { "label": "Ziel- / Adress-OCR", "desc": "Liest Versandadressen für automatisierte Sort-Entscheidungen." },
+          "2": { "label": "Fehlgeleitetes-Paket-Erkennung", "desc": "Markiert Pakete, die in die falsche Sort-Lane geschickt wurden — bevor sie die Linie verlassen." },
+          "3": { "label": "Förderband-Stau- / Blockadeerkennung", "desc": "Erkennt Staus und Blockaden auf der Sort-Linie und alarmiert die Wartung." },
+          "4": { "label": "Beschädigtes / zerdrücktes Paket", "desc": "Markiert beschädigte Pakete auf der Linie für Nacharbeit oder Reklamationen." },
+          "5": { "label": "Offenes / leckendes Paket", "desc": "Markiert geplatzte, offene oder leckende Pakete vor der Weiterfahrt." },
+          "6": { "label": "Nicht-förderfähige / übergroße Erkennung", "desc": "Identifiziert unregelmäßige oder übergroße Teile, die manuelle Handhabung benötigen." },
+          "7": { "label": "Falschartikel- / Falschetikett-Erkennung", "desc": "Markiert einen Unterschied zwischen Artikel und dem daran befestigten Etikett." },
+          "8": { "label": "LKW-Beladungsverifizierung", "desc": "Prüft, ob Anzahl und Artikel der Beladung mit dem Manifest je LKW übereinstimmen." },
+          "9": { "label": "Trailer-Füllung / Volumenauslastung", "desc": "Misst die Beladung jedes Trailers zur Optimierung der Raumnutzung." },
+          "10": { "label": "Falschbeladungs-Erkennung", "desc": "Markiert ein Paket auf der falschen Route oder dem falschen LKW — vor Abfahrt." },
+          "11": { "label": "Dock-Tür-Aktivitätsüberwachung", "desc": "Verfolgt Be- und Entladeaktivitäten an jeder Dock-Tür." },
+          "12": { "label": "Förderband- / Sortiererzustand", "desc": "Überwacht den Zustand von Automatisierungsgeräten zur Vorhersage von Ausfällen." },
+          "13": { "label": "FTF / AMR-Navigation & Hinderniserkennung", "desc": "Führt autonome Fahrzeuge durch die Anlage und vermeidet Kollisionen." },
+          "14": { "label": "Robotergestütztes Pick / Place", "desc": "Vision führt robotergestützte Handhabung für Pick-and-Place von Paketen oder Artikeln." },
+          "15": { "label": "Gabelstapler- / MHE-Sicherheit", "desc": "Erkennt Fußgängernähe, Rasen und Beinaheunfälle rund um MHE." }
+        }
+      }
+    }
+  },
+  "presence": {
+    "eyebrow": "Lokale Präsenz",
+    "heading": "Wir sind <span class=\"hl\">vor Ort</span> — nicht nur online.",
+    "cardTitle": "Deutschland — eingetragene GmbH",
+    "cardBody": "Think Future Technologies GmbH<br>Klara-Franke-Str. 16<br>10557 Berlin, Deutschland<br><a href=\"mailto:info@tftus.com\">info@tftus.com</a>"
+  },
   "footer": {
     "tagline": "Engineering-Beschleunigung für deutsche Unternehmen — spezialisiert, zertifiziert, lokal präsent.",
     "services": "Services",
