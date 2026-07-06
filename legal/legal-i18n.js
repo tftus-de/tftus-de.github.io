@@ -38,7 +38,7 @@
     document.documentElement.setAttribute('lang', lang);
     localStorage.setItem(STORAGE_KEY, lang);
     var btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    if (btn) btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
     if (typeof window.rebuildLegalToc === 'function') window.rebuildLegalToc();
   }
 

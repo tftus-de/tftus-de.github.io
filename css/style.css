@@ -781,9 +781,27 @@
 @media (max-width:560px){ .fint-sub{ line-height:1.8; } }
 
 /* ===== LANG TOGGLE ===== */
-.lang-toggle{ margin-left:14px; padding:6px 12px; border-radius:6px; border:1px solid currentColor; background:transparent; color:inherit; cursor:pointer; font-size:12px; font-weight:700; }
-.legal-hero .lang-toggle{ position:absolute; top:24px; right:32px; border-color:var(--blue-d); color:var(--blue-d); background:var(--white); }
-@media (max-width:560px){ .legal-hero .lang-toggle{ position:static; display:inline-block; margin:0 0 14px; } }
+.lang-toggle{
+  margin-left:14px; display:inline-flex; align-items:center; gap:6px;
+  border:none; background:transparent; cursor:pointer; padding:0;
+  font-size:12px; font-weight:700; color:inherit; line-height:1;
+}
+.lt-label{ transition:opacity .2s; user-select:none; }
+.lt-de{ opacity:1; }
+.lt-en{ opacity:.4; }
+.lang-toggle[aria-pressed="true"] .lt-de{ opacity:.4; }
+.lang-toggle[aria-pressed="true"] .lt-en{ opacity:1; }
+.lt-track{
+  position:relative; width:36px; height:20px; border-radius:10px;
+  background:var(--blue-d); transition:background .2s; flex-shrink:0;
+}
+.lt-thumb{
+  position:absolute; top:3px; left:3px;
+  width:14px; height:14px; border-radius:50%; background:#fff;
+  transition:transform .22s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 1px 3px rgba(0,0,0,.25);
+}
+.lang-toggle[aria-pressed="true"] .lt-thumb{ transform:translateX(16px); }
 
 /* ===== LEGAL PAGES ===== */
 .legal-hero{ position:relative;
