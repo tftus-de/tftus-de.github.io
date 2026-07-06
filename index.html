@@ -89,37 +89,87 @@
 
         <!-- Right Content -->
         <div>
-          <div class="demo-card">
-            <div class="demo-bar">
-              <span class="rec">LIVE INSPECTION FEED</span>
-              <span>CAM_04 — LINE 2</span>
+                  <div class="hero-visual">
+          <div class="cv-dashboard">
+            <!-- top bar -->
+            <div class="cvd-topbar">
+              <span class="cvd-dot live"></span>
+              <span class="cvd-dot r"></span>
+              <span class="cvd-dot g"></span>
+              <span style="margin-left:8px">LIVE VISION MONITOR</span>
+              <span class="cvd-cam-label">4 CAMERAS ACTIVE</span>
             </div>
-            <div class="demo-stage">
-              <div class="part part-body"></div>
-              <div class="bbox b1"><span class="tag">OK 0.97</span></div>
-              <div class="bbox flagged b2"><span class="tag">DEFECT 0.91</span></div>
-              <div class="bbox b3"><span class="tag">OK 0.95</span></div>
-              <div class="scanline"></div>
+
+            <!-- 2×2 camera feeds -->
+            <div class="cvd-feeds">
+
+              <!-- Feed 1: Defect detection on part -->
+              <div class="cvd-feed">
+                <div class="cvd-feed-bg"></div>
+                <div class="cvd-feed-label">CAM 01 · LINE 3 · DEFECT</div>
+                <div class="shape sh-part"></div>
+                <div class="bb bb-ok" style="top:30%;left:25%;width:22%;height:18%"><span class="bb-tag">PASS 0.98</span></div>
+                <div class="bb bb-alert" style="top:47%;left:52%;width:18%;height:15%"><span class="bb-tag">DEFECT 0.93</span></div>
+                <div class="bb bb-ok" style="top:60%;left:28%;width:16%;height:13%"><span class="bb-tag">PASS 0.96</span></div>
+                <div class="cvd-scan"></div>
+              </div>
+
+              <!-- Feed 2: PPE compliance -->
+              <div class="cvd-feed">
+                <div class="cvd-feed-bg"></div>
+                <div class="cvd-feed-label">CAM 02 · ENTRY · PPE</div>
+                <div class="shape sh-worker-head"></div>
+                <div class="shape sh-worker-body"></div>
+                <div class="bb bb-warn" style="top:14%;left:36%;width:28%;height:22%"><span class="bb-tag">NO HELMET</span></div>
+                <div class="bb bb-ok" style="top:34%;left:33%;width:34%;height:54%"><span class="bb-tag">VEST ✓</span></div>
+              </div>
+
+              <!-- Feed 3: Vehicle ANPR at gate -->
+              <div class="cvd-feed">
+                <div class="cvd-feed-bg"></div>
+                <div class="cvd-feed-label">CAM 03 · GATE · ANPR</div>
+                <div class="shape sh-vehicle"></div>
+                <div class="shape sh-vehicle-win"></div>
+                <div class="bb bb-ok" style="top:54%;left:22%;width:56%;height:22%"><span class="bb-tag">B-MK 4892 · AUTH ✓</span></div>
+              </div>
+
+              <!-- Feed 4: Logistics / conveyor -->
+              <div class="cvd-feed">
+                <div class="cvd-feed-bg"></div>
+                <div class="cvd-feed-label">CAM 04 · DOCK · COUNT</div>
+                <div class="shape sh-conv"></div>
+                <div class="shape sh-box1"></div>
+                <div class="shape sh-box2"></div>
+                <div class="shape sh-box3"></div>
+                <div class="bb bb-ok" style="top:27%;left:15%;width:17%;height:28%"><span class="bb-tag">SKU A1</span></div>
+                <div class="bb bb-ok" style="top:27%;left:37%;width:17%;height:28%"><span class="bb-tag">SKU A1</span></div>
+                <div class="bb bb-warn" style="top:27%;left:59%;width:17%;height:28%"><span class="bb-tag">MISMATCH</span></div>
+              </div>
             </div>
-            <div class="demo-readout">
-              <div>
-                <div class="k" data-i18n="hero.demo.checked">Geprüft heute</div>
-                <div class="v">14,203</div>
+
+            <!-- stat bar -->
+            <div class="cvd-stats">
+              <div class="cvd-stat">
+                <div class="cvd-stat-val ok">14,241</div>
+                <div class="cvd-stat-lbl">Inspected</div>
               </div>
-              <div>
-                <div class="k" data-i18n="hero.demo.detected">Fehler erkannt</div>
-                <div class="v flag">38</div>
+              <div class="cvd-stat">
+                <div class="cvd-stat-val alert">3</div>
+                <div class="cvd-stat-lbl">Alerts</div>
               </div>
-              <div>
-                <div class="k" data-i18n="hero.demo.reaction">Reaktionszeit</div>
-                <div class="v">0.4s</div>
+              <div class="cvd-stat">
+                <div class="cvd-stat-val">0.4s</div>
+                <div class="cvd-stat-lbl">Response</div>
+              </div>
+              <div class="cvd-stat">
+                <div class="cvd-stat-val ok">99.7%</div>
+                <div class="cvd-stat-lbl">Uptime</div>
               </div>
             </div>
           </div>
-          <div class="demo-caption" data-i18n="hero.demo.caption">
-            ↳ Illustrative Darstellung. Läuft auf Ihrer vorhandenen Kamera-
-            und Netzwerkinfrastruktur — kein neuer Hardware-Rollout nötig.
-          </div>
+        </div>
+
+
         </div>
 
       </div>
