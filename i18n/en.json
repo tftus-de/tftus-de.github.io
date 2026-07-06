@@ -9,16 +9,16 @@
   },
   "hero": {
     "eyebrow": "Computer vision for German manufacturing",
-    "pill": "20+ years of engineering — now in Germany",
+    "pill": "20+ years of engineering - now in Germany",
     "title": "Sees what your inspectors <span class=\"hl\">miss.</span>",
-    "sub": "TFT deploys defect detection, safety monitoring, and production transparency on the cameras and systems you already have — backed by over 20 years of global engineering experience, now with a local team in Berlin.",
+    "sub": "TFT deploys defect detection, safety monitoring, and production transparency on the cameras and systems you already have - backed by over 20 years of global engineering experience, now with a local team in Berlin.",
     "emailPlaceholder": "Your business email",
     "cta": "Request demo",
     "demo": {
       "checked": "Inspected today",
       "detected": "Defects detected",
       "reaction": "Response time",
-      "caption": "↳ Illustrative representation. Runs on your existing camera and network infrastructure — no new hardware rollout required."
+      "caption": "↳ Illustrative representation. Runs on your existing camera and network infrastructure - no new hardware rollout required."
     }
   },
   "certs": {
@@ -28,10 +28,10 @@
     "eyebrow": "The Challenge",
     "stat": "One in three German manufacturing companies struggles to fill technical positions. The shortage is already affecting production, quality, and efficiency.",
     "title": "The skilled-labor shortage has already reached the shop floor.",
-    "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology — but because experienced specialists are increasingly hard to replace.",
+    "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology - but because experienced specialists are increasingly hard to replace.",
     "card1": { "title": "Experienced eyes are running short", "text": "Inspection and monitoring roles are among the hardest positions to fill." },
     "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of hands-on knowledge disappear from the operation." },
-    "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results — not years-long transformation projects." }
+    "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results - not years-long transformation projects." }
   },
   "comparison": {
     "eyebrow": "Why TFT",
@@ -44,7 +44,7 @@
     "r4": { "label": "Engineering depth on demand", "tft": "400+ engineers", "generic": "⚠ Limited to project team", "internal": "✗ Limited by hiring" },
     "r5": { "label": "Delivery experience across markets", "tft": "✓ 5 markets, 20+ years", "generic": "⚠ Mostly DACH", "internal": "✗ Not applicable" },
     "r6": { "label": "Transparent pilot pricing", "tft": "✓ Clearly defined scope", "generic": "⚠ Often platform lock-in", "internal": "✗ Hidden staffing costs" },
-    "note": "Assessment as of June 2026. Individual results may vary — a given vendor's actual rating may differ on a case-by-case basis."
+    "note": "Assessment as of June 2026. Individual results may vary - a given vendor's actual rating may differ on a case-by-case basis."
   },
   "ctaStrip": {
     "text": "<strong>Ready for a first look at your line?</strong> In a short conversation, we'll show you what a demo using your own camera or image footage could look like.",
@@ -53,21 +53,21 @@
   "contact": {
     "eyebrow": "Book a Call",
     "title": "20 minutes. No pitch. Just an honest conversation.",
-    "lead": "Tell us where your bottleneck is — we'll tell you honestly whether and how we can help.",
-    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is — we will tell you honestly whether and how we can help."
+    "lead": "Tell us where your bottleneck is - we'll tell you honestly whether and how we can help.",
+    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help."
   },
   "solution": {
     "eyebrow": "The Solution",
     "title": "One Facility. Fully Visible.",
-    "lead": "See how computer vision works across your facility — from entry gates to production lines — using the cameras and systems you already have.",
+    "lead": "See how computer vision works across your facility - from entry gates to production lines - using the cameras and systems you already have.",
     "legend": {
       "common": "Common across all facilities",
       "industry": "Production floor (industry-specific)",
       "support": "Support zones",
       "erp": "ERP / integration layer",
-      "office": "Office — Agentic / LLM layer"
+      "office": "Office - Agentic / LLM layer"
     },
-    "divider": "Production floor — select industry below",
+    "divider": "Production floor - select industry below",
     "zones": {
       "entry": "Entry / Exit Gate",
       "worker": "Worker entry / locker",
@@ -75,7 +75,7 @@
       "security": "Security / Control Room",
       "dispatch": "Goods in / dispatch dock",
       "production": "Production Floor",
-      "productionSub": "Industry-specific vision use cases — tap to explore",
+      "productionSub": "Industry-specific vision use cases - tap to explore",
       "warehouse": "Warehouse / Storage",
       "cleaning": "Cleaning / Maintenance"
     },
@@ -86,14 +86,14 @@
       "predictive": "Predictive maintenance"
     },
     "erp": {
-      "main": "ERP / MES / WMS / TMS integration layer — all vision data flows here",
+      "main": "ERP / MES / WMS / TMS integration layer - all vision data flows here",
       "sub": "SAP · Odoo | Real-time alerts | Automated reporting | OEE / OTIF dashboards | Audit / traceability | AI agents",
       "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
     },
     "hint": "Tap any zone on the map to explore its computer vision use cases.",
     "close": "✕ close",
     "badge": {
-      "common": "Common — all facilities",
+      "common": "Common - all facilities",
       "industry": "Industry-specific",
       "support": "Support zone"
     },
@@ -102,7 +102,7 @@
         "title": "Entry / Exit gate", "sub": "Common across all facility types",
         "tabs": { "gen": "General / Automotive", "logistics": "Logistics" },
         "gen": {
-          "0": { "label": "ANPR — plate read", "desc": "Auto-reads plates of incoming/outgoing trucks. Logs entry/exit times and verifies against expected deliveries." },
+          "0": { "label": "ANPR - plate read", "desc": "Auto-reads plates of incoming/outgoing trucks. Logs entry/exit times and verifies against expected deliveries." },
           "1": { "label": "Boom-barrier automation", "desc": "Opens/closes only for authorised, matched vehicles. No manual guard action needed." },
           "2": { "label": "Vehicle type classification", "desc": "Distinguishes car-carriers, reefer trucks, trailers, and vans. Routes to the correct dock or lane automatically." },
           "3": { "label": "Tailgating detection", "desc": "Flags an unauthorised vehicle following an authorised one through the gate." },
@@ -119,7 +119,7 @@
         }
       },
       "worker": {
-        "title": "Worker entry / locker area", "sub": "PPE, gowning, headcount — tuned per industry",
+        "title": "Worker entry / locker area", "sub": "PPE, gowning, headcount - tuned per industry",
         "tabs": { "gen": "General / Automotive", "pharma": "Pharma", "food": "Food", "logistics": "Logistics" },
         "gen": {
           "0": { "label": "Hard hat / helmet", "desc": "Confirms head protection is worn before entry to plant areas." },
@@ -127,7 +127,7 @@
           "2": { "label": "Safety shoes", "desc": "Confirms correct steel-cap or chemical-resistant footwear." },
           "3": { "label": "Gloves", "desc": "Checks hand protection in machining, chemical-handling and assembly zones." },
           "4": { "label": "Ear protection", "desc": "Checks earmuffs or plugs before entry to press, stamping, or high-noise zones." },
-          "5": { "label": "Loose-clothing flag", "desc": "Flags loose sleeves or clothing near rotating machinery — a caught-in-machine risk." },
+          "5": { "label": "Loose-clothing flag", "desc": "Flags loose sleeves or clothing near rotating machinery - a caught-in-machine risk." },
           "6": { "label": "Headcount / attendance", "desc": "Counts and logs workers entering via face or turnstile. Cross-references against shift roster." },
           "7": { "label": "Tailgating", "desc": "Enforces one-badge, one-person rule at every turnstile entry point." }
         },
@@ -148,7 +148,7 @@
           "3": { "label": "No jewellery / watches", "desc": "Flags rings, watches, earrings, and other items that could contaminate food." },
           "4": { "label": "Colour-coded uniform", "desc": "Confirms uniform colour matches the zone (raw vs cooked, allergen vs allergen-free)." },
           "5": { "label": "Hand-wash compliance", "desc": "Confirms hand-washing and sanitization is completed before entry to production." },
-          "6": { "label": "No exposed bandages", "desc": "Flags uncovered wounds or bandages — a contamination and metal-detection risk." },
+          "6": { "label": "No exposed bandages", "desc": "Flags uncovered wounds or bandages - a contamination and metal-detection risk." },
           "7": { "label": "Apron / coat check", "desc": "Confirms apron or protective coat is worn and is clean before entry." }
         },
         "logistics": {
@@ -169,16 +169,16 @@
         "2": { "label": "Spill / slip detection", "desc": "Flags wet floors and spills before they become slip hazards. Auto-alerts cleaning team." },
         "3": { "label": "Hand hygiene at re-entry", "desc": "Confirms sanitization is completed before workers return to production areas." },
         "4": { "label": "De-gown before canteen (Pharma/Food)", "desc": "Confirms cleanroom or food-zone wear is removed before eating. Flags violations." },
-        "5": { "label": "Re-gown after canteen", "desc": "Confirms correct re-gowning before production re-entry — a GMP and food-safety requirement." },
-        "6": { "label": "No production garments in dining", "desc": "Flags production or cleanroom wear worn into the eating area — cross-contamination risk." },
-        "7": { "label": "Pest detection (Food)", "desc": "Watches for pests in the dining zone — a critical audit point for food-safety certification." }
+        "5": { "label": "Re-gown after canteen", "desc": "Confirms correct re-gowning before production re-entry - a GMP and food-safety requirement." },
+        "6": { "label": "No production garments in dining", "desc": "Flags production or cleanroom wear worn into the eating area - cross-contamination risk." },
+        "7": { "label": "Pest detection (Food)", "desc": "Watches for pests in the dining zone - a critical audit point for food-safety certification." }
       },
       "security": {
         "title": "Security / control room", "sub": "Perimeter, asset protection, incident detection",
         "0": { "label": "Perimeter intrusion detection", "desc": "Detects fence climbing or boundary crossing. Triggers immediate alert to guards." },
         "1": { "label": "Camera-tamper detection", "desc": "Alerts if a camera is blocked, angled away, or physically moved." },
-        "2": { "label": "Fire / smoke detection", "desc": "AI-enhanced early fire and smoke detection — especially critical in paint shops and solvent stores." },
-        "3": { "label": "Restricted area monitoring", "desc": "Flags entry into unauthorised zones — R&D, formulation, vaults, sterile corridors." },
+        "2": { "label": "Fire / smoke detection", "desc": "AI-enhanced early fire and smoke detection - especially critical in paint shops and solvent stores." },
+        "3": { "label": "Restricted area monitoring", "desc": "Flags entry into unauthorised zones - R&D, formulation, vaults, sterile corridors." },
         "4": { "label": "Asset / scrap monitoring", "desc": "Watches for removal of materials, finished goods, or scrap outside authorised processes." },
         "5": { "label": "Finished-vehicle yard (Auto)", "desc": "Monitors high-value vehicle storage areas for damage or unauthorised access." },
         "6": { "label": "Cargo monitoring (Logistics)", "desc": "Watches high-value cargo and trailer areas for unauthorised handling or removal." },
@@ -206,16 +206,16 @@
       },
       "warehouse": {
         "title": "Warehouse / storage", "sub": "Inventory accuracy, pick verification, safety, compliance",
-        "tabs": { "gen": "General", "logistics": "Logistics — Fleet / Yard" },
+        "tabs": { "gen": "General", "logistics": "Logistics - Fleet / Yard" },
         "gen": {
-          "0": { "label": "Inventory counting", "desc": "Overhead or drone-mounted cameras count pallets and stock on racks — continuous or scheduled." },
+          "0": { "label": "Inventory counting", "desc": "Overhead or drone-mounted cameras count pallets and stock on racks - continuous or scheduled." },
           "1": { "label": "Empty-slot detection", "desc": "Finds open rack locations and feeds the WMS for smarter putaway routing." },
           "2": { "label": "Pick accuracy verification", "desc": "Confirms the correct item and quantity was picked before it leaves the station." },
-          "3": { "label": "Misplaced-item alert", "desc": "Flags stock stored in the wrong location — prevents order errors and delays." },
+          "3": { "label": "Misplaced-item alert", "desc": "Flags stock stored in the wrong location - prevents order errors and delays." },
           "4": { "label": "Forklift / pedestrian safety", "desc": "Detects when pedestrians enter forklift operating zones. Alerts driver and supervisor." },
-          "5": { "label": "FEFO / FIFO enforcement", "desc": "Confirms oldest or first-expiry stock is picked first — critical in pharma and food." },
+          "5": { "label": "FEFO / FIFO enforcement", "desc": "Confirms oldest or first-expiry stock is picked first - critical in pharma and food." },
           "6": { "label": "Temperature-zone compliance", "desc": "Confirms goods are stored in the correct temperature zone. (Pharma / Food / Cold chain)" },
-          "7": { "label": "Batch traceability", "desc": "Links stored stock visually to batch records — supports fast recall readiness." }
+          "7": { "label": "Batch traceability", "desc": "Links stored stock visually to batch records - supports fast recall readiness." }
         },
         "logistics": {
           "0": { "label": "Yard / trailer location tracking", "desc": "Tracks where each trailer is parked across the yard in real time." },
@@ -230,17 +230,17 @@
       },
       "cleaning": {
         "title": "Cleaning / maintenance", "sub": "Verify activity, compliance, and audit evidence",
-        "0": { "label": "Cleaning-activity detection", "desc": "Confirms cleaning crews actually cleaned zones — detects mop, bucket, and movement patterns." },
+        "0": { "label": "Cleaning-activity detection", "desc": "Confirms cleaning crews actually cleaned zones - detects mop, bucket, and movement patterns." },
         "1": { "label": "Schedule compliance", "desc": "Verifies cleaning is done within the required time window. Flags missed or late cleans." },
-        "2": { "label": "5S / housekeeping compliance", "desc": "Monitors workplace organisation — flags items left in wrong places or aisles blocked." },
+        "2": { "label": "5S / housekeeping compliance", "desc": "Monitors workplace organisation - flags items left in wrong places or aisles blocked." },
         "3": { "label": "Spill cleanup verification", "desc": "Confirms spills are cleaned up after alert. Closes the loop on the incident log." },
         "4": { "label": "CIP verification (Food)", "desc": "Confirms clean-in-place cycles ran on equipment. Visual evidence for HACCP and ISO 22000." },
-        "5": { "label": "Line-clearance (Pharma)", "desc": "Confirms the area is cleared between batches — a GMP-critical step before next production run." },
+        "5": { "label": "Line-clearance (Pharma)", "desc": "Confirms the area is cleared between batches - a GMP-critical step before next production run." },
         "6": { "label": "Disinfection verification", "desc": "Confirms disinfection was performed in the correct sequence and areas." },
-        "7": { "label": "Audit-log trail", "desc": "Timestamped visual record of every cleaning event — ready for ISO, GMP, HACCP, or BG audits." }
+        "7": { "label": "Audit-log trail", "desc": "Timestamped visual record of every cleaning event - ready for ISO, GMP, HACCP, or BG audits." }
       },
       "production": {
-        "title": "Production floor", "sub": "Select your industry — use cases differ significantly",
+        "title": "Production floor", "sub": "Select your industry - use cases differ significantly",
         "tabs": { "auto": "Automotive", "pharma": "Pharma", "food": "Food", "gen": "General manufacturing", "logistics": "Logistics" },
         "auto": {
           "sec0": "Defect detection", "sec1": "Assembly verification", "sec2": "Other automotive",
@@ -252,9 +252,9 @@
           "5": { "label": "Harness routing", "desc": "Verifies wiring harness is routed correctly and clipped in the right positions." },
           "6": { "label": "Variant / VIN verification", "desc": "Confirms correct trim and engine variant per build sheet. Matches VIN to order spec." },
           "7": { "label": "Poka-yoke error-proofing", "desc": "Catches assembly errors at the station before the car moves to the next step." },
-          "8": { "label": "Robotic bin-picking guidance", "desc": "Vision guides robots picking randomly placed parts from bins — no fixed orientation required." },
+          "8": { "label": "Robotic bin-picking guidance", "desc": "Vision guides robots picking randomly placed parts from bins - no fixed orientation required." },
           "9": { "label": "Dimensional measurement", "desc": "In-line measurement of part dimensions against CAD. Flags out-of-tolerance items before assembly." },
-          "10": { "label": "Stamping-die monitoring", "desc": "Watches press-die condition for wear, crack, and misalignment — predicts failure before scrap." },
+          "10": { "label": "Stamping-die monitoring", "desc": "Watches press-die condition for wear, crack, and misalignment - predicts failure before scrap." },
           "11": { "label": "Wheel / tyre fitment check", "desc": "Verifies correct wheel and tyre assembly before the vehicle leaves the line." }
         },
         "pharma": {
@@ -267,39 +267,39 @@
           "5": { "label": "Braille verification", "desc": "Confirms required Braille text is present and correctly embossed (EU requirement)." },
           "6": { "label": "Serialization code check", "desc": "Confirms serial codes are present, scannable, and match the track-and-trace record." },
           "7": { "label": "Correct leaflet insertion", "desc": "Confirms the right patient information leaflet is inserted into every carton." },
-          "8": { "label": "Line-clearance verification", "desc": "Confirms no leftover material from the previous batch remains on the line — a GMP-critical check." },
+          "8": { "label": "Line-clearance verification", "desc": "Confirms no leftover material from the previous batch remains on the line - a GMP-critical check." },
           "9": { "label": "Fill-finish / isolator monitoring", "desc": "Watches activity in sterile fill-finish areas and RABS/isolator environments." },
           "10": { "label": "Visual batch record", "desc": "Captures a visual record of every production step for electronic batch record and 21 CFR Part 11 audit." },
           "11": { "label": "Tablet-press monitoring", "desc": "Watches tablet-press condition for die wear, sticking, and compression variation." }
         },
         "food": {
           "sec0": "Defect & safety detection", "sec1": "Pack verification", "sec2": "On-floor hygiene",
-          "0": { "label": "Foreign-object detection", "desc": "Detects metal, plastic, glass, insects, and stones — often combined with X-ray inspection." },
+          "0": { "label": "Foreign-object detection", "desc": "Detects metal, plastic, glass, insects, and stones - often combined with X-ray inspection." },
           "1": { "label": "Appearance check", "desc": "Checks colour, shape, size, burn marks, and mould on food products at line speed." },
           "2": { "label": "Contamination detection", "desc": "Flags visible contamination on the product or on the line surface." },
           "3": { "label": "Under / over-cook detection", "desc": "Flags improperly cooked product using colour and thermal analysis." },
           "4": { "label": "Date-code / batch legibility", "desc": "Confirms codes are present, readable, and correct before packs leave the line." },
-          "5": { "label": "Fill level check", "desc": "Checks fill level in packs and containers — flags under and overfill." },
+          "5": { "label": "Fill level check", "desc": "Checks fill level in packs and containers - flags under and overfill." },
           "6": { "label": "Seal integrity", "desc": "Detects heat-seal and closure defects that could compromise shelf life." },
           "7": { "label": "Allergen changeover clearance", "desc": "Confirms the line is fully cleared between allergen and allergen-free product runs." },
-          "8": { "label": "Quality grading / sorting", "desc": "Sorts produce by ripeness, size, colour, or grade — replaces or augments manual graders." },
-          "9": { "label": "Pest detection on line", "desc": "Flags pests in the production area — a critical control point for food-safety certification." },
+          "8": { "label": "Quality grading / sorting", "desc": "Sorts produce by ripeness, size, colour, or grade - replaces or augments manual graders." },
+          "9": { "label": "Pest detection on line", "desc": "Flags pests in the production area - a critical control point for food-safety certification." },
           "10": { "label": "On-floor gowning compliance", "desc": "Confirms hairnet and gloves are worn correctly by all workers on the production line." },
-          "11": { "label": "Portion / weight estimation", "desc": "Estimates portion size or weight using vision — flags deviations before packing." }
+          "11": { "label": "Portion / weight estimation", "desc": "Estimates portion size or weight using vision - flags deviations before packing." }
         },
         "gen": {
           "sec0": "Defect detection", "sec1": "Assembly & counting", "sec2": "Predictive maintenance",
           "0": { "label": "Surface defects", "desc": "Detects scratches, cracks, dents, and discolouration on finished parts." },
           "1": { "label": "Moulding defects", "desc": "Detects flash, short shots, and sink marks in plastic and cast components." },
           "2": { "label": "Print / label defects", "desc": "Detects misprints, smudges, and misalignment on packaging and product labels." },
-          "3": { "label": "Dimensional check", "desc": "Flags out-of-tolerance dimensions in-line — feeds rejection gate automatically." },
+          "3": { "label": "Dimensional check", "desc": "Flags out-of-tolerance dimensions in-line - feeds rejection gate automatically." },
           "4": { "label": "Component presence check", "desc": "Confirms all parts are present and correctly oriented before the unit moves forward." },
           "5": { "label": "Screw / fastener count", "desc": "Checks fastener count and seating at each assembly station." },
           "6": { "label": "In-line product count", "desc": "Counts products on the conveyor. Reconciles against production targets and ERP order." },
           "7": { "label": "Fill-level & weight verify", "desc": "Checks product weight and fill levels in containers against specification." },
           "8": { "label": "Motor / bearing thermal", "desc": "Thermal camera detects overheating motors and bearings before failure." },
           "9": { "label": "Conveyor belt health", "desc": "Vision spots belt wear, roller damage, and tracking issues before they cause downtime." },
-          "10": { "label": "Vibration-by-vision", "desc": "Detects abnormal machine vibration patterns using high-speed cameras — no sensor required." },
+          "10": { "label": "Vibration-by-vision", "desc": "Detects abnormal machine vibration patterns using high-speed cameras - no sensor required." },
           "11": { "label": "Coolant / oil leak", "desc": "Detects leaks on the floor or machine surfaces before they cause secondary damage." }
         },
         "logistics": {
@@ -326,12 +326,12 @@
   },
   "presence": {
     "eyebrow": "Local Presence",
-    "heading": "We are <span class=\"hl\">on the ground</span> — not just online.",
-    "cardTitle": "Germany — registered GmbH",
-    "cardBody": "Think Future Technologies GmbH<br>Klara-Franke-Str. 16<br>10557 Berlin, Germany<br><a href=\"mailto:info@tftus.com\">info@tftus.com</a>"
+    "heading": "We are <span class=\"hl\">on the ground</span> - not just online.",
+    "cardTitle": "Germany - registered GmbH",
+    "cardBody": "Think Future Technologies GmbH<br>Christburger Str., 23, 10405,<br> Berlin, Germany<br><a href=\"mailto:info@tftus.com\">info@tftus.com</a>"
   },
   "footer": {
-    "tagline": "Engineering acceleration for German companies — specialized, certified, locally present.",
+    "tagline": "Engineering acceleration for German companies - specialized, certified, locally present.",
     "services": "Services",
     "legal": "Legal",
     "impressum": "Legal Notice",
@@ -343,7 +343,7 @@
   },
   "cookies": {
     "text": "We use cookies to operate and improve our website. See our <a href=\"legal/cookie-policy.html\">Cookie Policy</a> and <a href=\"legal/privacy-policy.html\">Privacy Policy</a> for more information.",
-    "reject": "Necessary only",
+    "reject": "Decline all",
     "accept": "Accept all"
   }
 }
