@@ -51,10 +51,24 @@
     "cta": "Gespräch vereinbaren →"
   },
   "contact": {
-    "eyebrow": "Gespräch vereinbaren / Book a Call",
+    "eyebrow": "Gespräch vereinbaren",
     "title": "20 Minuten. Kein Pitch. Ein ehrliches Gespräch.",
     "lead": "Schildern Sie uns Ihren Engpass - wir sagen Ihnen offen, ob und wie wir helfen können.",
-    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help."
+    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help.",
+    "steps": {
+      "1": {
+        "title": "Termin wählen",
+        "text": "Online oder persönlich in Berlin."
+      },
+      "2": {
+        "title": "Situation kurz beschreiben",
+        "text": "Was ist Ihr größter technischer Engpass heute?"
+      },
+      "3": {
+        "title": "Auf Deutsch oder Englisch",
+        "text": "Ein TFT-Teammitglied bestätigt und nimmt am Gespräch teil."
+      }
+    }
   },
   "solution": {
     "eyebrow": "Die Lösung",

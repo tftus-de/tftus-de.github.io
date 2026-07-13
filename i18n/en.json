@@ -54,7 +54,21 @@
     "eyebrow": "Book a Call",
     "title": "20 minutes. No pitch. Just an honest conversation.",
     "lead": "Tell us where your bottleneck is - we'll tell you honestly whether and how we can help.",
-    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help."
+    "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help.",
+    "steps": {
+      "1": {
+        "title": "Choose a slot",
+        "text": "Online or in person in Berlin."
+      },
+      "2": {
+        "title": "Describe your situation",
+        "text": "What is your biggest engineering bottleneck today?"
+      },
+      "3": {
+        "title": "In German or English",
+        "text": "A TFT team member confirms and joins the call."
+      }
+    }
   },
   "solution": {
     "eyebrow": "The Solution",
