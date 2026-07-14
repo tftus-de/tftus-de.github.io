@@ -39,6 +39,7 @@
 
   function finishSetLang(lang, dict) {
     applyDict(dict);
+    if(window._sliderSyncFns) window._sliderSyncFns.forEach(function(fn){ fn(); });
     document.documentElement.setAttribute('lang', lang);
     localStorage.setItem(STORAGE_KEY, lang);
     var btn = document.getElementById('langToggle');
