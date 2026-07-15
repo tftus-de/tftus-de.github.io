@@ -34,18 +34,67 @@
     "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results - not years-long transformation projects." }
   },
   "comparison": {
-    "eyebrow": "Why TFT",
-    "title": "Computer Vision: TFT vs. the alternatives",
-    "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to a computer vision pilot.",
-    "th": { "criterion": "Criterion", "generic": "Generic automation provider", "internal": "In-house solution" },
-    "r1": { "label": "Runs on existing camera infrastructure", "tft": "✓ Yes, no hardware swap", "generic": "⚠ New hardware often required", "internal": "⚠ Depends on the team" },
-    "r2": { "label": "Time to first pilot", "tft": "A few weeks", "generic": "2–4 months", "internal": "6+ months" },
-    "r3": { "label": "Local point of contact in Berlin", "tft": "✓ Via NLND", "generic": "⚠ Partially", "internal": "✓ In-house" },
-    "r4": { "label": "Engineering depth on demand", "tft": "400+ engineers", "generic": "⚠ Limited to project team", "internal": "✗ Limited by hiring" },
-    "r5": { "label": "Delivery experience across markets", "tft": "✓ 5 markets, 20+ years", "generic": "⚠ Mostly DACH", "internal": "✗ Not applicable" },
-    "r6": { "label": "Transparent pilot pricing", "tft": "✓ Clearly defined scope", "generic": "⚠ Often platform lock-in", "internal": "✗ Hidden staffing costs" },
-    "note": "Assessment as of June 2026. Individual results may vary - a given vendor's actual rating may differ on a case-by-case basis."
+  "eyebrow": "Why TFT",
+  "title": "Computer Vision: TFT vs. the alternatives",
+  "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to a computer vision pilot.",
+
+  "th": {
+    "criterion": "Criterion",
+    "generic": "Large automation vendor",
+    "internal": "Build in-house"
   },
+
+  "r1": {
+    "label": "Runs on existing camera infrastructure",
+    "tft": "✓ Yes - no hardware replacement",
+    "generic": "⚠ Usually requires new hardware",
+    "internal": "⚠ Depends on your team"
+  },
+
+  "r2": {
+    "label": "Time to first pilot results",
+    "tft": "✓ 6–8 weeks",
+    "generic": "2–4 months",
+    "internal": "6+ months"
+  },
+
+  "r3": {
+    "label": "Pilot approved at operational budget",
+    "tft": "✓ Yes - no board sign-off needed",
+    "generic": "✗ Often €200K+ minimum",
+    "internal": "⚠ Headcount requires approval"
+  },
+
+  "r4": {
+    "label": "Local presence in Germany",
+    "tft": "✓ Berlin office - registered GmbH",
+    "generic": "⚠ Varies by vendor",
+    "internal": "✓ Internal"
+  },
+
+  "r5": {
+    "label": "QA validation included",
+    "tft": "✓ CMMI L3 - built into delivery",
+    "generic": "⚠ Separate engagement",
+    "internal": "✗ You build and validate"
+  },
+
+  "r6": {
+    "label": "Engineering depth for complex problems",
+    "tft": "✓ 400+ engineers on call",
+    "generic": "⚠ Limited to project team",
+    "internal": "✗ Constrained by hiring"
+  },
+
+  "r7": {
+    "label": "Transparent pilot pricing",
+    "tft": "✓ Fixed scope, fixed price",
+    "generic": "⚠ Often platform lock-in",
+    "internal": "✗ Hidden personnel costs"
+  },
+
+  "note": "Assessment as of June 2026. Individual results may vary - a given vendor's actual rating may differ on a case-by-case basis."
+},
   "ctaStrip": {
     "text": "<strong>Ready for a first look at your line?</strong> In a short conversation, we'll show you what a demo using your own camera or image footage could look like.",
     "cta": "Schedule a conversation →"
@@ -105,7 +154,7 @@
       "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
     },
     "hint": "Tap any zone on the map to explore its computer vision use cases.",
-    "close": "✕ close",
+    "close": "✕",
     "badge": {
       "common": "Common - all facilities",
       "industry": "Industry-specific",
