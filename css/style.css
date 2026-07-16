@@ -940,4 +940,5 @@
   .cta-section { grid-template-columns: 1fr; padding: 48px 24px; gap: 36px; }
   .cta-diagram { aspect-ratio: 1 / 0.9; }
   .lang-toggle { top: 14px; right: 14px; }
+  .ctnbox{max-width: 320px;}
 }
