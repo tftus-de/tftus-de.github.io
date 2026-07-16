@@ -117,6 +117,16 @@
         "title": "In German or English",
         "text": "A TFT team member confirms and joins the call."
       }
+    },
+    "widget": {
+      "card1": "Computer Vision",
+      "card2": "Agentic AI / LLM",
+      "card3": "GDPR Compliant",
+      "card4": "Berlin GmbH<br>Local Team",
+      "cta": "Book a discovery call",
+      "duration": "30 minutes",
+      "noCommit": "No commitment",
+      "lang": "EN or DE"
     }
   },
   "solution": {
@@ -140,7 +150,10 @@
       "production": "Production Floor",
       "productionSub": "Industry-specific vision use cases - tap to explore",
       "warehouse": "Warehouse / Storage",
-      "cleaning": "Cleaning / Maintenance"
+      "cleaning": "Cleaning / Maintenance",
+      "office": "Office layer — Agentic / LLM",
+      "officeSub": "Finance · Admin / HR · Procurement · Leadership — connects to every department above.",
+      "officeCta": "Tap to explore →"
     },
     "prodGrid": {
       "defect": "Defect detection",

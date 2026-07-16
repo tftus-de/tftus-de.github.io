@@ -117,6 +117,16 @@
         "title": "Auf Deutsch oder Englisch",
         "text": "Ein TFT-Teammitglied bestätigt und nimmt am Gespräch teil."
       }
+    },
+    "widget": {
+      "card1": "Computer Vision",
+      "card2": "Agentische KI / LLM",
+      "card3": "DSGVO-konform",
+      "card4": "Berlin GmbH<br>Vor Ort",
+      "cta": "Gespräch buchen",
+      "duration": "30 Minuten",
+      "noCommit": "Keine Verpflichtung",
+      "lang": "DE oder EN"
     }
   },
   "solution": {
@@ -140,7 +150,10 @@
       "production": "Produktionsboden",
       "productionSub": "Branchenspezifische Vision-Anwendungsfälle - zum Erkunden tippen",
       "warehouse": "Lager / Lagerhaltung",
-      "cleaning": "Reinigung / Wartung"
+      "cleaning": "Reinigung / Wartung",
+      "office": "Office-Schicht — Agenten / LLM",
+      "officeSub": "Finanzen · Administration / HR · Einkauf · Führung — verbindet alle obigen Bereiche.",
+      "officeCta": "Erkunden →"
     },
     "prodGrid": {
       "defect": "Fehlererkennung",
