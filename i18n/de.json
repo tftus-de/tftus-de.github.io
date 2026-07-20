@@ -34,18 +34,67 @@
     "card3": { "title": "Jede Investition muss sich rechnen", "text": "Fertigungsunternehmen brauchen messbare Ergebnisse - keine jahrelangen Transformationsprojekte." }
   },
   "comparison": {
-    "eyebrow": "Warum TFT",
-    "title": "Computer Vision: TFT im Vergleich zu den Alternativen",
-    "lead": "So schneidet TFT im Vergleich zu den Optionen ab, die ein Werksleiter typischerweise prüft, bevor er sich für einen Computer-Vision-Piloten entscheidet.",
-    "th": { "criterion": "Kriterium", "generic": "Allgemeiner Automatisierungsanbieter", "internal": "Interne Lösung" },
-    "r1": { "label": "Läuft auf vorhandener Kamera-Infrastruktur", "tft": "✓ Ja, kein Hardware-Austausch", "generic": "⚠ Oft neue Hardware erforderlich", "internal": "⚠ Abhängig vom Team" },
-    "r2": { "label": "Zeit bis zum ersten Piloten", "tft": "Wenige Wochen", "generic": "2–4 Monate", "internal": "6+ Monate" },
-    "r3": { "label": "Lokaler Ansprechpartner in Berlin", "tft": "✓ Via NLND", "generic": "⚠ Teilweise", "internal": "✓ Intern" },
-    "r4": { "label": "Engineering-Tiefe bei Bedarf", "tft": "400+ Ingenieure", "generic": "⚠ Begrenzt auf Projektteam", "internal": "✗ Durch Hiring begrenzt" },
-    "r5": { "label": "Liefererfahrung in mehreren Märkten", "tft": "✓ 5 Märkte, 20+ Jahre", "generic": "⚠ Überwiegend DACH", "internal": "✗ Nicht zutreffend" },
-    "r6": { "label": "Transparente Pilotpreise", "tft": "✓ Klar definierter Scope", "generic": "⚠ Oft Plattform-Lock-in", "internal": "✗ Versteckte Personalkosten" },
-    "note": "Einschätzung Stand Juni 2026. Individuelle Ergebnisse können abweichen - die konkrete Bewertung eines Anbieters kann im Einzelfall unterschiedlich ausfallen."
+  "eyebrow": "Warum TFT",
+  "title": "Computer Vision: TFT im Vergleich zu den Alternativen",
+  "lead": "So schneidet TFT im Vergleich zu den Optionen ab, die ein Werksleiter typischerweise prüft, bevor er sich für einen Computer-Vision-Piloten entscheidet.",
+
+  "th": {
+    "criterion": "Kriterium",
+    "generic": "Großer Automatisierungsanbieter",
+    "internal": "Intern aufbauen"
   },
+
+  "r1": {
+    "label": "Läuft auf vorhandener Kamera-Infrastruktur",
+    "tft": "✓ Ja - kein Hardware-Austausch",
+    "generic": "⚠ Benötigt in der Regel neue Hardware",
+    "internal": "⚠ Hängt von Ihrem Team ab"
+  },
+
+  "r2": {
+    "label": "Zeit bis zu ersten Pilot-Ergebnissen",
+    "tft": "✓ 6-8 Wochen",
+    "generic": "2-4 Monate",
+    "internal": "6+ Monate"
+  },
+
+  "r3": {
+    "label": "Pilot im operativen Budget genehmigt",
+    "tft": "✓ Ja - keine Freigabe durch den Vorstand erforderlich",
+    "generic": "✗ Häufig mindestens 200.000 €",
+    "internal": "⚠ Genehmigung zusätzlicher Stellen erforderlich"
+  },
+
+  "r4": {
+    "label": "Lokale Präsenz in Deutschland",
+    "tft": "✓ Berliner Büro - eingetragene GmbH",
+    "generic": "⚠ Je nach Anbieter unterschiedlich",
+    "internal": "✓ Intern"
+  },
+
+  "r5": {
+    "label": "QA-Validierung inklusive",
+    "tft": "✓ CMMI L3 - Bestandteil der Lieferung",
+    "generic": "⚠ Separates Engagement",
+    "internal": "✗ Sie übernehmen Entwicklung und Validierung"
+  },
+
+  "r6": {
+    "label": "Engineering-Kompetenz für komplexe Probleme",
+    "tft": "✓ Über 400 Ingenieure verfügbar",
+    "generic": "⚠ Auf das Projektteam begrenzt",
+    "internal": "✗ Durch Neueinstellungen begrenzt"
+  },
+
+  "r7": {
+    "label": "Transparente Pilotpreise",
+    "tft": "✓ Fest definierter Umfang, Festpreis",
+    "generic": "⚠ Häufig Plattform-Lock-in",
+    "internal": "✗ Versteckte Personalkosten"
+  },
+
+  "note": "Bewertung Stand Juni 2026. Die tatsächlichen Ergebnisse können je nach Anbieter und Projekt variieren."
+},
   "ctaStrip": {
     "text": "<strong>Bereit für einen ersten Blick auf Ihre Linie?</strong> Wir zeigen Ihnen in einem kurzen Gespräch, wie eine Demo mit Ihrem eigenen Kamera- oder Bildmaterial aussehen könnte.",
     "cta": "Gespräch vereinbaren →"
@@ -68,6 +117,16 @@
         "title": "Auf Deutsch oder Englisch",
         "text": "Ein TFT-Teammitglied bestätigt und nimmt am Gespräch teil."
       }
+    },
+    "widget": {
+      "card1": "Computer Vision",
+      "card2": "Agentische KI / LLM",
+      "card3": "DSGVO-konform",
+      "card4": "Berlin GmbH<br>Vor Ort",
+      "cta": "Gespräch buchen",
+      "duration": "30 Minuten",
+      "noCommit": "Keine Verpflichtung",
+      "lang": "DE oder EN"
     }
   },
   "solution": {
@@ -91,7 +150,10 @@
       "production": "Produktionsboden",
       "productionSub": "Branchenspezifische Vision-Anwendungsfälle - zum Erkunden tippen",
       "warehouse": "Lager / Lagerhaltung",
-      "cleaning": "Reinigung / Wartung"
+      "cleaning": "Reinigung / Wartung",
+      "office": "Office-Schicht — Agenten / LLM",
+      "officeSub": "Finanzen · Administration / HR · Einkauf · Führung — verbindet alle obigen Bereiche.",
+      "officeCta": "Erkunden →"
     },
     "prodGrid": {
       "defect": "Fehlererkennung",
@@ -105,7 +167,7 @@
       "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
     },
     "hint": "Tippen Sie auf eine Zone der Karte, um die Computer-Vision-Anwendungsfälle zu erkunden.",
-    "close": "✕ schließen",
+    "close": "✕",
     "badge": {
       "common": "Allgemein - alle Anlagen",
       "industry": "Branchenspezifisch",
