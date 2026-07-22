@@ -132,13 +132,13 @@
   "solution": {
     "eyebrow": "The Solution",
     "title": "One Facility. Fully Visible.",
-    "lead": "See how computer vision works across your facility - from entry gates to production lines - using the cameras and systems you already have.",
+    "lead": "Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries.",
     "legend": {
-      "common": "Common across all facilities",
-      "industry": "Production floor (industry-specific)",
-      "support": "Support zones",
+      "office": "Office — Agentic / LLM",
       "erp": "ERP / integration layer",
-      "office": "Office - Agentic / LLM layer"
+      "common": "Common — all facilities",
+      "industry": "Production floor (industry-specific)",
+      "support": "Support zones"
     },
     "divider": "Production floor - select industry below",
     "zones": {
@@ -157,21 +157,58 @@
     },
     "prodGrid": {
       "defect": "Defect detection",
+      "defectTags": "Surface · Paint · Weld · Dimensional · Tablets · Vials · Foreign object · Contamination",
       "assembly": "Assembly verification",
+      "assemblyTags": "Component presence · Fastener count · Clip / screw check · Label & seal · Harness routing · VIN match",
       "counting": "Counting / weighing",
-      "predictive": "Predictive maintenance"
+      "countingTags": "In-line product count · Kit completeness · Fill-level check · Weight verification · Tablet count",
+      "predictive": "Predictive maintenance",
+      "predictiveTags": "Motor thermal · Conveyor wear · Robot anomaly · Coolant / oil leak · Vibration-by-vision"
     },
     "erp": {
-      "main": "ERP / MES / WMS / TMS integration layer - all vision data flows here",
-      "sub": "SAP · Odoo | Real-time alerts | Automated reporting | OEE / OTIF dashboards | Audit / traceability | AI agents",
-      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
+      "main": "All vision data → ERP / MES / WMS / TMS integration layer",
+      "pill0": "SAP · Odoo",
+      "pill1": "Blue Yonder · Manhattan",
+      "pill2": "Custom ERP",
+      "pill3": "Real-time data feeds",
+      "pill4": "Bi-directional sync",
+      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP"
+    },
+    "connector": {
+      "main": "AI Agents · Chatbots · Real-time Dashboards · Predictive Alerts",
+      "sub": "Full floor visibility flows up to management · Targets, thresholds & configurations flow down",
+      "chip0": "Real-time alerts",
+      "chip1": "Automated reporting",
+      "chip2": "OEE / OTIF dashboards",
+      "chip3": "Compliance logs",
+      "chip4": "Audit / traceability"
+    },
+    "zoneTags": {
+      "entry":    { "0": "Vehicle ANPR",         "1": "Boom barrier",      "2": "JIT slot check",    "3": "Tailgating" },
+      "worker":   { "0": "Uniform · PPE",         "1": "Headcount",         "2": "Gowning check" },
+      "canteen":  { "0": "Hygiene checks",        "1": "Crowding alerts",   "2": "Spill detection" },
+      "security": { "0": "Perimeter · Intruder",  "1": "Fire · Smoke",      "2": "Camera tamper" },
+      "dispatch": { "0": "OCR · Vehicle ID",      "1": "Item count",        "2": "Damage detect" },
+      "warehouse":{ "0": "Inventory · Pick accuracy", "1": "FEFO enforcement", "2": "Forklift safety", "3": "Yard / trailer tracking" },
+      "cleaning": { "0": "Activity detection",    "1": "Audit log trail",   "2": "Schedule compliance" }
+    },
+    "officeHeader": "OFFICE · LEADERSHIP · MANAGEMENT",
+    "floorHeader": "FACTORY FLOOR — VISION DATA SOURCES",
+    "floorHeaderHint": "Tap any zone to explore use cases",
+    "office": {
+      "preview": {
+        "leadership": { "0": "Executive briefing agent", "1": "KPI dashboards", "2": "Floor anomaly triage", "3": "Scenario planning" },
+        "finance":    { "0": "AP invoice agent", "1": "Budget Q&A copilot", "2": "Anomaly / fraud detection", "3": "Financial close assistant" },
+        "admin":      { "0": "HR onboarding agent", "1": "Vendor contract review", "2": "IT helpdesk triage", "3": "RFQ / RFP drafting" }
+      }
     },
     "hint": "Tap any zone on the map to explore its computer vision use cases.",
     "close": "✕",
     "badge": {
       "common": "Common - all facilities",
       "industry": "Industry-specific",
-      "support": "Support zone"
+      "support": "Support zone",
+      "office": "Agentic / LLM layer"
     },
     "panels": {
       "entry": {
@@ -314,6 +351,34 @@
         "5": { "label": "Line-clearance (Pharma)", "desc": "Confirms the area is cleared between batches - a GMP-critical step before next production run." },
         "6": { "label": "Disinfection verification", "desc": "Confirms disinfection was performed in the correct sequence and areas." },
         "7": { "label": "Audit-log trail", "desc": "Timestamped visual record of every cleaning event - ready for ISO, GMP, HACCP, or BG audits." }
+      },
+      "office": {
+        "title": "Office layer — Agentic / LLM", "sub": "Finance · Admin / HR · Procurement · Leadership — connects to every department above.",
+        "tabs": { "finance": "Finance", "admin": "Admin / HR / Procurement", "leadership": "Leadership" },
+        "finance": {
+          "0": { "label": "AP invoice processing agent", "desc": "Extracts invoice data, matches it to PO and goods-receipt records, and flags exceptions for review." },
+          "1": { "label": "AR / collections agent", "desc": "Drafts payment reminders, predicts late-payers, and prioritises the collections worklist." },
+          "2": { "label": "Expense-report review agent", "desc": "Checks expense claims against policy and flags anomalies before approval." },
+          "3": { "label": "Financial-close assistant", "desc": "Reconciles ledger entries and drafts variance commentary to speed up month-end close." },
+          "4": { "label": "Budget / forecast Q&A agent", "desc": "Answers natural-language questions over budget and forecast data — no report-building required." },
+          "5": { "label": "Anomaly / fraud detection agent", "desc": "Flags unusual transactions or spend patterns for finance review." }
+        },
+        "admin": {
+          "0": { "label": "HR onboarding agent", "desc": "Drafts offer letters and runs the new-hire checklist across IT, facilities, and payroll." },
+          "1": { "label": "Policy & compliance Q&A assistant", "desc": "Answers employee questions on HR policy, safety procedure, and site rules instantly." },
+          "2": { "label": "Procurement RFQ / RFP drafting agent", "desc": "Drafts sourcing documents and compares supplier quotes against spec." },
+          "3": { "label": "Vendor-contract review agent", "desc": "Reviews supplier contracts and flags risky or non-standard clauses before signature." },
+          "4": { "label": "IT helpdesk triage agent", "desc": "Auto-categorises and routes IT tickets, and resolves common requests without a human agent." },
+          "5": { "label": "Scheduling / meeting coordination agent", "desc": "Coordinates calendars, books rooms, and handles reschedules across departments." }
+        },
+        "leadership": {
+          "0": { "label": "Executive daily-briefing agent", "desc": "Summarises KPI dashboards and shop-floor vision alerts into a daily leadership brief." },
+          "1": { "label": "Cross-department anomaly triage", "desc": "Surfaces the highest-priority incidents from the vision and ERP layers for leadership attention." },
+          "2": { "label": "Strategic data Q&A copilot", "desc": "Lets leadership ask natural-language questions across WMS, TMS, ERP, and vision data." },
+          "3": { "label": "Meeting-notes & action-item agent", "desc": "Summarises meetings and tracks follow-up actions to closure automatically." },
+          "4": { "label": "Board-deck drafting assistant", "desc": "Drafts board and investor updates from operational and financial data." },
+          "5": { "label": "Scenario / what-if planning assistant", "desc": "Models the operational and financial impact of proposed changes before they're made." }
+        }
       },
       "production": {
         "title": "Production floor", "sub": "Select your industry - use cases differ significantly",

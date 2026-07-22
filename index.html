@@ -17,16 +17,6 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
-<style>
-.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1c1a1b;color:#fff;padding:16px 20px;display:none;}
-.cookie-banner.show{display:block;}
-.cookie-banner-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.cookie-banner-text{font-size:13px;line-height:1.5;flex:1 1 360px;}
-.cookie-banner-text a{color:#9fd1ff;text-decoration:underline;}
-.cookie-banner-actions{display:flex;gap:10px;flex-wrap:wrap;}
-.cookie-btn{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid #fff;background:transparent;color:#fff;}
-.cookie-btn.primary{background:#fff;color:#1c1a1b;}
-</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -259,7 +249,7 @@
     <div class="wrap">
       <div class="eyebrow" data-i18n="solution.eyebrow">The Solution</div>
       <h2 data-i18n="solution.title">One Facility. Fully Visible.</h2>
-      <p class="lead" data-i18n="solution.lead">See how computer vision works across your facility — from entry gates to production lines — using the cameras and systems you already have.</p>
+      <p class="lead" data-i18n="solution.lead">Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries.</p>
       <h2 class="sr-only">Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries</h2>
 
 <style>
@@ -379,19 +369,21 @@
 @media (max-width: 700px) { .fprod-grid { grid-template-columns: repeat(2,1fr); } }
 .fprod-item {
   background: rgba(35,31,32,.06); border: 1px solid rgba(35,31,32,.16);
-  border-radius: 8px; padding: 14px 10px; text-align: center;
-  font-family: var(--fh); font-size: 12px; font-weight: 700; color: var(--black);
-  display: flex; align-items: center; justify-content: center; min-height: 56px; line-height: 1.3;
+  border-radius: 8px; padding: 14px 12px;
+  display: flex; flex-direction: column; align-items: flex-start; min-height: 56px;
 }
+.fprod-item-title { font-family: var(--fh); font-size: 13px; font-weight: 700; color: var(--blue-d); margin-bottom: 6px; line-height: 1.3; }
+.fprod-item-tags { font-size: 11px; color: var(--mid); line-height: 1.55; }
 
-.fmap-side       { display: flex; flex-direction: column; gap: 10px; }
-.fmap-side .fzone { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.fmap-side       { display: flex; flex-direction: column; gap: 10px; min-width: 175px; flex-shrink: 0; }
+.fmap-side .fzone { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
 
 /* --- ERP strip --- */
-.fmap-integration { margin-top: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--light); padding: 14px 18px; text-align: center; }
-.fint-main        { font-family: var(--fh); font-size: 12.5px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-.fint-sub         { font-size: 11px; color: var(--mid); line-height: 1.6; }
-.fint-compliance  { font-size: 10.5px; color: var(--mid); line-height: 1.6; margin-top: 4px; opacity: .85; }
+.fmap-integration { margin-top: 12px; background: #0B1F3A; border-radius: 10px; padding: 12px 18px; display: flex; flex-direction: column; gap: 8px; }
+.fint-main        { font-family: var(--fh); font-size: 11.5px; font-weight: 600; color: #8BBBDD; letter-spacing: .01em; }
+.fint-pills       { display: flex; gap: 6px; flex-wrap: wrap; }
+.fint-pill        { font-size: 10.5px; color: #fff; background: rgba(255,255,255,.12); border: 0.5px solid rgba(255,255,255,.2); padding: 3px 10px; border-radius: 20px; }
+.fint-compliance  { font-size: 9.5px; color: rgba(139,187,221,.6); margin-top: 2px; }
 
 /* --- Office / Agentic zone --- */
 .fzone--office {
@@ -574,36 +566,179 @@
 
 /* hide the section label element inside each slide — shown in .uc-slide-label above instead */
 .uc-slide .map-section-label { display: none; }
+
+/* ── Zone tag chips ── */
+.fzone-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+.fzone-tag  { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 500; font-family: var(--fh); }
+.fzone--common   .fzone-tag { background: rgba(59,116,240,.12); color: var(--blue-d); }
+.fzone--support  .fzone-tag { background: rgba(92,78,229,.12);  color: #5c4ee5; }
+.fzone--cleaning .fzone-tag { background: rgba(90,90,90,.10);   color: var(--mid); }
+@media (max-width: 640px) { .fzone-tags { display: none; } }
+
+/* ── Flow connector band ── */
+.fmap-connector { background: linear-gradient(135deg,#0C3B6E 0%,#0a4d8c 50%,#0C3B6E 100%); border-radius: 10px; padding: 10px 18px; display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+.fcon-arrows { display: flex; flex-direction: column; align-items: center; gap: 1px; color: rgba(255,255,255,.5); font-size: 15px; line-height: 1; flex-shrink: 0; }
+.fcon-body  { flex: 1; }
+.fcon-main  { font-size: 11px; font-weight: 600; color: #fff; letter-spacing: .01em; margin-bottom: 2px; font-family: var(--fh); }
+.fcon-sub   { font-size: 10px; color: rgba(255,255,255,.55); margin-bottom: 5px; }
+.fcon-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.fcon-chip  { font-size: 10px; padding: 3px 10px; border-radius: 20px; background: rgba(255,255,255,.13); border: 0.5px solid rgba(255,255,255,.2); color: rgba(255,255,255,.85); }
+
+/* ── Office section header ── */
+.fmap-section-hdr { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 10px; }
+.fmsh-left { display: flex; align-items: center; gap: 7px; font-family: var(--fh); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #0C8599; }
+.fmsh-dot { width: 10px; height: 10px; border-radius: 2px; background: #0C8599; flex-shrink: 0; }
+.fmsh-badge { font-size: 10.5px; padding: 2px 10px; border-radius: 20px; background: #E0F5F7; color: #0C8599; font-weight: 600; font-family: var(--fh); }
+
+/* ── Office 3-card row ── */
+.fmap-row--office { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+@media (max-width: 800px) { .fmap-row--office { grid-template-columns: 1fr; gap: 8px; } }
+
+/* ── Office sub-card ── */
+.fzone--office-card { background: #E0F5F7; border: 1.5px solid #0C8599; border-radius: 10px; padding: 14px 16px 12px; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.fzone--office-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(12,133,153,.15); }
+.fzone--office-card .fzone-title { font-family: var(--fh); font-size: 13px; font-weight: 700; color: #0C8599; margin-bottom: 8px; display: block; text-align: left; flex-direction: row; justify-content: flex-start; }
+.fzone--office-card .fzone-tag { background: rgba(12,133,153,.12); color: #0A6B7A; }
+.fzone-cta { margin-top: 10px; font-size: 11px; font-weight: 600; color: #0C8599; opacity: .7; font-family: var(--fh); }
+
+/* ── Factory floor section header ── */
+.fmap-floor-hdr { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 10px; }
+.ffh-left { display: flex; align-items: center; gap: 7px; font-family: var(--fh); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #1e8db8; }
+.ffh-dot { width: 10px; height: 10px; border-radius: 2px; background: #1e8db8; flex-shrink: 0; }
+.ffh-right { font-size: 10.5px; color: var(--mid); font-weight: 500; font-family: var(--fh); }
+@media (max-width: 640px) { .ffh-right { display: none; } }
 </style>
 
 <div class="map-wrap">
   <div class="legend-bar">
-    <span class="leg"><span class="leg-dot d-common"></span><span data-i18n="solution.legend.common">Common across all facilities</span></span>
+    <span class="leg"><span class="leg-dot d-office" style="background:#0C8599"></span><span data-i18n="solution.legend.office">Office — Agentic / LLM</span></span>
+    <span class="leg"><span class="leg-dot d-erp"></span><span data-i18n="solution.legend.erp">ERP / integration layer</span></span>
+    <span class="leg"><span class="leg-dot d-common"></span><span data-i18n="solution.legend.common">Common — all facilities</span></span>
     <span class="leg"><span class="leg-dot d-industry"></span><span data-i18n="solution.legend.industry">Production floor (industry-specific)</span></span>
     <span class="leg"><span class="leg-dot d-support"></span><span data-i18n="solution.legend.support">Support zones</span></span>
-    <span class="leg"><span class="leg-dot d-erp"></span><span data-i18n="solution.legend.erp">ERP / integration layer</span></span>
-    <span class="leg"><span class="leg-dot d-office" style="background:#0C8599"></span><span data-i18n="solution.legend.office">Office — Agentic / LLM layer</span></span>
   </div>
 
   <div class="fmap">
-    <div class="fmap-row fmap-row--top">
-      <div class="fzone fzone--common" onclick="showPanel('entry')">
-        <div class="fzone-title"><em class="fa fa-road-barrier"></em> <span data-i18n="solution.zones.entry">Entry / Exit Gate</span></div>
+
+    <!-- ── OFFICE · LEADERSHIP · MANAGEMENT ── -->
+    <div class="fmap-section-hdr">
+      <div class="fmsh-left"><span class="fmsh-dot"></span><span data-i18n="solution.officeHeader">OFFICE · LEADERSHIP · MANAGEMENT</span></div>
+      <span class="fmsh-badge" data-i18n="solution.badge.office">Agentic / LLM layer</span>
+    </div>
+    <div class="fmap-row fmap-row--office">
+      <div class="fzone fzone--office-card" onclick="showPanel('office','leadership')">
+        <div class="fzone-title" data-i18n="solution.panels.office.tabs.leadership">Leadership</div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.office.preview.leadership.0">Executive briefing agent</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.leadership.1">KPI dashboards</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.leadership.2">Floor anomaly triage</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.leadership.3">Scenario planning</span>
+        </div>
+        <div class="fzone-cta" data-i18n="solution.zones.officeCta">tap to explore →</div>
       </div>
-      <div class="fzone fzone--common" onclick="showPanel('worker')">
-        <div class="fzone-title"><em class="fa fa-lock-open"></em> <span data-i18n="solution.zones.worker">Worker entry / locker</span></div>
+      <div class="fzone fzone--office-card" onclick="showPanel('office','finance')">
+        <div class="fzone-title" data-i18n="solution.panels.office.tabs.finance">Finance</div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.office.preview.finance.0">AP invoice agent</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.finance.1">Budget Q&amp;A copilot</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.finance.2">Anomaly / fraud detection</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.finance.3">Financial close assistant</span>
+        </div>
+        <div class="fzone-cta" data-i18n="solution.zones.officeCta">tap to explore →</div>
       </div>
-      <div class="fzone fzone--common" onclick="showPanel('canteen')">
-        <div class="fzone-title"><em class="fa fa-utensils"></em> <span data-i18n="solution.zones.canteen">Canteen / break area</span></div>
-      </div>
-      <div class="fzone fzone--common" onclick="showPanel('security')">
-        <div class="fzone-title"><em class="fa fa-shield-halved"></em> <span data-i18n="solution.zones.security">Security / Control Room</span></div>
-      </div>
-      <div class="fzone fzone--common" onclick="showPanel('dispatch')">
-        <div class="fzone-title"><em class="fa fa-truck-ramp-box"></em> <span data-i18n="solution.zones.dispatch">Goods in / dispatch dock</span></div>
+      <div class="fzone fzone--office-card" onclick="showPanel('office','admin')">
+        <div class="fzone-title" data-i18n="solution.panels.office.tabs.admin">Admin / HR / Procurement</div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.office.preview.admin.0">HR onboarding agent</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.admin.1">Vendor contract review</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.admin.2">IT helpdesk triage</span>
+          <span class="fzone-tag" data-i18n="solution.office.preview.admin.3">RFQ / RFP drafting</span>
+        </div>
+        <div class="fzone-cta" data-i18n="solution.zones.officeCta">tap to explore →</div>
       </div>
     </div>
 
+    <!-- ── AI AGENTS CONNECTOR ── -->
+    <div class="fmap-connector">
+      <div class="fcon-arrows"><span>↑</span><span>↓</span></div>
+      <div class="fcon-body">
+        <div class="fcon-main" data-i18n="solution.connector.main">AI Agents · Chatbots · Real-time Dashboards · Predictive Alerts</div>
+        <div class="fcon-sub" data-i18n="solution.connector.sub">Full floor visibility flows up to management · Targets, thresholds &amp; configurations flow down</div>
+        <div class="fcon-chips">
+          <span class="fcon-chip" data-i18n="solution.connector.chip0">Real-time alerts</span>
+          <span class="fcon-chip" data-i18n="solution.connector.chip1">Automated reporting</span>
+          <span class="fcon-chip" data-i18n="solution.connector.chip2">OEE / OTIF dashboards</span>
+          <span class="fcon-chip" data-i18n="solution.connector.chip3">Compliance logs</span>
+          <span class="fcon-chip" data-i18n="solution.connector.chip4">Audit / traceability</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ERP INTEGRATION BAND ── -->
+    <div class="fmap-integration">
+      <div class="fint-main" data-i18n="solution.erp.main">All vision data → ERP / MES / WMS / TMS integration layer</div>
+      <div class="fint-pills">
+        <span class="fint-pill" data-i18n="solution.erp.pill0">SAP · Odoo</span>
+        <span class="fint-pill" data-i18n="solution.erp.pill1">Blue Yonder · Manhattan</span>
+        <span class="fint-pill" data-i18n="solution.erp.pill2">Custom ERP</span>
+        <span class="fint-pill" data-i18n="solution.erp.pill3">Real-time data feeds</span>
+        <span class="fint-pill" data-i18n="solution.erp.pill4">Bi-directional sync</span>
+      </div>
+      <div class="fint-compliance" data-i18n="solution.erp.compliance">IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP</div>
+    </div>
+
+    <!-- ── FACTORY FLOOR SECTION HEADER ── -->
+    <div class="fmap-floor-hdr">
+      <div class="ffh-left"><span class="ffh-dot"></span><span data-i18n="solution.floorHeader">FACTORY FLOOR — VISION DATA SOURCES</span></div>
+      <span class="ffh-right" data-i18n="solution.floorHeaderHint">Tap any zone to explore use cases</span>
+    </div>
+
+    <!-- ── COMMON ZONES (5 in a row) ── -->
+    <div class="fmap-row fmap-row--top">
+      <div class="fzone fzone--common" onclick="showPanel('entry')">
+        <div class="fzone-title"><em class="fa fa-road-barrier"></em> <span data-i18n="solution.zones.entry">Entry / Exit Gate</span></div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.zoneTags.entry.0">Vehicle ANPR</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.entry.1">Boom barrier</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.entry.2">JIT slot check</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.entry.3">Tailgating</span>
+        </div>
+      </div>
+      <div class="fzone fzone--common" onclick="showPanel('worker')">
+        <div class="fzone-title"><em class="fa fa-lock-open"></em> <span data-i18n="solution.zones.worker">Worker Entry / Locker</span></div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.zoneTags.worker.0">Uniform · PPE</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.worker.1">Headcount</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.worker.2">Gowning check</span>
+        </div>
+      </div>
+      <div class="fzone fzone--common" onclick="showPanel('canteen')">
+        <div class="fzone-title"><em class="fa fa-utensils"></em> <span data-i18n="solution.zones.canteen">Canteen / Break Area</span></div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.zoneTags.canteen.0">Hygiene checks</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.canteen.1">Crowding alerts</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.canteen.2">Spill detection</span>
+        </div>
+      </div>
+      <div class="fzone fzone--common" onclick="showPanel('security')">
+        <div class="fzone-title"><em class="fa fa-shield-halved"></em> <span data-i18n="solution.zones.security">Security / Control Room</span></div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.zoneTags.security.0">Perimeter · Intruder</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.security.1">Fire · Smoke</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.security.2">Camera tamper</span>
+        </div>
+      </div>
+      <div class="fzone fzone--common" onclick="showPanel('dispatch')">
+        <div class="fzone-title"><em class="fa fa-truck-ramp-box"></em> <span data-i18n="solution.zones.dispatch">Goods In / Dispatch Dock</span></div>
+        <div class="fzone-tags">
+          <span class="fzone-tag" data-i18n="solution.zoneTags.dispatch.0">OCR · Vehicle ID</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.dispatch.1">Item count</span>
+          <span class="fzone-tag" data-i18n="solution.zoneTags.dispatch.2">Damage detect</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PRODUCTION FLOOR ── -->
     <div class="fmap-divider"><span data-i18n="solution.divider">Production floor — select industry below</span></div>
 
     <div class="fmap-row fmap-row--bottom">
@@ -611,35 +746,47 @@
         <div class="fzone-title" data-i18n="solution.zones.production">Production Floor</div>
         <div class="fzone-sub" data-i18n="solution.zones.productionSub">Industry-specific vision use cases — tap to explore</div>
         <div class="fprod-grid">
-          <div class="fprod-item" data-i18n="solution.prodGrid.defect">Defect detection</div>
-          <div class="fprod-item" data-i18n="solution.prodGrid.assembly">Assembly verification</div>
-          <div class="fprod-item" data-i18n="solution.prodGrid.counting">Counting / weighing</div>
-          <div class="fprod-item" data-i18n="solution.prodGrid.predictive">Predictive maintenance</div>
+          <div class="fprod-item">
+            <div class="fprod-item-title" data-i18n="solution.prodGrid.defect">Defect detection</div>
+            <div class="fprod-item-tags" data-i18n="solution.prodGrid.defectTags">Surface · Paint · Weld · Dimensional · Tablets · Vials · Foreign object · Contamination</div>
+          </div>
+          <div class="fprod-item">
+            <div class="fprod-item-title" data-i18n="solution.prodGrid.assembly">Assembly verification</div>
+            <div class="fprod-item-tags" data-i18n="solution.prodGrid.assemblyTags">Component presence · Fastener count · Clip / screw check · Label &amp; seal · Harness routing · VIN match</div>
+          </div>
+          <div class="fprod-item">
+            <div class="fprod-item-title" data-i18n="solution.prodGrid.counting">Counting / weighing</div>
+            <div class="fprod-item-tags" data-i18n="solution.prodGrid.countingTags">In-line product count · Kit completeness · Fill-level check · Weight verification · Tablet count</div>
+          </div>
+          <div class="fprod-item">
+            <div class="fprod-item-title" data-i18n="solution.prodGrid.predictive">Predictive maintenance</div>
+            <div class="fprod-item-tags" data-i18n="solution.prodGrid.predictiveTags">Motor thermal · Conveyor wear · Robot anomaly · Coolant / oil leak · Vibration-by-vision</div>
+          </div>
         </div>
       </div>
       <div class="fmap-side">
         <div class="fzone fzone--support" onclick="showPanel('warehouse')">
           <div class="fzone-title" data-i18n="solution.zones.warehouse">Warehouse / Storage</div>
+          <div class="fzone-tags">
+            <span class="fzone-tag" data-i18n="solution.zoneTags.warehouse.0">Inventory · Pick accuracy</span>
+            <span class="fzone-tag" data-i18n="solution.zoneTags.warehouse.1">FEFO enforcement</span>
+            <span class="fzone-tag" data-i18n="solution.zoneTags.warehouse.2">Forklift safety</span>
+            <span class="fzone-tag" data-i18n="solution.zoneTags.warehouse.3">Yard / trailer tracking</span>
+          </div>
+          <div class="fzone-cta" data-i18n="solution.zones.officeCta">tap to explore →</div>
         </div>
         <div class="fzone fzone--cleaning" onclick="showPanel('cleaning')">
           <div class="fzone-title" data-i18n="solution.zones.cleaning">Cleaning / Maintenance</div>
+          <div class="fzone-tags">
+            <span class="fzone-tag" data-i18n="solution.zoneTags.cleaning.0">Activity detection</span>
+            <span class="fzone-tag" data-i18n="solution.zoneTags.cleaning.1">Audit log trail</span>
+            <span class="fzone-tag" data-i18n="solution.zoneTags.cleaning.2">Schedule compliance</span>
+          </div>
+          <div class="fzone-cta" data-i18n="solution.zones.officeCta">tap to explore →</div>
         </div>
       </div>
     </div>
 
-    <div class="fmap-integration">
-      <div class="fint-main" data-i18n="solution.erp.main">ERP / MES / WMS / TMS integration layer — all vision data flows here</div>
-      <div class="fint-sub" data-i18n="solution.erp.sub">SAP · Odoo &nbsp;|&nbsp; Real-time alerts &nbsp;|&nbsp; Automated reporting &nbsp;|&nbsp; OEE / OTIF dashboards &nbsp;|&nbsp; Audit / traceability &nbsp;|&nbsp; AI agents</div>
-      <div class="fint-compliance" data-i18n="solution.erp.compliance">IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan</div>
-    </div>
-
-    <div class="fzone fzone--office" onclick="showPanel('office')">
-      <div class="fzone-office-text">
-        <span class="fzone-title" data-i18n="solution.zones.office">Office layer — Agentic / LLM</span>
-        <div class="fzone-sub" data-i18n="solution.zones.officeSub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div>
-      </div>
-      <div class="fzone-office-cta" data-i18n="solution.zones.officeCta">Tap to explore →</div>
-    </div>
   </div>
 
   <p class="hint" id="hint-msg" data-i18n="solution.hint">Tap any zone on the map to explore its computer vision use cases.</p>
@@ -1028,28 +1175,53 @@
     <!-- Office layer panel -->
     <div class="panel" id="p-office">
       <div class="panel-header">
-        <div><div class="panel-title">Office layer — Agentic / LLM</div><div class="panel-sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div></div>
+        <div><div class="panel-title" data-i18n="solution.panels.office.title">Office layer — Agentic / LLM</div><div class="panel-sub" data-i18n="solution.panels.office.sub">Finance · Admin / HR · Procurement · Leadership — connects to every department above.</div></div>
         <div style="display:flex;gap:6px;align-items:center">
-          <span class="panel-badge badge-office">Agentic / LLM</span>
-          <button class="close-btn" onclick="closePanel()">✕</button>
+          <span class="panel-badge badge-office" data-i18n="solution.badge.office">Agentic / LLM</span>
+          <button class="close-btn" onclick="closePanel()" data-i18n="solution.close">✕</button>
         </div>
       </div>
-      <div class="map-uc-grid">
-        <div class="uc-item"><div class="uc-item-label">AI Production Copilot</div><div class="uc-item-desc">Summarises production KPIs, bottlenecks and shift performance using live vision data.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Executive Dashboard</div><div class="uc-item-desc">Natural-language insights for plant leadership with real-time operational visibility.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Procurement Intelligence</div><div class="uc-item-desc">Predicts shortages and recommends purchasing actions based on inventory and vision events.</div></div>
-        <div class="uc-item"><div class="uc-item-label">HR & Workforce Analytics</div><div class="uc-item-desc">Analyses attendance, PPE compliance and workforce utilisation trends.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Finance Automation</div><div class="uc-item-desc">Validates production counts against ERP and supports automated reconciliation.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Quality Assistant</div><div class="uc-item-desc">Explains recurring defects and recommends corrective actions.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Maintenance Copilot</div><div class="uc-item-desc">Converts predictive maintenance alerts into work orders and priorities.</div></div>
-        <div class="uc-item"><div class="uc-item-label">Compliance Assistant</div><div class="uc-item-desc">Generates audit-ready reports using vision events and ERP records.</div></div>
+      <div class="map-ind-tabs">
+        <button class="map-ind-tab sel" onclick="selInd('office','finance',this)" data-i18n="solution.panels.office.tabs.finance">Finance</button>
+        <button class="map-ind-tab" onclick="selInd('office','admin',this)" data-i18n="solution.panels.office.tabs.admin">Admin / HR / Procurement</button>
+        <button class="map-ind-tab" onclick="selInd('office','leadership',this)" data-i18n="solution.panels.office.tabs.leadership">Leadership</button>
+      </div>
+      <div id="office-finance" class="map-ind-uc active">
+        <div class="map-uc-grid">
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.0.label">AP invoice processing agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.0.desc">Extracts invoice data, matches it to PO and goods-receipt records, and flags exceptions for review.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.1.label">AR / collections agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.1.desc">Drafts payment reminders, predicts late-payers, and prioritises the collections worklist.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.2.label">Expense-report review agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.2.desc">Checks expense claims against policy and flags anomalies before approval.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.3.label">Financial-close assistant</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.3.desc">Reconciles ledger entries and drafts variance commentary to speed up month-end close.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.4.label">Budget / forecast Q&amp;A agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.4.desc">Answers natural-language questions over budget and forecast data — no report-building required.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.finance.5.label">Anomaly / fraud detection agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.finance.5.desc">Flags unusual transactions or spend patterns for finance review.</div></div>
+        </div>
+      </div>
+      <div id="office-admin" class="map-ind-uc">
+        <div class="map-uc-grid">
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.0.label">HR onboarding agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.0.desc">Drafts offer letters and runs the new-hire checklist across IT, facilities, and payroll.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.1.label">Policy &amp; compliance Q&amp;A assistant</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.1.desc">Answers employee questions on HR policy, safety procedure, and site rules instantly.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.2.label">Procurement RFQ / RFP drafting agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.2.desc">Drafts sourcing documents and compares supplier quotes against spec.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.3.label">Vendor-contract review agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.3.desc">Reviews supplier contracts and flags risky or non-standard clauses before signature.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.4.label">IT helpdesk triage agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.4.desc">Auto-categorises and routes IT tickets, and resolves common requests without a human agent.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.admin.5.label">Scheduling / meeting coordination agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.admin.5.desc">Coordinates calendars, books rooms, and handles reschedules across departments.</div></div>
+        </div>
+      </div>
+      <div id="office-leadership" class="map-ind-uc">
+        <div class="map-uc-grid">
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.0.label">Executive daily-briefing agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.0.desc">Summarises KPI dashboards and shop-floor vision alerts into a daily leadership brief.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.1.label">Cross-department anomaly triage</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.1.desc">Surfaces the highest-priority incidents from the vision and ERP layers for leadership attention.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.2.label">Strategic data Q&amp;A copilot</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.2.desc">Lets leadership ask natural-language questions across WMS, TMS, ERP, and vision data.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.3.label">Meeting-notes &amp; action-item agent</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.3.desc">Summarises meetings and tracks follow-up actions to closure automatically.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.4.label">Board-deck drafting assistant</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.4.desc">Drafts board and investor updates from operational and financial data.</div></div>
+          <div class="uc-item"><div class="uc-item-label" data-i18n="solution.panels.office.leadership.5.label">Scenario / what-if planning assistant</div><div class="uc-item-desc" data-i18n="solution.panels.office.leadership.5.desc">Models the operational and financial impact of proposed changes before they're made.</div></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-function showPanel(id){
+function showPanel(id, tab){
   document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
   var modal = document.getElementById('zone-modal');
   var dialog = modal && modal.querySelector('.zone-modal-dialog');
@@ -1059,8 +1231,20 @@ function showPanel(id){
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     if(dialog) dialog.scrollTop = 0;
-    var firstTab = p.querySelector('.map-ind-tab');
-    if(firstTab && !p.querySelector('.map-ind-tab.sel')) firstTab.classList.add('sel');
+    if(tab){
+      var tabBtn = null;
+      p.querySelectorAll('.map-ind-tab').forEach(function(b){
+        if((b.getAttribute('onclick')||'').indexOf("'"+tab+"'") !== -1) tabBtn = b;
+      });
+      if(tabBtn){ selInd(id, tab, tabBtn); }
+      else {
+        var firstTab = p.querySelector('.map-ind-tab');
+        if(firstTab){ p.querySelectorAll('.map-ind-tab').forEach(function(t){ t.classList.remove('sel'); }); firstTab.classList.add('sel'); }
+      }
+    } else {
+      var firstTab = p.querySelector('.map-ind-tab');
+      if(firstTab && !p.querySelector('.map-ind-tab.sel')) firstTab.classList.add('sel');
+    }
     /* reset sliders: active industry tab, and panel-level (untabbed panels) */
     var activeUc = p.querySelector('.map-ind-uc.active');
     if(activeUc && activeUc._resetSlider) activeUc._resetSlider();

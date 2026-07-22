@@ -132,13 +132,13 @@
   "solution": {
     "eyebrow": "Die Lösung",
     "title": "Eine Anlage. Vollständig sichtbar.",
-    "lead": "Sehen Sie, wie Computer Vision in Ihrer gesamten Anlage funktioniert - vom Eingangstor bis zur Produktionslinie - mit den Kameras und Systemen, die Sie bereits haben.",
+    "lead": "Interaktive TFT-Anlagenkarte mit Computer-Vision-Anwendungsfällen für alle Zonen – für Automotive, Pharma, Lebensmittel und die allgemeine Fertigung.",
     "legend": {
-      "common": "Gemeinsam in allen Anlagen",
-      "industry": "Produktionsboden (branchenspezifisch)",
-      "support": "Supportbereiche",
+      "office": "Office — Agenten / LLM",
       "erp": "ERP / Integrationsschicht",
-      "office": "Office – Agenten-/LLM-Schicht"
+      "common": "Gemeinsam — alle Anlagen",
+      "industry": "Produktionsboden (branchenspezifisch)",
+      "support": "Supportbereiche"
     },
     "divider": "Produktionsboden - Branche auswählen",
     "zones": {
@@ -157,21 +157,58 @@
     },
     "prodGrid": {
       "defect": "Fehlererkennung",
+      "defectTags": "Oberfläche · Farbe · Schweißnaht · Maßhaltigkeit · Tabletten · Vials · Fremdkörper · Kontamination",
       "assembly": "Montageverifikation",
+      "assemblyTags": "Bauteilpräsenz · Schraubenanzahl · Clip / Schraubenprüfung · Etikett & Siegel · Kabelführung · VIN-Abgleich",
       "counting": "Zählen / Wiegen",
-      "predictive": "Vorausschauende Wartung"
+      "countingTags": "Inline-Stückzählung · Kit-Vollständigkeit · Füllstandsprüfung · Gewichtsverifizierung · Tablettenanzahl",
+      "predictive": "Vorausschauende Wartung",
+      "predictiveTags": "Motorwärme · Förderbandverschleiß · Roboteranomalie · Kühlmittel / Ölleck · Schwingungsanalyse"
     },
     "erp": {
-      "main": "ERP / MES / WMS / TMS-Integrationsschicht - alle Vision-Daten laufen hier zusammen",
-      "sub": "SAP · Odoo | Echtzeit-Alarme | Automatisiertes Reporting | OEE / OTIF-Dashboards | Audit / Rückverfolgbarkeit | KI-Agenten",
-      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
+      "main": "Alle Vision-Daten → ERP / MES / WMS / TMS-Integrationsschicht",
+      "pill0": "SAP · Odoo",
+      "pill1": "Blue Yonder · Manhattan",
+      "pill2": "Eigenes ERP",
+      "pill3": "Echtzeit-Datenfeeds",
+      "pill4": "Bidirektionale Synchronisierung",
+      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP"
+    },
+    "connector": {
+      "main": "KI-Agenten · Chatbots · Echtzeit-Dashboards · Vorausschauende Warnungen",
+      "sub": "Vollständige Shopfloor-Transparenz fließt nach oben · Ziele, Schwellenwerte & Konfigurationen fließen nach unten",
+      "chip0": "Echtzeit-Warnungen",
+      "chip1": "Automatisiertes Reporting",
+      "chip2": "OEE / OTIF-Dashboards",
+      "chip3": "Compliance-Protokolle",
+      "chip4": "Audit / Rückverfolgbarkeit"
+    },
+    "zoneTags": {
+      "entry":    { "0": "Fahrzeug-ANPR",              "1": "Schrankenautomatik",   "2": "JIT-Zeitfenster",      "3": "Tailgating" },
+      "worker":   { "0": "Uniform · PSA",               "1": "Kopfzählung",          "2": "Schutzkleidungskontrolle" },
+      "canteen":  { "0": "Hygienekontrollen",           "1": "Überfüllungsalarme",   "2": "Verschüttungserkennung" },
+      "security": { "0": "Perimeter · Eindringling",    "1": "Feuer · Rauch",        "2": "Kamerasabotage" },
+      "dispatch": { "0": "OCR · Fahrzeug-ID",           "1": "Artikelzählung",       "2": "Schadenserkennung" },
+      "warehouse":{ "0": "Inventur · Kommissionierung", "1": "FEFO-Durchsetzung",    "2": "Staplersicherheit", "3": "Hof- / Anhänger-Tracking" },
+      "cleaning": { "0": "Aktivitätserkennung",         "1": "Prüfprotokoll",        "2": "Planungseinhaltung" }
+    },
+    "officeHeader": "BÜRO · FÜHRUNG · MANAGEMENT",
+    "floorHeader": "PRODUKTIONSHALLE — VISION-DATENQUELLEN",
+    "floorHeaderHint": "Zone antippen, um Anwendungsfälle zu erkunden",
+    "office": {
+      "preview": {
+        "leadership": { "0": "Tägliches Briefing-Agent", "1": "KPI-Dashboards", "2": "Anomalie-Triage", "3": "Szenarioplanung" },
+        "finance":    { "0": "AP-Rechnungsagent", "1": "Budget-Q&A-Copilot", "2": "Anomalie- / Betrugserkennung", "3": "Finanzabschluss-Assistent" },
+        "admin":      { "0": "HR-Onboarding-Agent", "1": "Lieferantenvertrag-Review", "2": "IT-Helpdesk-Triage", "3": "Anfragen / Angebote (RFQ/RFP)" }
+      }
     },
     "hint": "Tippen Sie auf eine Zone der Karte, um die Computer-Vision-Anwendungsfälle zu erkunden.",
     "close": "✕",
     "badge": {
       "common": "Allgemein - alle Anlagen",
       "industry": "Branchenspezifisch",
-      "support": "Supportbereich"
+      "support": "Supportbereich",
+      "office": "Agenten / LLM-Schicht"
     },
     "panels": {
       "entry": {
@@ -314,6 +351,34 @@
         "5": { "label": "Linienfreigabe (Pharma)", "desc": "Prüft die Flächenfreigabe zwischen Chargen - ein GMP-kritischer Schritt vor dem nächsten Produktionslauf." },
         "6": { "label": "Desinfektionsverifizierung", "desc": "Prüft, ob Desinfektion in korrekter Reihenfolge und den richtigen Bereichen durchgeführt wurde." },
         "7": { "label": "Prüfprotokoll", "desc": "Zeitgestempelter visueller Nachweis jedes Reinigungsvorgangs - bereit für ISO-, GMP-, HACCP- oder BG-Audits." }
+      },
+      "office": {
+        "title": "Office-Schicht — Agenten / LLM", "sub": "Finanzen · Administration / HR · Einkauf · Führung — verbindet alle obigen Bereiche.",
+        "tabs": { "finance": "Finanzen", "admin": "Admin / HR / Einkauf", "leadership": "Führung" },
+        "finance": {
+          "0": { "label": "Kreditoren-Rechnungsbearbeitungs-Agent", "desc": "Extrahiert Rechnungsdaten, gleicht sie mit Bestell- und Wareneingangsdatensätzen ab und markiert Ausnahmen zur Prüfung." },
+          "1": { "label": "Debitoren- / Inkasso-Agent", "desc": "Erstellt Zahlungserinnerungen, prognostiziert Spätzahler und priorisiert die Inkassoarbeitsliste." },
+          "2": { "label": "Spesenabrechnungs-Prüfagent", "desc": "Prüft Spesenanträge gegen die Richtlinien und markiert Anomalien vor der Genehmigung." },
+          "3": { "label": "Finanzabschluss-Assistent", "desc": "Gleicht Buchungseinträge ab und erstellt Abweichungskommentare zur Beschleunigung des Monatsabschlusses." },
+          "4": { "label": "Budget- / Forecast-Q&A-Agent", "desc": "Beantwortet Fragen in natürlicher Sprache zu Budget- und Prognosedaten — kein Report-Building erforderlich." },
+          "5": { "label": "Anomalie- / Betrugserkennung-Agent", "desc": "Markiert ungewöhnliche Transaktionen oder Ausgabenmuster zur Finanzprüfung." }
+        },
+        "admin": {
+          "0": { "label": "HR-Onboarding-Agent", "desc": "Erstellt Angebotsschreiben und führt die Checkliste für neue Mitarbeiter über IT, Facility und Lohnbuchhaltung durch." },
+          "1": { "label": "Richtlinien- & Compliance-Q&A-Assistent", "desc": "Beantwortet Mitarbeiterfragen zu HR-Richtlinien, Sicherheitsverfahren und Betriebsregeln sofort." },
+          "2": { "label": "Einkauf-RFQ- / RFP-Erstellungs-Agent", "desc": "Erstellt Beschaffungsdokumente und vergleicht Lieferantenangebote mit den Spezifikationen." },
+          "3": { "label": "Lieferantenvertragsprüfungs-Agent", "desc": "Prüft Lieferantenverträge und markiert riskante oder nicht standardmäßige Klauseln vor der Unterzeichnung." },
+          "4": { "label": "IT-Helpdesk-Triage-Agent", "desc": "Kategorisiert und leitet IT-Tickets automatisch weiter und löst häufige Anfragen ohne menschlichen Eingriff." },
+          "5": { "label": "Termin- / Meeting-Koordinations-Agent", "desc": "Koordiniert Kalender, bucht Räume und verwaltet Terminänderungen abteilungsübergreifend." }
+        },
+        "leadership": {
+          "0": { "label": "Täglicher Executive-Briefing-Agent", "desc": "Fasst KPI-Dashboards und Shopfloor-Vision-Meldungen in einem täglichen Führungsbrief zusammen." },
+          "1": { "label": "Abteilungsübergreifende Anomalie-Triage", "desc": "Hebt die wichtigsten Vorfälle aus den Vision- und ERP-Schichten für die Führungsebene hervor." },
+          "2": { "label": "Strategischer Daten-Q&A-Copilot", "desc": "Ermöglicht der Führungsebene, in natürlicher Sprache über WMS-, TMS-, ERP- und Vision-Daten zu fragen." },
+          "3": { "label": "Meeting-Notizen- & Aktionspunkt-Agent", "desc": "Fasst Meetings zusammen und verfolgt Folgemaßnahmen bis zum Abschluss automatisch." },
+          "4": { "label": "Board-Präsentations-Erstellungsassistent", "desc": "Erstellt Board- und Investoren-Updates aus operativen und finanziellen Daten." },
+          "5": { "label": "Szenario- / Was-wäre-wenn-Planungsassistent", "desc": "Modelliert die operative und finanzielle Auswirkung vorgeschlagener Änderungen vor der Umsetzung." }
+        }
       },
       "production": {
         "title": "Produktionsboden", "sub": "Branche auswählen - Anwendungsfälle unterscheiden sich erheblich",
