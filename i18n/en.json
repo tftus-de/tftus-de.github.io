@@ -132,13 +132,13 @@
   "solution": {
     "eyebrow": "The Solution",
     "title": "One Facility. Fully Visible.",
-    "lead": "See how computer vision works across your facility - from entry gates to production lines - using the cameras and systems you already have.",
+    "lead": "Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries.",
     "legend": {
-      "common": "Common across all facilities",
-      "industry": "Production floor (industry-specific)",
-      "support": "Support zones",
+      "office": "Office — Agentic / LLM",
       "erp": "ERP / integration layer",
-      "office": "Office - Agentic / LLM layer"
+      "common": "Common — all facilities",
+      "industry": "Production floor (industry-specific)",
+      "support": "Support zones"
     },
     "divider": "Production floor - select industry below",
     "zones": {

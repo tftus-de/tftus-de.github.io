@@ -132,13 +132,13 @@
   "solution": {
     "eyebrow": "Die Lösung",
     "title": "Eine Anlage. Vollständig sichtbar.",
-    "lead": "Sehen Sie, wie Computer Vision in Ihrer gesamten Anlage funktioniert - vom Eingangstor bis zur Produktionslinie - mit den Kameras und Systemen, die Sie bereits haben.",
+    "lead": "Interaktive TFT-Anlagenkarte mit Computer-Vision-Anwendungsfällen für alle Zonen – für Automotive, Pharma, Lebensmittel und die allgemeine Fertigung.",
     "legend": {
-      "common": "Gemeinsam in allen Anlagen",
-      "industry": "Produktionsboden (branchenspezifisch)",
-      "support": "Supportbereiche",
+      "office": "Office — Agenten / LLM",
       "erp": "ERP / Integrationsschicht",
-      "office": "Office – Agenten-/LLM-Schicht"
+      "common": "Gemeinsam — alle Anlagen",
+      "industry": "Produktionsboden (branchenspezifisch)",
+      "support": "Supportbereiche"
     },
     "divider": "Produktionsboden - Branche auswählen",
     "zones": {
