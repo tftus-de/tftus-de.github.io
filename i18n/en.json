@@ -11,9 +11,9 @@
     "eyebrow": "Computer vision for German manufacturing",
     "pill": "20+ years of engineering - now in Germany",
     "title": "Your factory floor, <span class=\"hl\">fully visible.</span>",
-    "sub": "TFT brings computer vision to the cameras and systems you already have — detecting defects, enforcing safety, and mapping production in real time. Now with a local team in Berlin.",
+    "sub": "From gate entry and PPE compliance to defect detection and ERP integration, TFT helps existing systems see, understand, and respond. Now with a local presence in Berlin.",
     "emailPlaceholder": "Your business email",
-    "cta": "Request demo",
+    "cta": "Book a Call",
     "demo": {
       "checked": "Inspected today",
       "detected": "Defects detected",
@@ -101,13 +101,13 @@
   },
   "contact": {
     "eyebrow": "Book a Call",
-    "title": "20 minutes. No pitch. Just an honest conversation.",
+    "title": "30 minutes. No pitch. Just an honest conversation.",
     "lead": "Tell us where your bottleneck is - we'll tell you honestly whether and how we can help.",
     "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help.",
     "steps": {
       "1": {
         "title": "Choose a slot",
-        "text": "Online or in person in Berlin."
+        "text": "Book an online conversation with our team at a time that suits your schedule."
       },
       "2": {
         "title": "Describe your situation",
@@ -115,7 +115,7 @@
       },
       "3": {
         "title": "In German or English",
-        "text": "A TFT team member confirms and joins the call."
+        "text": "No forms, no gatekeeping. A TFT team member will confirm your slot. All calls are conducted in English."
       }
     },
     "widget": {
@@ -123,10 +123,10 @@
       "card2": "Agentic AI / LLM",
       "card3": "GDPR Compliant",
       "card4": "Berlin GmbH<br>Local Team",
-      "cta": "Book a discovery call",
+      "cta": "Book a call",
       "duration": "30 minutes",
       "noCommit": "No commitment",
-      "lang": "EN or DE"
+      "lang": "English"
     }
   },
   "solution": {

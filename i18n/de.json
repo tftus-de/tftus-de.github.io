@@ -5,15 +5,15 @@
     "comparison": "Vergleich",
     "proof": "Referenzen",
     "contact": "Kontakt",
-    "cta": "Einen Gesprächstermin vereinbaren"
+    "cta": "Anruf buchen"
   },
   "hero": {
     "eyebrow": "Computer Vision für die deutsche Fertigung",
     "pill": "20+ Jahre Engineering - jetzt in Deutschland",
     "title": "Ihre Fertigungshalle, <span class=\"hl\">vollständig einsehbar.</span>",
-    "sub": "TFT bringt Computer Vision in Ihre bereits vorhandenen Kameras und Systeme – zur Fehlererkennung, Sicherheitsüberwachung und Echtzeit-Abbildung der Produktion. Jetzt mit einem lokalen Team in Berlin.",
+    "sub": "Von der Zufahrtskontrolle über die PSA-Compliance bis hin zur Fehlererkennung und ERP-Integration hilft TFT bestehenden Systemen zu sehen, zu verstehen und zu reagieren. Jetzt mit einer eingetragenen Niederlassung in Berlin.",
     "emailPlaceholder": "Ihre geschäftliche E-Mail",
-    "cta": "Demo anfragen",
+    "cta": "Anruf buchen",
     "demo": {
       "checked": "Geprüft heute",
       "detected": "Fehler erkannt",
