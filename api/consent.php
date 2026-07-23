@@ -1,7 +1,14 @@
 <?php
-require __DIR__ . '/../admin/includes/db.php';
-
 header('Content-Type: application/json');
+
+try {
+    require __DIR__ . '/../admin/includes/db.php';
+} catch (Throwable $e) {
+    http_response_code(500);
+    error_log('[consent.php] db.php load failed: ' . $e->getMessage());
+    echo json_encode(['ok' => false, 'error' => 'db_load_failed']);
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -37,7 +44,8 @@ try {
         substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255) ?: null,
     ]);
     echo json_encode(['ok' => true]);
-} catch (PDOException $e) {
+} catch (Throwable $e) {
     http_response_code(500);
+    error_log('[consent.php] DB error: ' . $e->getMessage());
     echo json_encode(['ok' => false, 'error' => 'server_error']);
 }
