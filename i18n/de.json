@@ -479,12 +479,63 @@
     "privacy": "Datenschutzerklärung",
     "terms": "AGB",
     "cookies": "Cookie-Richtlinie",
+    "cookieSettings": "Cookie-Einstellungen",
     "trust": "Trust Center",
     "global": "Global Website"
   },
   "cookies": {
-    "text": "Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Weitere Informationen finden Sie in unserer <a href=\"legal/cookie-policy.html\">Cookie-Richtlinie</a> und <a href=\"legal/privacy-policy.html\">Datenschutzerklärung</a>.",
-    "reject": "Alle ablehnen",
-    "accept": "Alle akzeptieren"
+    "text": "Wir verwenden Cookies, um diese Website zu betreiben und — nur mit Ihrer Zustimmung — die Nutzung zu verstehen und relevante Inhalte zu zeigen. Über das unbedingt Notwendige hinaus wird nichts aktiviert, es sei denn, Sie stimmen zu.",
+    "acceptAll": "Alle akzeptieren",
+    "rejectAll": "Alle ablehnen",
+    "customize": "Anpassen",
+    "fabTitle": "Cookie-Präferenzen",
+    "modalTitle": "Cookie-Einstellungen verwalten",
+    "modalSub": "Jede Kategorie unten ist standardmäßig deaktiviert, bis Sie sie aktivieren. Sie können dies jederzeit über den Link in der Fußzeile ändern.",
+    "showCookies": "Cookies anzeigen",
+    "rejectNonEssential": "Nicht-essenzielle ablehnen",
+    "savePreferences": "Einstellungen speichern",
+    "saved": "Einstellungen gespeichert.",
+    "tableHeaders": ["Name","Anbieter","Zweck","Ablauf"],
+    "categories": {
+      "necessary": {
+        "name": "Unbedingt erforderlich",
+        "meaning": "Kann nicht deaktiviert werden — für den Betrieb der Website erforderlich.",
+        "cookies": [
+          {"name":"session_id","provider":"1st-party","purpose":"Sicherheit / Navigation","expiry":"Sitzung"},
+          {"name":"consent_state","provider":"1st-party","purpose":"Speichert Ihre Cookie-Auswahl","expiry":"12 Monate"}
+        ]
+      },
+      "functional": {
+        "name": "Funktional",
+        "meaning": "Die Website funktioniert vollständig; Sprach- und Chat-Einstellungen werden zwischen Besuchen nicht gespeichert.",
+        "cookies": [
+          {"name":"hubspot_chat","provider":"Drittanbieter","purpose":"Chat-Widget-Status","expiry":"12 Monate"}
+        ]
+      },
+      "analytics": {
+        "name": "Analyse",
+        "meaning": "Keine Auswirkung auf Ihre Nutzung — wir verlieren lediglich Einblick in diesen Besuch.",
+        "cookies": [
+          {"name":"_ga","provider":"Drittanbieter (Google)","purpose":"Unterscheidet Nutzer","expiry":"2 Jahre"},
+          {"name":"_gid","provider":"Drittanbieter (Google)","purpose":"Unterscheidet Nutzer","expiry":"24 Stunden"},
+          {"name":"__hstc","provider":"Drittanbieter (HubSpot)","purpose":"Analyse","expiry":"13 Monate"}
+        ]
+      },
+      "marketing": {
+        "name": "Marketing / Werbung",
+        "meaning": "Sie sehen möglicherweise weiterhin Werbung von uns, jedoch nicht gezielt basierend auf diesem Besuch.",
+        "cookies": [
+          {"name":"li_sugr","provider":"Drittanbieter (LinkedIn)","purpose":"Anzeigen-Targeting","expiry":"2 Jahre"},
+          {"name":"_fbp","provider":"Drittanbieter (Meta)","purpose":"Anzeigen-Targeting","expiry":"90 Tage"}
+        ]
+      },
+      "social": {
+        "name": "Soziale Medien",
+        "meaning": "Freigabe-Buttons und eingebettete Feeds werden möglicherweise nicht geladen; der Rest der Seite ist nicht betroffen.",
+        "cookies": [
+          {"name":"li_share","provider":"Drittanbieter (LinkedIn)","purpose":"Freigabe-Button","expiry":"12 Monate"}
+        ]
+      }
+    }
   }
 }

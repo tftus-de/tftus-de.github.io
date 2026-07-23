@@ -479,12 +479,63 @@
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "cookies": "Cookie Policy",
+    "cookieSettings": "Cookie Settings",
     "trust": "Trust Center",
     "global": "Global Website"
   },
   "cookies": {
-    "text": "We use cookies to operate and improve our website. See our <a href=\"legal/cookie-policy.html\">Cookie Policy</a> and <a href=\"legal/privacy-policy.html\">Privacy Policy</a> for more information.",
-    "reject": "Decline all",
-    "accept": "Accept all"
+    "text": "We use cookies to operate this website and — only with your consent — to understand usage and show relevant content. Nothing beyond strictly necessary is active unless you agree.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Decline all",
+    "customize": "Customise",
+    "fabTitle": "Cookie Preferences",
+    "modalTitle": "Manage cookie settings",
+    "modalSub": "Each category below is off by default until you enable it. You can change this at any time via the footer link.",
+    "showCookies": "Show cookies",
+    "rejectNonEssential": "Reject non-essential",
+    "savePreferences": "Save preferences",
+    "saved": "Preferences saved.",
+    "tableHeaders": ["Name","Provider","Purpose","Expiry"],
+    "categories": {
+      "necessary": {
+        "name": "Strictly necessary",
+        "meaning": "Cannot be turned off — required for the website to function.",
+        "cookies": [
+          {"name":"session_id","provider":"1st-party","purpose":"Security / Navigation","expiry":"Session"},
+          {"name":"consent_state","provider":"1st-party","purpose":"Stores your cookie choice","expiry":"12 months"}
+        ]
+      },
+      "functional": {
+        "name": "Functional",
+        "meaning": "The site works fully; language and chat preferences won't be remembered between visits.",
+        "cookies": [
+          {"name":"hubspot_chat","provider":"3rd-party","purpose":"Chat widget state","expiry":"12 months"}
+        ]
+      },
+      "analytics": {
+        "name": "Analytics",
+        "meaning": "No impact on your experience — we simply lose visibility into this visit.",
+        "cookies": [
+          {"name":"_ga","provider":"3rd-party (Google)","purpose":"Distinguishes users","expiry":"2 years"},
+          {"name":"_gid","provider":"3rd-party (Google)","purpose":"Distinguishes users","expiry":"24 hours"},
+          {"name":"__hstc","provider":"3rd-party (HubSpot)","purpose":"Analytics","expiry":"13 months"}
+        ]
+      },
+      "marketing": {
+        "name": "Marketing / Advertising",
+        "meaning": "You may still see ads from us, but not targeted based on this visit.",
+        "cookies": [
+          {"name":"li_sugr","provider":"3rd-party (LinkedIn)","purpose":"Ad targeting","expiry":"2 years"},
+          {"name":"_fbp","provider":"3rd-party (Meta)","purpose":"Ad targeting","expiry":"90 days"}
+        ]
+      },
+      "social": {
+        "name": "Social media",
+        "meaning": "Share buttons and embedded feeds may not load; the rest of the page is unaffected.",
+        "cookies": [
+          {"name":"li_share","provider":"3rd-party (LinkedIn)","purpose":"Share button","expiry":"12 months"}
+        ]
+      }
+    }
   }
 }

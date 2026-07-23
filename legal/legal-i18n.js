@@ -24,7 +24,7 @@
       finishSetLang(lang, dictCache[lang]);
       return;
     }
-    fetch('../i18n/legal.' + lang + '.json')
+    fetch('../i18n/legal.' + lang + '.json', { cache: 'no-store' })
       .then(function (res) { return res.json(); })
       .then(function (dict) {
         dictCache[lang] = dict;
