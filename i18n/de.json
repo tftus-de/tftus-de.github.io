@@ -101,13 +101,13 @@
   },
   "contact": {
     "eyebrow": "Gespräch vereinbaren",
-    "title": "20 Minuten. Kein Pitch. Ein ehrliches Gespräch.",
-    "lead": "Schildern Sie uns Ihren Engpass - wir sagen Ihnen offen, ob und wie wir helfen können.",
-    "leadEn": "20 Minuten. Kein Pitch. Einfach ein offenes Gespräch. Sagen Sie uns, wo der Engpass liegt – wir sagen Ihnen ehrlich, ob und wie wir helfen können.",
+    "title": "30 Minuten. Keine Tonhöhe. Nur ein ehrliches Gespräch.",
+    "lead": "Verraten Sie uns, wo Ihr Engpass liegt – wir sagen Ihnen ehrlich, ob und wie wir helfen können.",
+    "leadEn": "30 Minuten. Kein Pitch. Einfach ein offenes Gespräch. Sagen Sie uns, wo der Engpass liegt – wir sagen Ihnen ehrlich, ob und wie wir helfen können.",
     "steps": {
       "1": {
         "title": "Termin wählen",
-        "text": "Online oder persönlich in Berlin."
+        "text": "Vereinbaren Sie ein Online-Gespräch mit unserem Team zu einem Zeitpunkt, der in Ihren Zeitplan passt."
       },
       "2": {
         "title": "Situation kurz beschreiben",
@@ -115,7 +115,7 @@
       },
       "3": {
         "title": "Auf Deutsch oder Englisch",
-        "text": "Ein TFT-Teammitglied bestätigt und nimmt am Gespräch teil."
+        "text": "Keine Formulare, keine Hürden. Ein Mitglied des TFT-Teams bestätigt deinen Platz. Alle Gespräche werden auf Englisch geführt."
       }
     },
     "widget": {
@@ -126,7 +126,7 @@
       "cta": "Gespräch buchen",
       "duration": "30 Minuten",
       "noCommit": "Keine Verpflichtung",
-      "lang": "DE oder EN"
+      "lang": "Englisch"
     }
   },
   "solution": {

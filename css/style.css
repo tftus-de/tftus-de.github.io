@@ -410,7 +410,7 @@
   .pillar p{ font-size:14px; color:rgba(255,255,255,.55); line-height:1.65; }
 
   /* ===== COMPARISON ===== */
-  .comparison{ background:var(--white); }
+  .comparison{ background:var(--white); padding-top: 0px;}
   .comparison h2{
     font-family:var(--fh); font-size:34px; font-weight:800; margin:0 0 12px;
     max-width:680px; letter-spacing:-0.01em;
