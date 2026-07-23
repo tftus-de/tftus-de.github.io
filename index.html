@@ -23,15 +23,37 @@
 
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <div class="cookie-banner-text" data-i18n-html="cookies.text">
-      Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Weitere Informationen finden Sie in unserer <a href="legal/cookie-policy.html">Cookie-Richtlinie</a> und <a href="legal/privacy-policy.html">Datenschutzerklärung</a>.
-    </div>
+    <p class="cookie-banner-text" data-i18n-html="cookies.text">Wir verwenden Cookies, um unsere Website zu betreiben und zu verbessern. Weitere Informationen finden Sie in unserer <a href="legal/cookie-policy.html">Cookie-Richtlinie</a> und <a href="legal/privacy-policy.html">Datenschutzerklärung</a>.</p>
     <div class="cookie-banner-actions">
-      <button type="button" id="cookieReject" class="cookie-btn" data-i18n="cookies.reject">Nur notwendige</button>
-      <button type="button" id="cookieAccept" class="cookie-btn primary" data-i18n="cookies.accept">Alle akzeptieren</button>
+      <button type="button" id="cookieAccept"    class="cookie-btn ck-equal"   data-i18n="cookies.acceptAll">Alle akzeptieren</button>
+      <button type="button" id="cookieReject"    class="cookie-btn ck-equal"   data-i18n="cookies.rejectAll">Alle ablehnen</button>
+      <button type="button" id="cookieCustomize" class="cookie-btn ck-tertiary" data-i18n="cookies.customize">Anpassen</button>
     </div>
   </div>
 </div>
+
+<div id="cookieModalBackdrop" class="ck-modal-backdrop">
+  <div id="cookieModal" class="ck-modal" role="dialog" aria-modal="true" aria-labelledby="ckModalTitle">
+    <h2 id="ckModalTitle" class="ck-modal-title" data-i18n="cookies.modalTitle">Cookie-Einstellungen verwalten</h2>
+    <p class="ck-modal-sub" data-i18n="cookies.modalSub">Jede Kategorie ist standardmäßig deaktiviert. Sie können Ihre Wahl jederzeit über den Link in der Fußzeile ändern.</p>
+    <div id="cookieCategoryList"></div>
+    <div class="ck-modal-actions">
+      <button type="button" class="cookie-btn" id="ckModalReject"    data-i18n="cookies.rejectNonEssential">Nicht-essenzielle ablehnen</button>
+      <button type="button" class="cookie-btn" id="ckModalAcceptAll" data-i18n="cookies.acceptAll">Alle akzeptieren</button>
+      <button type="button" class="cookie-btn ck-primary" id="ckModalSave" data-i18n="cookies.savePreferences">Einstellungen speichern</button>
+    </div>
+    <p id="ckSaveConfirm" class="ck-save-confirm" data-i18n="cookies.saved">Einstellungen gespeichert.</p>
+  </div>
+</div>
+
+<!-- Cookie FAB -->
+<button id="ckFab" class="ck-fab" aria-label="Cookie settings" title="Cookie settings">🍪</button>
+<div id="ckFabPopup" class="ck-fab-popup" role="dialog" aria-label="Cookie preferences">
+  <div class="ck-fab-popup-title" data-i18n="cookies.fabTitle">Cookie-Präferenzen</div>
+  <div id="ckFabCats" class="ck-fab-cats"></div>
+  <button type="button" class="ck-fab-customize" id="ckFabCustomize" data-i18n="cookies.customize">Anpassen</button>
+</div>
+
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="https://tftus.de/"> <img src="images/TFT-logo.png" alt=""> </a>
@@ -1700,6 +1722,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="legal/privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
       <a href="legal/terms-and-conditions.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
       <a href="legal/cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
+      <a href="#" data-cookie-settings data-i18n="footer.cookieSettings">Cookie-Einstellungen</a>
       <a href="https://www.tftus.com" data-i18n="footer.global">Global Website</a>
     </div>
   </div>

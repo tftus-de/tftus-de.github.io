@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS submissions (
 
 CREATE TABLE IF NOT EXISTS cookie_consents (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  consent ENUM('accepted','rejected') NOT NULL,
+  consent VARCHAR(20) NOT NULL,
+  categories JSON NULL,
   lang VARCHAR(5) NULL,
   ip_address VARCHAR(45) NULL,
   user_agent VARCHAR(255) NULL,
