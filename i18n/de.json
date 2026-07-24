@@ -26,7 +26,7 @@
   },
   "problem": {
     "eyebrow": "Die Herausforderung",
-    "stat": "Jedes dritte deutsche Industrieunternehmen hat Schwierigkeiten, technische Stellen zu besetzen. Der Mangel wirkt sich bereits auf Produktion, Qualität und Effizienz aus.",
+    "stat": "Etwa jedes sechste deutsche Fertigungsunternehmen hat Schwierigkeiten, qualifizierte Fachkräfte zu findenbesonders betroffen sind spezialisierte technische Berufe.",
     "title": "Der Fachkräftemangel ist längst auf dem Shopfloor angekommen.",
     "lead": "Qualitätsprobleme. Sicherheitsrisiken. Verzögerungen. Nicht weil Fertigungsunternehmen keine Technologie haben - sondern weil erfahrene Fachkräfte immer schwerer zu ersetzen sind.",
     "card1": { "title": "Erfahrene Augen werden knapp", "text": "Prüf- und Überwachungsaufgaben gehören zu den am schwersten zu besetzenden Positionen." },
@@ -114,7 +114,7 @@
         "text": "Was ist Ihr größter technischer Engpass heute?"
       },
       "3": {
-        "title": "Auf Deutsch oder Englisch",
+        "title": "Wir bestätigen innerhalb von 24 Stunden.",
         "text": "Keine Formulare, keine Hürden. Ein Mitglied des TFT-Teams bestätigt deinen Platz. Alle Gespräche werden auf Englisch geführt."
       }
     },
@@ -134,9 +134,9 @@
     "title": "Eine Anlage. Vollständig sichtbar.",
     "lead": "Interaktive TFT-Anlagenkarte mit Computer-Vision-Anwendungsfällen für alle Zonen – für Automotive, Pharma, Lebensmittel und die allgemeine Fertigung.",
     "legend": {
-      "office": "Office — Agenten / LLM",
+      "office": "Office - Agenten / LLM",
       "erp": "ERP / Integrationsschicht",
-      "common": "Gemeinsam — alle Anlagen",
+      "common": "Gemeinsam - alle Anlagen",
       "industry": "Produktionsboden (branchenspezifisch)",
       "support": "Supportbereiche"
     },
