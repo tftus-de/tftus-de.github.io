@@ -114,7 +114,7 @@
   .cta-row{display:flex;  margin-bottom:40px;position: relative;}
 .cta-row #heroEmail{border: 1px solid #ccc; color: #000;}  
 .cta-row #heroEmail::placeholder{color: #ccc;}
-#heroCta{position: absolute; right: 0;}
+#heroCta{position: absolute; left: 0;}
 .btn{
     font-family:var(--fb); font-size:14px; font-weight:700;
     padding:13px 26px; border-radius:4px;
@@ -412,10 +412,9 @@
   /* ===== COMPARISON ===== */
   .comparison{ background:var(--white); padding-top: 0px;}
   .comparison h2{
-    font-family:var(--fh); font-size:34px; font-weight:800; margin:0 0 12px;
-    max-width:680px; letter-spacing:-0.01em;
+    font-family:var(--fh); font-size:34px; font-weight:800; margin:0 0 12px; letter-spacing:-0.01em;
   }
-  .comparison > .wrap > p.lead{ font-size:16px; color:var(--mid); max-width:640px; margin-bottom:40px; line-height:1.7; }
+  .comparison > .wrap > p.lead{ font-size:16px; color:var(--mid); margin-bottom:40px; line-height:1.7; }
   .cmp-table-wrap{ overflow-x:auto; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
   .cmp-table{ width:100%; border-collapse:collapse; min-width:680px; }
   .cmp-table th{

@@ -26,7 +26,7 @@
   },
   "problem": {
     "eyebrow": "The Challenge",
-    "stat": "One in three German manufacturing companies struggles to fill technical positions. The shortage is already affecting production, quality, and efficiency.",
+    "stat": "Roughly one in six German manufacturing companies reports a shortage of qualified workers and the gap is sharpest in specialized technical roles.",
     "title": "The skilled-labor shortage has already reached the shop floor.",
     "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology - but because experienced specialists are increasingly hard to replace.",
     "card1": { "title": "Experienced eyes are running short", "text": "Inspection and monitoring roles are among the hardest positions to fill." },
@@ -114,7 +114,7 @@
         "text": "What is your biggest engineering bottleneck today?"
       },
       "3": {
-        "title": "In German or English",
+        "title": "We confirm within 24 hours",
         "text": "No forms, no gatekeeping. A TFT team member will confirm your slot. All calls are conducted in English."
       }
     },
@@ -134,9 +134,9 @@
     "title": "One Facility. Fully Visible.",
     "lead": "Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries.",
     "legend": {
-      "office": "Office — Agentic / LLM",
+      "office": "Office - Agentic / LLM",
       "erp": "ERP / integration layer",
-      "common": "Common — all facilities",
+      "common": "Common - all facilities",
       "industry": "Production floor (industry-specific)",
       "support": "Support zones"
     },
