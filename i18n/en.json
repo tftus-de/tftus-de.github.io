@@ -8,10 +8,10 @@
     "cta": "Book a call"
   },
   "hero": {
-    "eyebrow": "Computer vision for German manufacturing",
+    "eyebrow": "THE AI ADOPTION LAYER FOR GERMAN MANUFACTURING",
     "pill": "20+ years of engineering - now in Germany",
-    "title": "Your factory floor, <span class=\"hl\">fully visible.</span>",
-    "sub": "From gate entry and PPE compliance to defect detection and ERP integration, TFT helps existing systems see, understand, and respond. Now with a local presence in Berlin.",
+    "title": "Your factory floor, fully visible. Your back office, fully connected.",
+    "sub": "From gate entry and PPE compliance on the floor to invoice matching and supplier risk in the office, TFT plugs into the systems you already run cameras, ERP, and everything between - and helps them see, decide, and act. Now with a local presence in Berlin.",
     "emailPlaceholder": "Your business email",
     "cta": "Book a Call",
     "demo": {
@@ -27,16 +27,16 @@
   "problem": {
     "eyebrow": "The Challenge",
     "stat": "Roughly one in six German manufacturing companies reports a shortage of qualified workers and the gap is sharpest in specialized technical roles.",
-    "title": "The skilled-labor shortage has already reached the shop floor.",
-    "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology - but because experienced specialists are increasingly hard to replace.",
+    "title": "The skilled-labor shortage has reached every floor of the business.",
+    "lead": "Quality issues. Safety risks. delays. Not because manufacturers lack technology - but because experienced specialists are increasingly hard to replace.",
     "card1": { "title": "Experienced eyes are running short", "text": "Inspection and monitoring roles are among the hardest positions to fill." },
-    "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of hands-on knowledge disappear from the operation." },
+    "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of expertise disappear from the supervisor who catches a fault by sound, to the compliance officer who knows every SOP by heart." },
     "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results - not years-long transformation projects." }
   },
   "comparison": {
   "eyebrow": "Why TFT",
-  "title": "Computer Vision: TFT vs. the alternatives",
-  "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to a computer vision pilot.",
+  "title": "AI Adoption: TFT vs. the alternatives",
+  "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to an AI pilot on the shop floor or in the back office.",
 
   "th": {
     "criterion": "Criterion",
@@ -45,7 +45,7 @@
   },
 
   "r1": {
-    "label": "Runs on existing camera infrastructure",
+    "label": "Runs on what you already have cameras, ERP, or document systems, no replacement",
     "tft": "✓ Yes - no hardware replacement",
     "generic": "⚠ Usually requires new hardware",
     "internal": "⚠ Depends on your team"
