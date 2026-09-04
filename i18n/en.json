@@ -5,15 +5,15 @@
     "comparison": "Comparison",
     "proof": "Proof",
     "contact": "Contact",
-    "cta": "Request demo"
+    "cta": "Book a call"
   },
   "hero": {
-    "eyebrow": "Computer vision for German manufacturing",
+    "eyebrow": "THE AI ADOPTION LAYER FOR GERMAN MANUFACTURING",
     "pill": "20+ years of engineering - now in Germany",
-    "title": "Your factory floor, <span class=\"hl\">fully visible.</span>",
-    "sub": "TFT brings computer vision to the cameras and systems you already have — detecting defects, enforcing safety, and mapping production in real time. Now with a local team in Berlin.",
+    "title": "Your factory floor, <span class=\"hl\">fully visible. </span>Your back office, fully connected.",
+    "sub": "From gate entry and PPE compliance on the floor to invoice matching and supplier risk in the office, TFT plugs into the systems you already run cameras, ERP, and everything between - and helps them see, decide, and act. Now with a local presence in Berlin.",
     "emailPlaceholder": "Your business email",
-    "cta": "Request demo",
+    "cta": "Book a Call",
     "demo": {
       "checked": "Inspected today",
       "detected": "Defects detected",
@@ -26,60 +26,119 @@
   },
   "problem": {
     "eyebrow": "The Challenge",
-    "stat": "One in three German manufacturing companies struggles to fill technical positions. The shortage is already affecting production, quality, and efficiency.",
-    "title": "The skilled-labor shortage has already reached the shop floor.",
-    "lead": "Quality issues. Safety risks. Delays. Not because manufacturers lack technology - but because experienced specialists are increasingly hard to replace.",
+    "stat": "Roughly one in six German manufacturing companies reports a shortage of qualified workers and the gap runs from the shop floor to the back office alike.",
+    "title": "The skilled-labor shortage has reached every floor of the business.",
+    "lead": "Quality issues on the line. Compliance backlogs in the office. Not because manufacturers lack technology but because experienced specialists, on the floor and behind a desk, are increasingly hard to replace.",
     "card1": { "title": "Experienced eyes are running short", "text": "Inspection and monitoring roles are among the hardest positions to fill." },
-    "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of hands-on knowledge disappear from the operation." },
+    "card2": { "title": "Know-how leaves with every retirement", "text": "With every retirement, years of expertise disappear from the supervisor who catches a fault by sound, to the compliance officer who knows every SOP by heart." },
     "card3": { "title": "Every investment has to pay off", "text": "Manufacturers need measurable results - not years-long transformation projects." }
   },
   "comparison": {
-    "eyebrow": "Why TFT",
-    "title": "Computer Vision: TFT vs. the alternatives",
-    "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to a computer vision pilot.",
-    "th": { "criterion": "Criterion", "generic": "Generic automation provider", "internal": "In-house solution" },
-    "r1": { "label": "Runs on existing camera infrastructure", "tft": "✓ Yes, no hardware swap", "generic": "⚠ New hardware often required", "internal": "⚠ Depends on the team" },
-    "r2": { "label": "Time to first pilot", "tft": "A few weeks", "generic": "2–4 months", "internal": "6+ months" },
-    "r3": { "label": "Local point of contact in Berlin", "tft": "✓ Via NLND", "generic": "⚠ Partially", "internal": "✓ In-house" },
-    "r4": { "label": "Engineering depth on demand", "tft": "400+ engineers", "generic": "⚠ Limited to project team", "internal": "✗ Limited by hiring" },
-    "r5": { "label": "Delivery experience across markets", "tft": "✓ 5 markets, 20+ years", "generic": "⚠ Mostly DACH", "internal": "✗ Not applicable" },
-    "r6": { "label": "Transparent pilot pricing", "tft": "✓ Clearly defined scope", "generic": "⚠ Often platform lock-in", "internal": "✗ Hidden staffing costs" },
-    "note": "Assessment as of June 2026. Individual results may vary - a given vendor's actual rating may differ on a case-by-case basis."
+  "eyebrow": "Why TFT",
+  "title": "AI Adoption: TFT vs. the alternatives",
+  "lead": "Here's how TFT compares against the options a plant manager typically evaluates before committing to an AI pilot on the shop floor or in the back office.",
+
+  "th": {
+    "criterion": "Criterion",
+    "generic": "Large automation vendor",
+    "internal": "Build in-house"
   },
+
+  "r1": {
+    "label": "Runs on what you already have cameras, ERP, or document systems, no replacement",
+    "tft": "✓ Yes - no hardware replacement",
+    "generic": "⚠ Usually requires new hardware",
+    "internal": "⚠ Depends on your team"
+  },
+
+  "r2": {
+    "label": "Time to first pilot results",
+    "tft": "✓ 6–8 weeks",
+    "generic": "2–4 months",
+    "internal": "6+ months"
+  },
+
+  "r3": {
+    "label": "Pilot approved at operational budget",
+    "tft": "✓ Yes - no board sign-off needed",
+    "generic": "✗ Often €200K+ minimum",
+    "internal": "⚠ Headcount requires approval"
+  },
+
+  "r4": {
+    "label": "Local presence in Germany",
+    "tft": "✓ Berlin office - registered GmbH",
+    "generic": "⚠ Varies by vendor",
+    "internal": "✓ Internal"
+  },
+
+  "r5": {
+    "label": "QA validation included",
+    "tft": "✓ CMMI L3 - built into delivery",
+    "generic": "⚠ Separate engagement",
+    "internal": "✗ You build and validate"
+  },
+
+  "r6": {
+    "label": "Engineering depth for complex problems",
+    "tft": "✓ 400+ engineers on call",
+    "generic": "⚠ Limited to project team",
+    "internal": "✗ Constrained by hiring"
+  },
+
+  "r7": {
+    "label": "Transparent pilot pricing",
+    "tft": "✓ Fixed scope, fixed price",
+    "generic": "⚠ Often platform lock-in",
+    "internal": "✗ Hidden personnel costs"
+  },
+
+  "note": "Assessment as of June 2026. Individual results may vary - a given vendor's actual rating may differ on a case-by-case basis."
+},
   "ctaStrip": {
     "text": "<strong>Ready for a first look at your line?</strong> In a short conversation, we'll show you what a demo using your own camera or image footage could look like.",
     "cta": "Schedule a conversation →"
   },
   "contact": {
     "eyebrow": "Book a Call",
-    "title": "20 minutes. No pitch. Just an honest conversation.",
+    "title": "30 minutes. No pitch. Just an honest conversation.",
     "lead": "Tell us where your bottleneck is - we'll tell you honestly whether and how we can help.",
     "leadEn": "20 minutes. No pitch. Just an honest conversation. Tell us where the bottleneck is - we will tell you honestly whether and how we can help.",
     "steps": {
       "1": {
         "title": "Choose a slot",
-        "text": "Online or in person in Berlin."
+        "text": "Book an online conversation with our team at a time that suits your schedule."
       },
       "2": {
         "title": "Describe your situation",
         "text": "What is your biggest engineering bottleneck today?"
       },
       "3": {
-        "title": "In German or English",
-        "text": "A TFT team member confirms and joins the call."
+        "title": "We confirm within 24 hours",
+        "text": "No forms, no gatekeeping. A TFT team member will confirm your slot. All calls are conducted in English."
       }
+    },
+    "widget": {
+      "card1": "Computer Vision",
+      "card2": "Agentic AI / LLM",
+      "card3": "GDPR Compliant",
+      "card4": "Berlin GmbH<br>Local Team",
+      "cta": "Book a call",
+      "duration": "30 minutes",
+      "noCommit": "No commitment",
+      "lang": "English"
     }
   },
   "solution": {
     "eyebrow": "The Solution",
     "title": "One Facility. Fully Visible.",
-    "lead": "See how computer vision works across your facility - from entry gates to production lines - using the cameras and systems you already have.",
+    "lead": "Interactive TFT facility vision map showing computer vision use cases across all facility zones for automotive, pharma, food, and general manufacturing industries.",
     "legend": {
-      "common": "Common across all facilities",
-      "industry": "Production floor (industry-specific)",
-      "support": "Support zones",
+      "office": "Office - Agentic / LLM",
       "erp": "ERP / integration layer",
-      "office": "Office - Agentic / LLM layer"
+      "common": "Common - all facilities",
+      "industry": "Production floor (industry-specific)",
+      "support": "Support zones"
     },
     "divider": "Production floor - select industry below",
     "zones": {
@@ -91,25 +150,65 @@
       "production": "Production Floor",
       "productionSub": "Industry-specific vision use cases - tap to explore",
       "warehouse": "Warehouse / Storage",
-      "cleaning": "Cleaning / Maintenance"
+      "cleaning": "Cleaning / Maintenance",
+      "office": "Office layer — Agentic / LLM",
+      "officeSub": "Finance · Admin / HR · Procurement · Leadership — connects to every department above.",
+      "officeCta": "Tap to explore →"
     },
     "prodGrid": {
       "defect": "Defect detection",
+      "defectTags": "Surface · Paint · Weld · Dimensional · Tablets · Vials · Foreign object · Contamination",
       "assembly": "Assembly verification",
+      "assemblyTags": "Component presence · Fastener count · Clip / screw check · Label & seal · Harness routing · VIN match",
       "counting": "Counting / weighing",
-      "predictive": "Predictive maintenance"
+      "countingTags": "In-line product count · Kit completeness · Fill-level check · Weight verification · Tablet count",
+      "predictive": "Predictive maintenance",
+      "predictiveTags": "Motor thermal · Conveyor wear · Robot anomaly · Coolant / oil leak · Vibration-by-vision"
     },
     "erp": {
-      "main": "ERP / MES / WMS / TMS integration layer - all vision data flows here",
-      "sub": "SAP · Odoo | Real-time alerts | Automated reporting | OEE / OTIF dashboards | Audit / traceability | AI agents",
-      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP · Blue Yonder · Manhattan"
+      "main": "All vision data → ERP / MES / WMS / TMS integration layer",
+      "pill0": "SAP · Odoo",
+      "pill1": "Blue Yonder · Manhattan",
+      "pill2": "Custom ERP",
+      "pill3": "Real-time data feeds",
+      "pill4": "Bi-directional sync",
+      "compliance": "IATF 16949 · EU GMP · ISO 22000 · ISO 9001 · 21 CFR Part 11 · HACCP"
+    },
+    "connector": {
+      "main": "AI Agents · Chatbots · Real-time Dashboards · Predictive Alerts",
+      "sub": "Full floor visibility flows up to management · Targets, thresholds & configurations flow down",
+      "chip0": "Real-time alerts",
+      "chip1": "Automated reporting",
+      "chip2": "OEE / OTIF dashboards",
+      "chip3": "Compliance logs",
+      "chip4": "Audit / traceability"
+    },
+    "zoneTags": {
+      "entry":    { "0": "Vehicle ANPR",         "1": "Boom barrier",      "2": "JIT slot check",    "3": "Tailgating" },
+      "worker":   { "0": "Uniform · PPE",         "1": "Headcount",         "2": "Gowning check" },
+      "canteen":  { "0": "Hygiene checks",        "1": "Crowding alerts",   "2": "Spill detection" },
+      "security": { "0": "Perimeter · Intruder",  "1": "Fire · Smoke",      "2": "Camera tamper" },
+      "dispatch": { "0": "OCR · Vehicle ID",      "1": "Item count",        "2": "Damage detect" },
+      "warehouse":{ "0": "Inventory · Pick accuracy", "1": "FEFO enforcement", "2": "Forklift safety", "3": "Yard / trailer tracking" },
+      "cleaning": { "0": "Activity detection",    "1": "Audit log trail",   "2": "Schedule compliance" }
+    },
+    "officeHeader": "OFFICE · LEADERSHIP · MANAGEMENT",
+    "floorHeader": "FACTORY FLOOR — VISION DATA SOURCES",
+    "floorHeaderHint": "Tap any zone to explore use cases",
+    "office": {
+      "preview": {
+        "leadership": { "0": "Executive briefing agent", "1": "KPI dashboards", "2": "Floor anomaly triage", "3": "Scenario planning" },
+        "finance":    { "0": "AP invoice agent", "1": "Budget Q&A copilot", "2": "Anomaly / fraud detection", "3": "Financial close assistant" },
+        "admin":      { "0": "HR onboarding agent", "1": "Vendor contract review", "2": "IT helpdesk triage", "3": "RFQ / RFP drafting" }
+      }
     },
     "hint": "Tap any zone on the map to explore its computer vision use cases.",
-    "close": "✕ close",
+    "close": "✕",
     "badge": {
       "common": "Common - all facilities",
       "industry": "Industry-specific",
-      "support": "Support zone"
+      "support": "Support zone",
+      "office": "Agentic / LLM layer"
     },
     "panels": {
       "entry": {
@@ -253,6 +352,34 @@
         "6": { "label": "Disinfection verification", "desc": "Confirms disinfection was performed in the correct sequence and areas." },
         "7": { "label": "Audit-log trail", "desc": "Timestamped visual record of every cleaning event - ready for ISO, GMP, HACCP, or BG audits." }
       },
+      "office": {
+        "title": "Office layer — Agentic / LLM", "sub": "Finance · Admin / HR · Procurement · Leadership — connects to every department above.",
+        "tabs": { "finance": "Finance", "admin": "Admin / HR / Procurement", "leadership": "Leadership" },
+        "finance": {
+          "0": { "label": "AP invoice processing agent", "desc": "Extracts invoice data, matches it to PO and goods-receipt records, and flags exceptions for review." },
+          "1": { "label": "AR / collections agent", "desc": "Drafts payment reminders, predicts late-payers, and prioritises the collections worklist." },
+          "2": { "label": "Expense-report review agent", "desc": "Checks expense claims against policy and flags anomalies before approval." },
+          "3": { "label": "Financial-close assistant", "desc": "Reconciles ledger entries and drafts variance commentary to speed up month-end close." },
+          "4": { "label": "Budget / forecast Q&A agent", "desc": "Answers natural-language questions over budget and forecast data — no report-building required." },
+          "5": { "label": "Anomaly / fraud detection agent", "desc": "Flags unusual transactions or spend patterns for finance review." }
+        },
+        "admin": {
+          "0": { "label": "HR onboarding agent", "desc": "Drafts offer letters and runs the new-hire checklist across IT, facilities, and payroll." },
+          "1": { "label": "Policy & compliance Q&A assistant", "desc": "Answers employee questions on HR policy, safety procedure, and site rules instantly." },
+          "2": { "label": "Procurement RFQ / RFP drafting agent", "desc": "Drafts sourcing documents and compares supplier quotes against spec." },
+          "3": { "label": "Vendor-contract review agent", "desc": "Reviews supplier contracts and flags risky or non-standard clauses before signature." },
+          "4": { "label": "IT helpdesk triage agent", "desc": "Auto-categorises and routes IT tickets, and resolves common requests without a human agent." },
+          "5": { "label": "Scheduling / meeting coordination agent", "desc": "Coordinates calendars, books rooms, and handles reschedules across departments." }
+        },
+        "leadership": {
+          "0": { "label": "Executive daily-briefing agent", "desc": "Summarises KPI dashboards and shop-floor vision alerts into a daily leadership brief." },
+          "1": { "label": "Cross-department anomaly triage", "desc": "Surfaces the highest-priority incidents from the vision and ERP layers for leadership attention." },
+          "2": { "label": "Strategic data Q&A copilot", "desc": "Lets leadership ask natural-language questions across WMS, TMS, ERP, and vision data." },
+          "3": { "label": "Meeting-notes & action-item agent", "desc": "Summarises meetings and tracks follow-up actions to closure automatically." },
+          "4": { "label": "Board-deck drafting assistant", "desc": "Drafts board and investor updates from operational and financial data." },
+          "5": { "label": "Scenario / what-if planning assistant", "desc": "Models the operational and financial impact of proposed changes before they're made." }
+        }
+      },
       "production": {
         "title": "Production floor", "sub": "Select your industry - use cases differ significantly",
         "tabs": { "auto": "Automotive", "pharma": "Pharma", "food": "Food", "gen": "General manufacturing", "logistics": "Logistics" },
@@ -352,12 +479,63 @@
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "cookies": "Cookie Policy",
+    "cookieSettings": "Cookie Settings",
     "trust": "Trust Center",
     "global": "Global Website"
   },
   "cookies": {
-    "text": "We use cookies to operate and improve our website. See our <a href=\"legal/cookie-policy.html\">Cookie Policy</a> and <a href=\"legal/privacy-policy.html\">Privacy Policy</a> for more information.",
-    "reject": "Decline all",
-    "accept": "Accept all"
+    "text": "We use cookies to operate this website and — only with your consent — to understand usage and show relevant content. Nothing beyond strictly necessary is active unless you agree.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Decline all",
+    "customize": "Customise",
+    "fabTitle": "Cookie Preferences",
+    "modalTitle": "Manage cookie settings",
+    "modalSub": "Each category below is off by default until you enable it. You can change this at any time via the footer link.",
+    "showCookies": "Show cookies",
+    "rejectNonEssential": "Reject non-essential",
+    "savePreferences": "Save preferences",
+    "saved": "Preferences saved.",
+    "tableHeaders": ["Name","Provider","Purpose","Expiry"],
+    "categories": {
+      "necessary": {
+        "name": "Strictly necessary",
+        "meaning": "Cannot be turned off — required for the website to function.",
+        "cookies": [
+          {"name":"session_id","provider":"1st-party","purpose":"Security / Navigation","expiry":"Session"},
+          {"name":"consent_state","provider":"1st-party","purpose":"Stores your cookie choice","expiry":"12 months"}
+        ]
+      },
+      "functional": {
+        "name": "Functional",
+        "meaning": "The site works fully; language and chat preferences won't be remembered between visits.",
+        "cookies": [
+          {"name":"hubspot_chat","provider":"3rd-party","purpose":"Chat widget state","expiry":"12 months"}
+        ]
+      },
+      "analytics": {
+        "name": "Analytics",
+        "meaning": "No impact on your experience — we simply lose visibility into this visit.",
+        "cookies": [
+          {"name":"_ga","provider":"3rd-party (Google)","purpose":"Distinguishes users","expiry":"2 years"},
+          {"name":"_gid","provider":"3rd-party (Google)","purpose":"Distinguishes users","expiry":"24 hours"},
+          {"name":"__hstc","provider":"3rd-party (HubSpot)","purpose":"Analytics","expiry":"13 months"}
+        ]
+      },
+      "marketing": {
+        "name": "Marketing / Advertising",
+        "meaning": "You may still see ads from us, but not targeted based on this visit.",
+        "cookies": [
+          {"name":"li_sugr","provider":"3rd-party (LinkedIn)","purpose":"Ad targeting","expiry":"2 years"},
+          {"name":"_fbp","provider":"3rd-party (Meta)","purpose":"Ad targeting","expiry":"90 days"}
+        ]
+      },
+      "social": {
+        "name": "Social media",
+        "meaning": "Share buttons and embedded feeds may not load; the rest of the page is unaffected.",
+        "cookies": [
+          {"name":"li_share","provider":"3rd-party (LinkedIn)","purpose":"Share button","expiry":"12 months"}
+        ]
+      }
+    }
   }
 }
