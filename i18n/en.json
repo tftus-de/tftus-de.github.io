@@ -10,7 +10,7 @@
   "hero": {
     "eyebrow": "THE AI ADOPTION LAYER FOR GERMAN MANUFACTURING",
     "pill": "20+ years of engineering - now in Germany",
-    "title": "Your factory floor, fully visible. Your back office, fully connected.",
+    "title": "Your factory floor, <span class=\"hl\">fully visible. </span>Your back office, fully connected.",
     "sub": "From gate entry and PPE compliance on the floor to invoice matching and supplier risk in the office, TFT plugs into the systems you already run cameras, ERP, and everything between - and helps them see, decide, and act. Now with a local presence in Berlin.",
     "emailPlaceholder": "Your business email",
     "cta": "Book a Call",
