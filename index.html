@@ -635,6 +635,18 @@
 .ffh-dot { width: 10px; height: 10px; border-radius: 2px; background: #1e8db8; flex-shrink: 0; }
 .ffh-right { font-size: 10.5px; color: var(--mid); font-weight: 500; font-family: var(--fh); }
 @media (max-width: 640px) { .ffh-right { display: none; } }
+
+  @media (max-width:860px){
+    .wrap{padding:28px 18px 40px;}
+    .board{grid-template-columns:1fr;}
+    .plan{padding:14px;}
+    .panel{padding:22px 20px 24px;}
+    .lede{max-width:none;}
+
+    .panel{order:-1;}
+    .plan{order:1;}
+  }
+
 </style>
 
 <div class="wrap">
@@ -758,6 +770,7 @@ const T = {
     title:"Ein Werk.<br>Bereich für Bereich.",
     lede:"Wählen Sie einen Bereich aus, um zu sehen, worauf Kameras dort achten können.",
     hint:"Wählen Sie links einen Bereich aus.",
+    hintMobile:"Wählen Sie unten einen Bereich aus.",
     foot:"Nicht jeder Bereich ist für jedes Werk relevant. Wir schauen uns gemeinsam an, was bei Ihnen sinnvoll ist.",
     lg1:"Ausgewählter Bereich",
     lg2:"Kameraposition",
@@ -768,6 +781,7 @@ const T = {
     title:"One plant.<br>Area by area.",
     lede:"Select an area to see what cameras can watch for there.",
     hint:"Select an area on the left.",
+    hintMobile:"Select an area below.",
     foot:"Not every area is relevant for every plant. We look at what makes sense for yours together.",
     lg1:"Selected area",
     lg2:"Camera position",
@@ -998,7 +1012,9 @@ function paintStatic(){
 
 function paintPanel(){
   if(!current){
-    body.innerHTML = '<p class="panel-hint">'+T[lang].hint+'</p>';
+    const isMobile = window.matchMedia("(max-width:860px)").matches;
+    const hintText = isMobile ? T[lang].hintMobile : T[lang].hint;
+    body.innerHTML = '<p class="panel-hint">'+hintText+'</p>';
     return;
   }
   const d = Z[current][lang];
@@ -1042,10 +1058,13 @@ function setLang(l){
 document.getElementById("btnDe").addEventListener("click", ()=>setLang("de"));
 document.getElementById("btnEn").addEventListener("click", ()=>setLang("en"));
 
+window.matchMedia("(max-width:860px)").addEventListener("change", ()=>{
+  if(!current) paintPanel();
+});
+
 paintStatic();
 paintPanel();
 </script>
-
 <style>
   :root{
     --cyan:#0EA5C4;
