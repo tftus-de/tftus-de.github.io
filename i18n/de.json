@@ -537,5 +537,366 @@
         ]
       }
     }
+  },
+  "solutionMap": {
+    "eyebrow": "Sichtfeld-Karte",
+    "title": "Ein Werk.<br>Bereich für Bereich.",
+    "lede": "Wählen Sie einen Bereich aus, um zu sehen, worauf Kameras dort achten können.",
+    "hint": "Wählen Sie links einen Bereich aus.",
+    "hintMobile": "Wählen Sie unten einen Bereich aus.",
+    "foot": "Nicht jeder Bereich ist für jedes Werk relevant. Wir schauen uns gemeinsam an, was bei Ihnen sinnvoll ist.",
+    "lg1": "Ausgewählter Bereich",
+    "lg2": "Kameraposition",
+    "kicker": "Worauf hier geachtet werden kann",
+    "zones": {
+      "gate": {
+        "name": "Werkstor & Hof",
+        "items": [
+          [
+            "Kennzeichen und Fahrzeugtyp",
+            "Erkennt, wer ankommt, bevor der Lkw hält"
+          ],
+          [
+            "Ankunft im gebuchten Zeitfenster",
+            "Prüft, ob der Lkw wie angekündigt kommt"
+          ],
+          [
+            "Container- und Anhänger-ID",
+            "Liest die Nummer automatisch aus"
+          ],
+          [
+            "Plomben- und Unversehrtheitsprüfung",
+            "Bestätigt, dass die Ladung unversehrt ankam"
+          ],
+          [
+            "Gefahrgut-Kennzeichnung",
+            "Erkennt Gefahrgut-Symbole direkt bei der Ankunft"
+          ],
+          [
+            "Kühlkette bei Ankunft",
+            "Prüft Kühl-Lkw, bevor das Entladen beginnt"
+          ]
+        ]
+      },
+      "office": {
+        "name": "Verwaltung",
+        "items": [
+          [
+            "Dokumenttyp erkannt",
+            "Sortiert eingehende Unterlagen automatisch"
+          ],
+          [
+            "Felder gelesen und geprüft",
+            "Erfasst die wichtigen Daten und prüft sie"
+          ],
+          [
+            "Rechnung, Bestellung und Wareneingang abgeglichen",
+            "Bringt alle drei Belege automatisch zusammen"
+          ],
+          [
+            "Doppelzahlung verhindert",
+            "Verhindert, dass eine Rechnung zweimal bezahlt wird"
+          ],
+          [
+            "Manipulierte Dokumente erkannt",
+            "Erkennt nachträglich veränderte Unterlagen"
+          ],
+          [
+            "Übergabe an das ERP",
+            "Übermittelt geprüfte Daten direkt an Ihr System"
+          ],
+          [
+            "Verfahren mit Vorschriften abgeglichen",
+            "Vergleicht Ihre Abläufe mit aktuellen Vorgaben"
+          ],
+          [
+            "Lieferantenstruktur und Eigentümerschaft",
+            "Zeigt, wem Ihre Lieferanten wirklich gehören"
+          ],
+          [
+            "Abhängigkeiten in der Lieferkette",
+            "Zeigt, wo ein einzelner Ausfall gefährlich wird"
+          ],
+          [
+            "Forderungsmanagement bei offenen Posten",
+            "Verfolgt ausstehende Beträge automatisch"
+          ],
+          [
+            "Lohnabrechnung läuft",
+            "Hält die Abrechnung ohne manuelles Nachfassen am Laufen"
+          ],
+          [
+            "Tägliches Management-Briefing",
+            "Jeden Morgen eine kurze Zusammenfassung"
+          ],
+          [
+            "Dokumente auf Deutsch und Englisch",
+            "Durchsuchbar in der Sprache, in der sie ankommen"
+          ],
+          [
+            "Wissen ausscheidender Fachkräfte sichern",
+            "Erhält Know-how im Unternehmen, wenn jemand geht"
+          ],
+          [
+            "Neue Mitarbeitende einarbeiten",
+            "Beantwortet Fragen neuer Mitarbeitender ab Tag eins"
+          ]
+        ]
+      },
+      "changing": {
+        "name": "Umkleide & Sozialräume",
+        "items": [
+          [
+            "Schutzausrüstung vollständig",
+            "Bestätigt vollständige Ausrüstung vor dem Betreten"
+          ],
+          [
+            "Reihenfolge beim Ankleiden",
+            "Prüft die vorgeschriebene Ankleide-Reihenfolge"
+          ],
+          [
+            "Hygienekontrolle",
+            "Haarnetz, Hände und Schmuck vor dem Betreten geprüft"
+          ],
+          [
+            "Belegung des Raums",
+            "Zeigt, wie viele Personen sich gerade dort aufhalten"
+          ],
+          [
+            "Sicherheitseinweisung in der Muttersprache",
+            "Wird beim ersten Mal verstanden, nicht nur gehört"
+          ]
+        ]
+      },
+      "production": {
+        "name": "Produktionshalle",
+        "items": [
+          [
+            "Oberflächenfehler",
+            "Kratzer, Dellen und Flecken direkt an der Linie erkannt"
+          ],
+          [
+            "Schweiß- und Fügefehler",
+            "Prüft Verbindungen, bevor das Teil weiterläuft"
+          ],
+          [
+            "Maßhaltigkeit",
+            "Misst Teile automatisch gegen die Toleranz"
+          ],
+          [
+            "Teile vollständig und richtig platziert",
+            "Bestätigt, dass nichts fehlt oder falsch sitzt"
+          ],
+          [
+            "Variante gegen Auftrag",
+            "Prüft, ob die richtige Version gebaut wird"
+          ],
+          [
+            "Zählung an der laufenden Linie",
+            "Zählt zuverlässig bei voller Liniengeschwindigkeit"
+          ],
+          [
+            "Füllstand und Gewicht",
+            "Bestätigt die korrekte Befüllung jeder Einheit"
+          ],
+          [
+            "Etiketten, Datum, Chargencode",
+            "Liest und prüft den Aufdruck"
+          ],
+          [
+            "Verschluss- und Siegelprüfung",
+            "Bestätigt die korrekte Versiegelung jeder Einheit"
+          ],
+          [
+            "Fremdkörper im Produkt",
+            "Erkennt Verunreinigungen vor dem Versand"
+          ],
+          [
+            "Sortierung nach Güteklasse",
+            "Trennt Produkte automatisch nach Qualität"
+          ],
+          [
+            "Linie frei zwischen Chargen",
+            "Bestätigt, dass nichts zurückbleibt, bevor die nächste Charge startet"
+          ],
+          [
+            "Allergenwechsel freigegeben",
+            "Bestätigt den sauberen Wechsel zwischen Allergenprofilen"
+          ],
+          [
+            "Visuelle Chargendokumentation",
+            "Führt eine bildbasierte Dokumentation jeder Charge"
+          ],
+          [
+            "Ungünstige Körperhaltung",
+            "Erkennt Bewegungen, die den Körper langfristig belasten"
+          ],
+          [
+            "Heben und Tragen",
+            "Beobachtet die Technik beim manuellen Handling"
+          ],
+          [
+            "Körperliche Belastung über die Schicht",
+            "Erfasst die Gesamtbelastung, nicht nur Einzelmomente"
+          ],
+          [
+            "Eingriff in eine laufende Maschine",
+            "Erkennt, wenn eine Hand in den Gefahrenbereich gerät"
+          ],
+          [
+            "Freihändige Meldung per Sprache",
+            "Ermöglicht Meldungen, ohne die Arbeit zu unterbrechen"
+          ],
+          [
+            "Schichtübergabe dokumentiert",
+            "Hält fest, was für die nächste Schicht wichtig ist"
+          ]
+        ]
+      },
+      "storage": {
+        "name": "Lager",
+        "items": [
+          [
+            "Bestand im Regal",
+            "Zeigt, was tatsächlich im Regal liegt, nicht nur auf dem Papier"
+          ],
+          [
+            "Freie Stellplätze",
+            "Findet automatisch verfügbaren Lagerplatz"
+          ],
+          [
+            "Richtig kommissioniert",
+            "Bestätigt den richtigen Artikel für den Auftrag"
+          ],
+          [
+            "Falsch eingelagert",
+            "Erkennt Bestand, der am falschen Ort liegt"
+          ],
+          [
+            "Ältere Charge zuerst",
+            "Stellt sicher, dass FIFO tatsächlich eingehalten wird"
+          ],
+          [
+            "Temperaturzone eingehalten",
+            "Bestätigt die richtige Klimazone für jeden Artikel"
+          ],
+          [
+            "Stapler und Person zu nah",
+            "Warnt, bevor es gefährlich eng wird"
+          ]
+        ]
+      },
+      "cleaning": {
+        "name": "Instandhaltung",
+        "items": [
+          [
+            "Thermografie an Motor und Lager",
+            "Erkennt Überhitzung, bevor ein Ausfall entsteht"
+          ],
+          [
+            "Zustand von Riemen und Rollen",
+            "Erkennt Verschleiß, bevor er zum Stillstand führt"
+          ],
+          [
+            "Ungewöhnliche Vibration",
+            "Erkennt, wenn eine Maschine sich anders verhält"
+          ],
+          [
+            "Öl- und Kühlmittelleckage",
+            "Erkennt Lecks frühzeitig, bevor sie sich ausweiten"
+          ],
+          [
+            "Werkzeug- und Formverschleiß",
+            "Erfasst Verschleiß für rechtzeitigen Austausch"
+          ],
+          [
+            "Stau oder Blockade an der Linie",
+            "Meldet einen Stillstand in dem Moment, in dem er passiert"
+          ],
+          [
+            "Maschine läuft oder steht",
+            "Zeigt die tatsächliche Auslastung, nicht die vermutete"
+          ],
+          [
+            "Reinigung tatsächlich durchgeführt",
+            "Bestätigt, dass wirklich gereinigt wurde, nicht nur dokumentiert"
+          ],
+          [
+            "Reinigung im vorgesehenen Zeitfenster",
+            "Prüft, ob rechtzeitig gereinigt wurde"
+          ],
+          [
+            "Wartung per Sprache dokumentiert",
+            "Technikerinnen und Techniker protokollieren, ohne zu tippen"
+          ],
+          [
+            "Ferngestützte Reparatur per Datenbrille",
+            "Holt Expertenwissen dazu, ohne Anfahrt"
+          ],
+          [
+            "Frühere Störungen und ihre Behebung",
+            "Eine durchsuchbare Historie statt reinem Erfahrungswissen"
+          ],
+          [
+            "Fragen an das Maschinenhandbuch",
+            "Antworten aus dem Handbuch in Sekunden"
+          ]
+        ]
+      },
+      "loading": {
+        "name": "Rampe",
+        "items": [
+          [
+            "Lieferschein gegen Auftrag",
+            "Gleicht Papiere mit der tatsächlichen Ladung ab"
+          ],
+          [
+            "Sichtbare Transportschäden",
+            "Erkannt an der Rampe, nicht erst im Lager"
+          ],
+          [
+            "Kartons und Paletten gezählt",
+            "Zählt automatisch beim Warendurchlauf"
+          ],
+          [
+            "Schaden mit Bild dokumentiert",
+            "Ein Foto in der Akte, sobald ein Schaden auffällt"
+          ],
+          [
+            "Ladung gegen Auftrag",
+            "Bestätigt, dass die Ladung dem Auftrag entspricht"
+          ],
+          [
+            "Rampe belegt oder frei",
+            "Zeigt den Rampenstatus auf einen Blick"
+          ],
+          [
+            "Ladungssicherung geprüft",
+            "Bestätigt sichere Ladung vor der Abfahrt"
+          ]
+        ]
+      },
+      "security": {
+        "name": "Werksweit",
+        "items": [
+          [
+            "Unbefugter Zutritt",
+            "Erkennt Personen dort, wo sie nicht sein sollten"
+          ],
+          [
+            "Früherkennung von Rauch und Feuer",
+            "Erkennt es früh genug zum Handeln"
+          ],
+          [
+            "Kamera verdeckt oder verstellt",
+            "Bemerkt, wenn eine Kamera nicht mehr richtig sieht"
+          ],
+          [
+            "Nachweise für Audits",
+            "Ein Nachweis, der jederzeit vorgezeigt werden kann"
+          ]
+        ]
+      }
+    }
   }
 }

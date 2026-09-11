@@ -537,5 +537,366 @@
         ]
       }
     }
+  },
+  "solutionMap": {
+    "eyebrow": "Vision map",
+    "title": "One plant.<br>Area by area.",
+    "lede": "Select an area to see what cameras can watch for there.",
+    "hint": "Select an area on the left.",
+    "hintMobile": "Select an area below.",
+    "foot": "Not every area is relevant for every plant. We look at what makes sense for yours together.",
+    "lg1": "Selected area",
+    "lg2": "Camera position",
+    "kicker": "What can be watched for here",
+    "zones": {
+      "gate": {
+        "name": "Gate & Yard",
+        "items": [
+          [
+            "Plate and vehicle type",
+            "Identifies who's arriving before the truck stops"
+          ],
+          [
+            "Arrival within booked slot",
+            "Checks the truck came when it said it would"
+          ],
+          [
+            "Container and trailer ID",
+            "Reads the container or trailer number automatically"
+          ],
+          [
+            "Seal and integrity check",
+            "Confirms the load arrived unbroken"
+          ],
+          [
+            "Dangerous-goods marking",
+            "Flags hazard labels the moment a truck arrives"
+          ],
+          [
+            "Cold chain on arrival",
+            "Checks refrigerated trucks before unloading starts"
+          ]
+        ]
+      },
+      "office": {
+        "name": "Office",
+        "items": [
+          [
+            "Document type recognised",
+            "Sorts incoming paperwork automatically"
+          ],
+          [
+            "Fields read and validated",
+            "Pulls out the key data and checks it"
+          ],
+          [
+            "Invoice, order and receipt matched",
+            "Brings the three documents together automatically"
+          ],
+          [
+            "Duplicate payment prevented",
+            "Stops the same invoice being paid twice"
+          ],
+          [
+            "Manipulated documents detected",
+            "Flags documents that have been altered"
+          ],
+          [
+            "Handover to the ERP",
+            "Sends validated data straight into your system"
+          ],
+          [
+            "Procedures checked against regulation",
+            "Compares your SOPs to current requirements"
+          ],
+          [
+            "Supplier structure and ownership",
+            "Maps who actually owns your suppliers"
+          ],
+          [
+            "Dependencies in the supply chain",
+            "Shows where a single point of failure sits"
+          ],
+          [
+            "Revenue recovery on open items",
+            "Chases outstanding amounts automatically"
+          ],
+          [
+            "Payroll in progress",
+            "Keeps payroll moving without manual chasing"
+          ],
+          [
+            "Daily brief for management",
+            "A short summary of what happened, every morning"
+          ],
+          [
+            "Documents in German and English",
+            "Searchable in whichever language they arrive in"
+          ],
+          [
+            "Capturing departing specialists' knowledge",
+            "Keeps know-how in the business after someone leaves"
+          ],
+          [
+            "Onboarding new staff",
+            "Answers a new hire's questions from day one"
+          ]
+        ]
+      },
+      "changing": {
+        "name": "Changing & Welfare",
+        "items": [
+          [
+            "Protective equipment complete",
+            "Confirms all required gear is worn before entry"
+          ],
+          [
+            "Order of gowning",
+            "Checks gear goes on in the required sequence"
+          ],
+          [
+            "Hygiene checks",
+            "Hairnets, hands, and jewellery, checked before entry"
+          ],
+          [
+            "Room occupancy",
+            "Shows how many people are in the room right now"
+          ],
+          [
+            "Safety briefing in the worker's own language",
+            "Understood the first time, not just heard"
+          ]
+        ]
+      },
+      "production": {
+        "name": "Production Hall",
+        "items": [
+          [
+            "Surface faults",
+            "Scratches, dents and marks, caught on the line"
+          ],
+          [
+            "Weld and joining faults",
+            "Checks joins are sound before the part moves on"
+          ],
+          [
+            "Dimensional accuracy",
+            "Measures parts against tolerance automatically"
+          ],
+          [
+            "Parts complete and correctly placed",
+            "Confirms nothing is missing or misplaced"
+          ],
+          [
+            "Variant against order",
+            "Checks the right version is being built"
+          ],
+          [
+            "Count on a moving line",
+            "Counts items accurately at full line speed"
+          ],
+          [
+            "Fill level and weight",
+            "Confirms every unit is filled correctly"
+          ],
+          [
+            "Labels, date, batch code",
+            "Reads and checks print is correct"
+          ],
+          [
+            "Seal and closure integrity",
+            "Confirms every unit is properly sealed"
+          ],
+          [
+            "Foreign body in product",
+            "Catches contamination before it ships"
+          ],
+          [
+            "Sorting by grade",
+            "Separates product automatically by quality grade"
+          ],
+          [
+            "Line clear between batches",
+            "Confirms nothing is left before the next run"
+          ],
+          [
+            "Allergen changeover cleared",
+            "Verifies a clean switch between allergen profiles"
+          ],
+          [
+            "Visual batch record",
+            "Keeps a picture-based record of every batch"
+          ],
+          [
+            "Awkward posture",
+            "Flags movements that strain the body over time"
+          ],
+          [
+            "Lifting and carrying",
+            "Watches technique on manual handling"
+          ],
+          [
+            "Physical load across the shift",
+            "Tracks cumulative strain, not just single moments"
+          ],
+          [
+            "Reach into a running machine",
+            "Flags a hand entering a danger zone"
+          ],
+          [
+            "Hands-free reporting by voice",
+            "Lets a worker report an issue without stopping"
+          ],
+          [
+            "Shift handover captured",
+            "Records what happened for the next shift"
+          ]
+        ]
+      },
+      "storage": {
+        "name": "Warehouse",
+        "items": [
+          [
+            "Stock on the rack",
+            "Shows what's actually on the shelf, not just on paper"
+          ],
+          [
+            "Free slots",
+            "Finds available storage space automatically"
+          ],
+          [
+            "Correct item picked",
+            "Confirms the right item for the order"
+          ],
+          [
+            "Stored in the wrong place",
+            "Flags stock that ended up somewhere it shouldn't"
+          ],
+          [
+            "Older batch first",
+            "Makes sure FIFO actually happens"
+          ],
+          [
+            "Temperature zone observed",
+            "Confirms items sit in the right climate zone"
+          ],
+          [
+            "Forklift and person too close",
+            "Warns before the two get dangerously close"
+          ]
+        ]
+      },
+      "cleaning": {
+        "name": "Maintenance",
+        "items": [
+          [
+            "Thermal on motor and bearing",
+            "Spots overheating before it becomes a failure"
+          ],
+          [
+            "Belt and roller condition",
+            "Watches wear before it causes downtime"
+          ],
+          [
+            "Unusual vibration",
+            "Flags a machine starting to behave differently"
+          ],
+          [
+            "Oil and coolant leak",
+            "Catches leaks early, before they spread"
+          ],
+          [
+            "Tool and die wear",
+            "Tracks wear so tools get replaced on time"
+          ],
+          [
+            "Jam and blockage on the line",
+            "Flags a stoppage the moment it happens"
+          ],
+          [
+            "Machine running or idle",
+            "Shows real utilisation, not assumed utilisation"
+          ],
+          [
+            "Cleaning actually done",
+            "Confirms the area was really covered, not just logged"
+          ],
+          [
+            "Cleaning within the window",
+            "Checks cleaning happened in the required time slot"
+          ],
+          [
+            "Maintenance logged by voice",
+            "Lets technicians log work without stopping to type"
+          ],
+          [
+            "Remote-assisted repair via smart glasses",
+            "Brings in an expert's eyes without the travel"
+          ],
+          [
+            "Past faults and how they were fixed",
+            "A searchable history instead of institutional memory"
+          ],
+          [
+            "Questions to the machine manual",
+            "Get an answer from the manual in seconds"
+          ]
+        ]
+      },
+      "loading": {
+        "name": "Dock",
+        "items": [
+          [
+            "Delivery note against order",
+            "Matches paperwork to what's actually on the truck"
+          ],
+          [
+            "Visible transport damage",
+            "Spotted at the dock, not after it's stored"
+          ],
+          [
+            "Cartons and pallets counted",
+            "Counts automatically as goods move through"
+          ],
+          [
+            "Damage recorded with image",
+            "A photo on file the moment damage is spotted"
+          ],
+          [
+            "Load against order",
+            "Confirms what's loaded matches what was ordered"
+          ],
+          [
+            "Ramp busy or free",
+            "Shows dock status at a glance"
+          ],
+          [
+            "Load securement checked",
+            "Confirms the load is safely secured before departure"
+          ]
+        ]
+      },
+      "security": {
+        "name": "Whole Site",
+        "items": [
+          [
+            "Unauthorised access to areas",
+            "Flags someone where they shouldn't be"
+          ],
+          [
+            "Early smoke and fire",
+            "Catches it early enough to act"
+          ],
+          [
+            "Camera blocked or moved",
+            "Notices when a camera stops seeing properly"
+          ],
+          [
+            "Evidence for audits",
+            "A record ready to show, whenever it's needed"
+          ]
+        ]
+      }
+    }
   }
 }

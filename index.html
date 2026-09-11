@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://www.tftus.com/de/computer-vision">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="https://www.tftus.de/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGFG6NW93D"></script>
@@ -280,386 +280,11 @@
   <section class="solution" id="solution">
     <div class="wrap">
 
-<style>
-/* ============================================================
-   FACILITY MAP
-   ============================================================ */
-.map-wrap { padding: 1rem 0 0; }
-
-.legend-bar { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
-.leg        { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--mid); }
-.leg-dot    { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
-.d-common   { background: #1e8db8; }
-.d-industry { background: #231f20; }
-.d-support  { background: #5c4ee5; }
-.d-erp      { background: #e08a00; }
-
-.hint {
-  font-size: 12px; color: var(--mid); text-align: center;
-  padding: 14px 0; border: 0.5px dashed var(--border);
-  border-radius: 10px; margin-top: 12px;
-}
-
-/* --- Map grid --- */
-.fmap        { border: 1.5px solid var(--border); border-radius: 14px; padding: 18px; background: var(--white); }
-.fmap-row    { display: flex; gap: 10px; }
-.fmap-row--bottom { align-items: stretch; }
-@media (max-width: 800px) { .fmap-row--bottom { flex-direction: column; } }
-
-/* --- Mobile map: 2-column tile grid --- */
-@media (max-width: 640px) {
-  .fmap { padding: 12px; }
-
-  /* Common zones row → 2-column grid */
-  .fmap-row--top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .fmap-row--top .fzone--common { width: auto; }
-
-  /* Zone tile sizing on mobile */
-  .fzone { padding: 16px 12px 14px; }
-  .fzone-title { font-size: 12px; margin-bottom: 0; }
-  .fzone-title em { font-size: 22px; margin-bottom: 8px; }
-
-  /* Side zones (warehouse + cleaning): row on mobile */
-  .fmap-side { flex-direction: row; }
-  .fmap-side .fzone { flex: 1; min-height: 72px; }
-
-  /* Production sub-grid: 2 columns already, just tighten */
-  .fprod-grid { gap: 8px; }
-  .fprod-item { padding: 10px 8px; font-size: 11px; min-height: 48px; }
-
-  /* Office zone: stack vertically */
-  .fzone--office { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .fzone--office .fzone-office-cta { align-self: flex-start; }
-
-  /* Tap affordance: small "Explore →" hint + press feedback */
-  .fzone::after {
-    content: "Erkunden →";
-    display: block;
-    font-size: 10px;
-    font-family: var(--fh);
-    font-weight: 600;
-    opacity: .55;
-    margin-top: 8px;
-    text-align: center;
-  }
-  .fzone--common::after  { color: var(--blue-d); }
-  .fzone--support::after { color: #5c4ee5; }
-  .fzone--cleaning::after { color: var(--mid); }
-  .fzone--office::after { display: none; } /* has its own CTA button */
-  .fzone--production::after { display: none; } /* has its own sub-grid */
-
-  /* Touch press state */
-  .fzone:active {
-    transform: scale(.96) !important;
-    opacity: .82;
-    transition: transform .08s, opacity .08s;
-  }
-}
-
-/* --- Zone tiles --- */
-.fzone {
-  border-radius: 10px; padding: 14px 14px 12px;
-  cursor: pointer; transition: transform .15s, box-shadow .15s; min-width: 0;
-}
-.fzone:hover          { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(35,31,32,.1); }
-.fzone--common        { background: var(--blue-l); border: 1px solid var(--blue); width: 100%; }
-.fzone--cleaning      { background: var(--light);  border: 1px solid #9a9596; }
-.fzone--support       { background: #eeecfd;        border: 1px solid #5c4ee5; }
-
-.fzone-title {
-  font-family: var(--fh); font-size: 13px; font-weight: 700;
-  color: var(--blue-d); margin-bottom: 8px; line-height: 1.3;
-  word-break: break-word; display: flex; justify-content: center;
-  align-items: center; flex-direction: column;
-}
-.fzone-title em              { font-size: 25px; margin-bottom: 10px; }
-.fzone--cleaning .fzone-title { color: var(--mid); }
-.fzone--support  .fzone-title { color: #5c4ee5; }
-
-/* --- Production zone --- */
-.fmap-divider {
-  display: flex; align-items: center; gap: 10px; margin: 16px 0 12px;
-  font-family: var(--fh); font-size: 10.5px; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase; color: var(--mid);
-}
-.fmap-divider::before,
-.fmap-divider::after  { content: ""; flex: 1; border-top: 1px dashed var(--border); }
-
-.fzone--production { background: var(--blue-ll); border: 1px solid var(--blue2); border-radius: 10px; padding: 18px 18px 16px; }
-.fzone--production .fzone-title { color: var(--black); font-size: 15px; margin-bottom: 4px; }
-.fzone-sub { font-size: 12px; color: var(--mid); margin-bottom: 14px; text-align: center; }
-
-.fprod-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
-@media (max-width: 700px) { .fprod-grid { grid-template-columns: repeat(2,1fr); } }
-.fprod-item {
-  background: rgba(35,31,32,.06); border: 1px solid rgba(35,31,32,.16);
-  border-radius: 8px; padding: 14px 12px;
-  display: flex; flex-direction: column; align-items: flex-start; min-height: 56px;
-}
-.fprod-item-title { font-family: var(--fh); font-size: 13px; font-weight: 700; color: var(--blue-d); margin-bottom: 6px; line-height: 1.3; }
-.fprod-item-tags { font-size: 11px; color: var(--mid); line-height: 1.55; }
-
-.fmap-side       { display: flex; flex-direction: column; gap: 10px; min-width: 175px; flex-shrink: 0; }
-.fmap-side .fzone { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
-
-/* --- ERP strip --- */
-.fmap-integration { margin-top: 12px; background: #0B1F3A; border-radius: 10px; padding: 12px 18px; display: flex; flex-direction: column; gap: 8px; }
-.fint-main        { font-family: var(--fh); font-size: 11.5px; font-weight: 600; color: #8BBBDD; letter-spacing: .01em; }
-.fint-pills       { display: flex; gap: 6px; flex-wrap: wrap; }
-.fint-pill        { font-size: 10.5px; color: #fff; background: rgba(255,255,255,.12); border: 0.5px solid rgba(255,255,255,.2); padding: 3px 10px; border-radius: 20px; }
-.fint-compliance  { font-size: 9.5px; color: rgba(139,187,221,.6); margin-top: 2px; }
-
-/* --- Office / Agentic zone --- */
-.fzone--office {
-  margin-top: 12px; width: 100%; cursor: pointer;
-  background: #E0F5F7; border: 1.5px solid #0C8599; border-radius: 10px;
-  padding: 16px 20px; display: flex; align-items: center;
-  justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  transition: transform .15s, box-shadow .15s;
-}
-.fzone--office:hover          { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(12,133,153,.15); }
-.fzone--office .fzone-office-text { flex: 1 1 320px; min-width: 0; }
-.fzone--office .fzone-title   { font-family: var(--fh); font-size: 15px; font-weight: 700; color: #0C8599; margin-bottom: 4px; display: block; text-align: left; }
-.fzone--office .fzone-sub     { font-size: 12px; color: #0A6B7A; text-align: left; margin-bottom: 0; }
-.fzone--office .fzone-office-cta {
-  flex: 0 0 auto; font-family: var(--fh); font-size: 12.5px; font-weight: 700;
-  color: #fff; background: #0C8599; padding: 9px 16px; border-radius: 7px; white-space: nowrap;
-}
-
-/* ============================================================
-   ZONE MODAL
-   ============================================================ */
-@keyframes modal-in {
-  from { opacity: 0; transform: scale(.96) translateY(10px); }
-  to   { opacity: 1; transform: scale(1)   translateY(0); }
-}
-
-.zone-modal-overlay {
-  display: none; position: fixed; inset: 0; z-index: 300;
-  background: rgba(35,31,32,.55); backdrop-filter: blur(5px);
-  align-items: center; justify-content: center; padding: 40px 20px;
-}
-.zone-modal-overlay.active { display: flex; }
-.zone-modal-overlay.active .zone-modal-dialog { animation: modal-in .22s cubic-bezier(.4,0,.2,1) both; }
-
-.zone-modal-dialog {
-  background: var(--white); border-radius: 18px;
-  width: 100%; max-width: 860px; max-height: calc(100vh - 80px);
-  overflow-y: auto; box-shadow: 0 32px 72px rgba(35,31,32,.24);
-}
-
-@media (max-width: 600px) {
-  @keyframes sheet-in {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .zone-modal-overlay { padding: 0; align-items: flex-end; }
-  .zone-modal-overlay.active .zone-modal-dialog { animation: sheet-in .24s cubic-bezier(.4,0,.2,1) both; }
-  .zone-modal-dialog { border-radius: 18px 18px 0 0; max-height: 90vh; }
-}
-
-/* ============================================================
-   MODAL PANEL
-   ============================================================ */
-.panel        { display: none; }
-.panel.active { display: block; }
-
-.panel-header {
-  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
-  padding: 22px 28px 18px; border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; background: var(--white); z-index: 5;
-  border-radius: 18px 18px 0 0;
-}
-@media (max-width: 600px) { .panel-header { padding: 18px 18px 14px; border-radius: 18px 18px 0 0; } }
-
-.panel-title { font-size: 16px; font-weight: 700; color: var(--black); font-family: var(--fh); }
-.panel-sub   { font-size: 12.5px; color: var(--mid); margin-top: 3px; }
-
-.panel-badge {
-  font-size: 11px; font-weight: 600; padding: 4px 10px;
-  border-radius: 20px; white-space: nowrap; flex-shrink: 0; font-family: var(--fh);
-}
-.badge-common   { background: #eaf8fd; color: #1e8db8; }
-.badge-industry { background: #fff8f0; color: #b45309; }
-.badge-support  { background: #eeecfd; color: #5c4ee5; }
-.badge-office   { background: #E0F5F7; color: #0C8599; }
-
-.close-btn {
-  width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center;
-  font-size: 17px; cursor: pointer; color: var(--mid);
-  border: 1px solid var(--border); background: var(--light);
-  border-radius: 8px; padding: 0; flex-shrink: 0;
-  transition: background .15s, color .15s;
-}
-.close-btn:hover { background: var(--border); color: var(--black); }
-
-/* ============================================================
-   INDUSTRY TABS
-   ============================================================ */
-.map-ind-tabs { display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px 0; }
-@media (max-width: 600px) { .map-ind-tabs { padding: 14px 18px 0; } }
-
-.map-ind-tab {
-  font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px;
-  border: 1.5px solid var(--border); cursor: pointer;
-  background: var(--white); color: var(--mid); font-family: var(--fh);
-  transition: border-color .15s, color .15s, background .15s;
-}
-.map-ind-tab:hover { border-color: var(--blue); color: var(--blue-d); }
-.map-ind-tab.sel   { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-.map-ind-uc        { display: none; }
-.map-ind-uc.active { display: block; }
-/* non-sliderified tabs: give their grid the same H-padding as the nav-area */
-.map-ind-uc > .map-uc-grid { padding: 16px 28px 28px; }
-@media (max-width: 600px) { .map-ind-uc > .map-uc-grid { padding: 14px 18px 24px; } }
-
-/* ============================================================
-   USE-CASE CARDS
-   ============================================================ */
-.map-section-label {
-  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .07em; color: var(--mid); margin: 18px 0 8px; font-family: var(--fh);
-}
-
-.map-uc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-@media (max-width: 600px) { .map-uc-grid { grid-template-columns: 1fr; } }
-
-/* tabless panels: grid is a direct child of .panel */
-.panel > .map-uc-grid { padding: 16px 28px 0; }
-.panel > *:last-child { padding-bottom: 28px; }
-@media (max-width: 600px) {
-  .panel > .map-uc-grid { padding: 14px 18px 0; }
-  .panel > *:last-child { padding-bottom: 20px; }
-}
-
-.uc-item {
-  background: var(--light); border-radius: 9px; padding: 11px 14px;
-  border: 1px solid var(--border); transition: border-color .15s, box-shadow .15s;
-}
-.uc-item:hover        { border-color: var(--blue); box-shadow: 0 2px 10px rgba(30,141,184,.1); }
-.uc-item-label        { font-size: 12px; font-weight: 700; color: var(--black); margin-bottom: 4px; font-family: var(--fh); }
-.uc-item-desc         { font-size: 11.5px; color: var(--mid); line-height: 1.55; }
-
-/* ============================================================
-   SECTION SLIDER (one section at a time, inside industry tabs)
-   ============================================================ */
-.uc-slides-wrap  { overflow: hidden; flex: 1; }
-.uc-slides-track {
-  display: flex; align-items: flex-start;
-  transition: transform .3s cubic-bezier(.4,0,.2,1);
-}
-.uc-slide { flex: 0 0 100%; min-width: 100%; }
-
-/* Section label sits above the nav-area row */
-.uc-slide-label {
-  padding: 12px 28px 12px; border-bottom: 1px solid var(--border);
-  font-size: 11.5px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .06em; color: var(--black); font-family: var(--fh); text-align: center;
-}
-.uc-slide-label:empty { display: none; }
-@media (max-width: 600px) { .uc-slide-label { padding: 10px 18px 10px; } }
-
-/* Nav area: [←]  [overflow-hidden track]  [→] */
-.uc-slide-nav-area {
-  display: flex; align-items: center; gap: 10px; padding: 16px 28px 0;
-}
-@media (max-width: 600px) { .uc-slide-nav-area { gap: 6px; padding: 12px 12px 0; } }
-
-.uc-slide-btn {
-  flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
-  border: 1.5px solid var(--border); background: var(--white);
-  color: var(--mid); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px; font-weight: 300; padding: 0; line-height: 1;
-  transition: all .15s;
-}
-.uc-slide-btn:hover:not(:disabled) { background: var(--blue); color: #fff; border-color: var(--blue); }
-.uc-slide-btn:disabled             { opacity: .25; cursor: default; }
-@media (max-width: 600px) { .uc-slide-btn { width: 28px; height: 28px; font-size: 18px; } }
-
-.uc-slide-dots {
-  display: flex; gap: 7px; align-items: center; justify-content: center;
-  padding: 12px 0 20px;
-}
-.uc-slide-dot {
-  width: 7px; height: 7px; border-radius: 50%; padding: 0; border: none; cursor: pointer;
-  background: var(--border); transition: background .18s, transform .18s;
-}
-.uc-slide-dot.active { background: var(--blue); transform: scale(1.3); }
-
-/* hide the section label element inside each slide — shown in .uc-slide-label above instead */
-.uc-slide .map-section-label { display: none; }
-
-/* ── Zone tag chips ── */
-.fzone-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
-.fzone-tag  { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 500; font-family: var(--fh); }
-.fzone--common   .fzone-tag { background: rgba(59,116,240,.12); color: var(--blue-d); }
-.fzone--support  .fzone-tag { background: rgba(92,78,229,.12);  color: #5c4ee5; }
-.fzone--cleaning .fzone-tag { background: rgba(90,90,90,.10);   color: var(--mid); }
-@media (max-width: 640px) { .fzone-tags { display: none; } }
-
-/* ── Flow connector band ── */
-.fmap-connector { background: linear-gradient(135deg,#0C3B6E 0%,#0a4d8c 50%,#0C3B6E 100%); border-radius: 10px; padding: 10px 18px; display: flex; align-items: center; gap: 14px; margin-top: 12px; }
-.fcon-arrows { display: flex; flex-direction: column; align-items: center; gap: 1px; color: rgba(255,255,255,.5); font-size: 15px; line-height: 1; flex-shrink: 0; }
-.fcon-body  { flex: 1; }
-.fcon-main  { font-size: 11px; font-weight: 600; color: #fff; letter-spacing: .01em; margin-bottom: 2px; font-family: var(--fh); }
-.fcon-sub   { font-size: 10px; color: rgba(255,255,255,.55); margin-bottom: 5px; }
-.fcon-chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.fcon-chip  { font-size: 10px; padding: 3px 10px; border-radius: 20px; background: rgba(255,255,255,.13); border: 0.5px solid rgba(255,255,255,.2); color: rgba(255,255,255,.85); }
-
-/* ── Office section header ── */
-.fmap-section-hdr { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 10px; }
-.fmsh-left { display: flex; align-items: center; gap: 7px; font-family: var(--fh); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #0C8599; }
-.fmsh-dot { width: 10px; height: 10px; border-radius: 2px; background: #0C8599; flex-shrink: 0; }
-.fmsh-badge { font-size: 10.5px; padding: 2px 10px; border-radius: 20px; background: #E0F5F7; color: #0C8599; font-weight: 600; font-family: var(--fh); }
-
-/* ── Office 3-card row ── */
-.fmap-row--office { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-@media (max-width: 800px) { .fmap-row--office { grid-template-columns: 1fr; gap: 8px; } }
-
-/* ── Office sub-card ── */
-.fzone--office-card { background: #E0F5F7; border: 1.5px solid #0C8599; border-radius: 10px; padding: 14px 16px 12px; cursor: pointer; transition: transform .15s, box-shadow .15s; }
-.fzone--office-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(12,133,153,.15); }
-.fzone--office-card .fzone-title { font-family: var(--fh); font-size: 13px; font-weight: 700; color: #0C8599; margin-bottom: 8px; display: block; text-align: left; flex-direction: row; justify-content: flex-start; }
-.fzone--office-card .fzone-tag { background: rgba(12,133,153,.12); color: #0A6B7A; }
-.fzone-cta { margin-top: 10px; font-size: 11px; font-weight: 600; color: #0C8599; opacity: .7; font-family: var(--fh); }
-
-/* ── Factory floor section header ── */
-.fmap-floor-hdr { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 10px; }
-.ffh-left { display: flex; align-items: center; gap: 7px; font-family: var(--fh); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #1e8db8; }
-.ffh-dot { width: 10px; height: 10px; border-radius: 2px; background: #1e8db8; flex-shrink: 0; }
-.ffh-right { font-size: 10.5px; color: var(--mid); font-weight: 500; font-family: var(--fh); }
-@media (max-width: 640px) { .ffh-right { display: none; } }
-
-  @media (max-width:860px){
-    .wrap{padding:28px 18px 40px;}
-    .board{grid-template-columns:1fr;}
-    .plan{padding:14px;}
-    .panel{padding:22px 20px 24px;}
-    .lede{max-width:none;}
-
-    .panel{order:-1;}
-    .plan{order:1;}
-  }
-
-</style>
-
-<div class="wrap">
-
   <div class="top">
     <div>
       <p class="eyebrow" data-t="eyebrow">Sichtfeld-Karte</p>
       <h1 data-t="title">Ein Werk.<br>Bereich für Bereich.</h1>
       <p class="lede" data-t="lede">Wählen Sie einen Bereich aus, um zu sehen, worauf Kameras dort achten können.</p>
-    </div>
-    <div class="lang" role="group" aria-label="Sprache / Language">
-      <button type="button" id="btnDe" class="on">DE</button>
-      <button type="button" id="btnEn">EN</button>
     </div>
   </div>
 
@@ -761,601 +386,8 @@
     <span><i class="swatch grey"></i><em style="font-style:normal" data-t="lg2">Kameraposition</em></span>
   </div>
 
-</div>
-
-<script>
-const T = {
-  de:{
-    eyebrow:"Sichtfeld-Karte",
-    title:"Ein Werk.<br>Bereich für Bereich.",
-    lede:"Wählen Sie einen Bereich aus, um zu sehen, worauf Kameras dort achten können.",
-    hint:"Wählen Sie links einen Bereich aus.",
-    hintMobile:"Wählen Sie unten einen Bereich aus.",
-    foot:"Nicht jeder Bereich ist für jedes Werk relevant. Wir schauen uns gemeinsam an, was bei Ihnen sinnvoll ist.",
-    lg1:"Ausgewählter Bereich",
-    lg2:"Kameraposition",
-    kicker:"Worauf hier geachtet werden kann"
-  },
-  en:{
-    eyebrow:"Vision map",
-    title:"One plant.<br>Area by area.",
-    lede:"Select an area to see what cameras can watch for there.",
-    hint:"Select an area on the left.",
-    hintMobile:"Select an area below.",
-    foot:"Not every area is relevant for every plant. We look at what makes sense for yours together.",
-    lg1:"Selected area",
-    lg2:"Camera position",
-    kicker:"What can be watched for here"
-  }
-};
-
-const Z = {
-  gate:{
-    de:{name:"Werkstor & Hof", items:[
-      ["Kennzeichen und Fahrzeugtyp","Erkennt, wer ankommt, bevor der Lkw hält"],
-      ["Ankunft im gebuchten Zeitfenster","Prüft, ob der Lkw wie angekündigt kommt"],
-      ["Container- und Anhänger-ID","Liest die Nummer automatisch aus"],
-      ["Plomben- und Unversehrtheitsprüfung","Bestätigt, dass die Ladung unversehrt ankam"],
-      ["Gefahrgut-Kennzeichnung","Erkennt Gefahrgut-Symbole direkt bei der Ankunft"],
-      ["Kühlkette bei Ankunft","Prüft Kühl-Lkw, bevor das Entladen beginnt"]
-    ]},
-    en:{name:"Gate & Yard", items:[
-      ["Plate and vehicle type","Identifies who's arriving before the truck stops"],
-      ["Arrival within booked slot","Checks the truck came when it said it would"],
-      ["Container and trailer ID","Reads the container or trailer number automatically"],
-      ["Seal and integrity check","Confirms the load arrived unbroken"],
-      ["Dangerous-goods marking","Flags hazard labels the moment a truck arrives"],
-      ["Cold chain on arrival","Checks refrigerated trucks before unloading starts"]
-    ]}
-  },
-  office:{
-    de:{name:"Verwaltung", items:[
-      ["Dokumenttyp erkannt","Sortiert eingehende Unterlagen automatisch"],
-      ["Felder gelesen und geprüft","Erfasst die wichtigen Daten und prüft sie"],
-      ["Rechnung, Bestellung und Wareneingang abgeglichen","Bringt alle drei Belege automatisch zusammen"],
-      ["Doppelzahlung verhindert","Verhindert, dass eine Rechnung zweimal bezahlt wird"],
-      ["Manipulierte Dokumente erkannt","Erkennt nachträglich veränderte Unterlagen"],
-      ["Übergabe an das ERP","Übermittelt geprüfte Daten direkt an Ihr System"],
-      ["Verfahren mit Vorschriften abgeglichen","Vergleicht Ihre Abläufe mit aktuellen Vorgaben"],
-      ["Lieferantenstruktur und Eigentümerschaft","Zeigt, wem Ihre Lieferanten wirklich gehören"],
-      ["Abhängigkeiten in der Lieferkette","Zeigt, wo ein einzelner Ausfall gefährlich wird"],
-      ["Forderungsmanagement bei offenen Posten","Verfolgt ausstehende Beträge automatisch"],
-      ["Lohnabrechnung läuft","Hält die Abrechnung ohne manuelles Nachfassen am Laufen"],
-      ["Tägliches Management-Briefing","Jeden Morgen eine kurze Zusammenfassung"],
-      ["Dokumente auf Deutsch und Englisch","Durchsuchbar in der Sprache, in der sie ankommen"],
-      ["Wissen ausscheidender Fachkräfte sichern","Erhält Know-how im Unternehmen, wenn jemand geht"],
-      ["Neue Mitarbeitende einarbeiten","Beantwortet Fragen neuer Mitarbeitender ab Tag eins"]
-    ]},
-    en:{name:"Office", items:[
-      ["Document type recognised","Sorts incoming paperwork automatically"],
-      ["Fields read and validated","Pulls out the key data and checks it"],
-      ["Invoice, order and receipt matched","Brings the three documents together automatically"],
-      ["Duplicate payment prevented","Stops the same invoice being paid twice"],
-      ["Manipulated documents detected","Flags documents that have been altered"],
-      ["Handover to the ERP","Sends validated data straight into your system"],
-      ["Procedures checked against regulation","Compares your SOPs to current requirements"],
-      ["Supplier structure and ownership","Maps who actually owns your suppliers"],
-      ["Dependencies in the supply chain","Shows where a single point of failure sits"],
-      ["Revenue recovery on open items","Chases outstanding amounts automatically"],
-      ["Payroll in progress","Keeps payroll moving without manual chasing"],
-      ["Daily brief for management","A short summary of what happened, every morning"],
-      ["Documents in German and English","Searchable in whichever language they arrive in"],
-      ["Capturing departing specialists' knowledge","Keeps know-how in the business after someone leaves"],
-      ["Onboarding new staff","Answers a new hire's questions from day one"]
-    ]}
-  },
-  changing:{
-    de:{name:"Umkleide & Sozialräume", items:[
-      ["Schutzausrüstung vollständig","Bestätigt vollständige Ausrüstung vor dem Betreten"],
-      ["Reihenfolge beim Ankleiden","Prüft die vorgeschriebene Ankleide-Reihenfolge"],
-      ["Hygienekontrolle","Haarnetz, Hände und Schmuck vor dem Betreten geprüft"],
-      ["Belegung des Raums","Zeigt, wie viele Personen sich gerade dort aufhalten"],
-      ["Sicherheitseinweisung in der Muttersprache","Wird beim ersten Mal verstanden, nicht nur gehört"]
-    ]},
-    en:{name:"Changing & Welfare", items:[
-      ["Protective equipment complete","Confirms all required gear is worn before entry"],
-      ["Order of gowning","Checks gear goes on in the required sequence"],
-      ["Hygiene checks","Hairnets, hands, and jewellery, checked before entry"],
-      ["Room occupancy","Shows how many people are in the room right now"],
-      ["Safety briefing in the worker's own language","Understood the first time, not just heard"]
-    ]}
-  },
-  production:{
-    de:{name:"Produktionshalle", items:[
-      ["Oberflächenfehler","Kratzer, Dellen und Flecken direkt an der Linie erkannt"],
-      ["Schweiß- und Fügefehler","Prüft Verbindungen, bevor das Teil weiterläuft"],
-      ["Maßhaltigkeit","Misst Teile automatisch gegen die Toleranz"],
-      ["Teile vollständig und richtig platziert","Bestätigt, dass nichts fehlt oder falsch sitzt"],
-      ["Variante gegen Auftrag","Prüft, ob die richtige Version gebaut wird"],
-      ["Zählung an der laufenden Linie","Zählt zuverlässig bei voller Liniengeschwindigkeit"],
-      ["Füllstand und Gewicht","Bestätigt die korrekte Befüllung jeder Einheit"],
-      ["Etiketten, Datum, Chargencode","Liest und prüft den Aufdruck"],
-      ["Verschluss- und Siegelprüfung","Bestätigt die korrekte Versiegelung jeder Einheit"],
-      ["Fremdkörper im Produkt","Erkennt Verunreinigungen vor dem Versand"],
-      ["Sortierung nach Güteklasse","Trennt Produkte automatisch nach Qualität"],
-      ["Linie frei zwischen Chargen","Bestätigt, dass nichts zurückbleibt, bevor die nächste Charge startet"],
-      ["Allergenwechsel freigegeben","Bestätigt den sauberen Wechsel zwischen Allergenprofilen"],
-      ["Visuelle Chargendokumentation","Führt eine bildbasierte Dokumentation jeder Charge"],
-      ["Ungünstige Körperhaltung","Erkennt Bewegungen, die den Körper langfristig belasten"],
-      ["Heben und Tragen","Beobachtet die Technik beim manuellen Handling"],
-      ["Körperliche Belastung über die Schicht","Erfasst die Gesamtbelastung, nicht nur Einzelmomente"],
-      ["Eingriff in eine laufende Maschine","Erkennt, wenn eine Hand in den Gefahrenbereich gerät"],
-      ["Freihändige Meldung per Sprache","Ermöglicht Meldungen, ohne die Arbeit zu unterbrechen"],
-      ["Schichtübergabe dokumentiert","Hält fest, was für die nächste Schicht wichtig ist"]
-    ]},
-    en:{name:"Production Hall", items:[
-      ["Surface faults","Scratches, dents and marks, caught on the line"],
-      ["Weld and joining faults","Checks joins are sound before the part moves on"],
-      ["Dimensional accuracy","Measures parts against tolerance automatically"],
-      ["Parts complete and correctly placed","Confirms nothing is missing or misplaced"],
-      ["Variant against order","Checks the right version is being built"],
-      ["Count on a moving line","Counts items accurately at full line speed"],
-      ["Fill level and weight","Confirms every unit is filled correctly"],
-      ["Labels, date, batch code","Reads and checks print is correct"],
-      ["Seal and closure integrity","Confirms every unit is properly sealed"],
-      ["Foreign body in product","Catches contamination before it ships"],
-      ["Sorting by grade","Separates product automatically by quality grade"],
-      ["Line clear between batches","Confirms nothing is left before the next run"],
-      ["Allergen changeover cleared","Verifies a clean switch between allergen profiles"],
-      ["Visual batch record","Keeps a picture-based record of every batch"],
-      ["Awkward posture","Flags movements that strain the body over time"],
-      ["Lifting and carrying","Watches technique on manual handling"],
-      ["Physical load across the shift","Tracks cumulative strain, not just single moments"],
-      ["Reach into a running machine","Flags a hand entering a danger zone"],
-      ["Hands-free reporting by voice","Lets a worker report an issue without stopping"],
-      ["Shift handover captured","Records what happened for the next shift"]
-    ]}
-  },
-  storage:{
-    de:{name:"Lager", items:[
-      ["Bestand im Regal","Zeigt, was tatsächlich im Regal liegt, nicht nur auf dem Papier"],
-      ["Freie Stellplätze","Findet automatisch verfügbaren Lagerplatz"],
-      ["Richtig kommissioniert","Bestätigt den richtigen Artikel für den Auftrag"],
-      ["Falsch eingelagert","Erkennt Bestand, der am falschen Ort liegt"],
-      ["Ältere Charge zuerst","Stellt sicher, dass FIFO tatsächlich eingehalten wird"],
-      ["Temperaturzone eingehalten","Bestätigt die richtige Klimazone für jeden Artikel"],
-      ["Stapler und Person zu nah","Warnt, bevor es gefährlich eng wird"]
-    ]},
-    en:{name:"Warehouse", items:[
-      ["Stock on the rack","Shows what's actually on the shelf, not just on paper"],
-      ["Free slots","Finds available storage space automatically"],
-      ["Correct item picked","Confirms the right item for the order"],
-      ["Stored in the wrong place","Flags stock that ended up somewhere it shouldn't"],
-      ["Older batch first","Makes sure FIFO actually happens"],
-      ["Temperature zone observed","Confirms items sit in the right climate zone"],
-      ["Forklift and person too close","Warns before the two get dangerously close"]
-    ]}
-  },
-  cleaning:{
-    de:{name:"Instandhaltung", items:[
-      ["Thermografie an Motor und Lager","Erkennt Überhitzung, bevor ein Ausfall entsteht"],
-      ["Zustand von Riemen und Rollen","Erkennt Verschleiß, bevor er zum Stillstand führt"],
-      ["Ungewöhnliche Vibration","Erkennt, wenn eine Maschine sich anders verhält"],
-      ["Öl- und Kühlmittelleckage","Erkennt Lecks frühzeitig, bevor sie sich ausweiten"],
-      ["Werkzeug- und Formverschleiß","Erfasst Verschleiß für rechtzeitigen Austausch"],
-      ["Stau oder Blockade an der Linie","Meldet einen Stillstand in dem Moment, in dem er passiert"],
-      ["Maschine läuft oder steht","Zeigt die tatsächliche Auslastung, nicht die vermutete"],
-      ["Reinigung tatsächlich durchgeführt","Bestätigt, dass wirklich gereinigt wurde, nicht nur dokumentiert"],
-      ["Reinigung im vorgesehenen Zeitfenster","Prüft, ob rechtzeitig gereinigt wurde"],
-      ["Wartung per Sprache dokumentiert","Technikerinnen und Techniker protokollieren, ohne zu tippen"],
-      ["Ferngestützte Reparatur per Datenbrille","Holt Expertenwissen dazu, ohne Anfahrt"],
-      ["Frühere Störungen und ihre Behebung","Eine durchsuchbare Historie statt reinem Erfahrungswissen"],
-      ["Fragen an das Maschinenhandbuch","Antworten aus dem Handbuch in Sekunden"]
-    ]},
-    en:{name:"Maintenance", items:[
-      ["Thermal on motor and bearing","Spots overheating before it becomes a failure"],
-      ["Belt and roller condition","Watches wear before it causes downtime"],
-      ["Unusual vibration","Flags a machine starting to behave differently"],
-      ["Oil and coolant leak","Catches leaks early, before they spread"],
-      ["Tool and die wear","Tracks wear so tools get replaced on time"],
-      ["Jam and blockage on the line","Flags a stoppage the moment it happens"],
-      ["Machine running or idle","Shows real utilisation, not assumed utilisation"],
-      ["Cleaning actually done","Confirms the area was really covered, not just logged"],
-      ["Cleaning within the window","Checks cleaning happened in the required time slot"],
-      ["Maintenance logged by voice","Lets technicians log work without stopping to type"],
-      ["Remote-assisted repair via smart glasses","Brings in an expert's eyes without the travel"],
-      ["Past faults and how they were fixed","A searchable history instead of institutional memory"],
-      ["Questions to the machine manual","Get an answer from the manual in seconds"]
-    ]}
-  },
-  loading:{
-    de:{name:"Rampe", items:[
-      ["Lieferschein gegen Auftrag","Gleicht Papiere mit der tatsächlichen Ladung ab"],
-      ["Sichtbare Transportschäden","Erkannt an der Rampe, nicht erst im Lager"],
-      ["Kartons und Paletten gezählt","Zählt automatisch beim Warendurchlauf"],
-      ["Schaden mit Bild dokumentiert","Ein Foto in der Akte, sobald ein Schaden auffällt"],
-      ["Ladung gegen Auftrag","Bestätigt, dass die Ladung dem Auftrag entspricht"],
-      ["Rampe belegt oder frei","Zeigt den Rampenstatus auf einen Blick"],
-      ["Ladungssicherung geprüft","Bestätigt sichere Ladung vor der Abfahrt"]
-    ]},
-    en:{name:"Dock", items:[
-      ["Delivery note against order","Matches paperwork to what's actually on the truck"],
-      ["Visible transport damage","Spotted at the dock, not after it's stored"],
-      ["Cartons and pallets counted","Counts automatically as goods move through"],
-      ["Damage recorded with image","A photo on file the moment damage is spotted"],
-      ["Load against order","Confirms what's loaded matches what was ordered"],
-      ["Ramp busy or free","Shows dock status at a glance"],
-      ["Load securement checked","Confirms the load is safely secured before departure"]
-    ]}
-  },
-  security:{
-    de:{name:"Werksweit", items:[
-      ["Unbefugter Zutritt","Erkennt Personen dort, wo sie nicht sein sollten"],
-      ["Früherkennung von Rauch und Feuer","Erkennt es früh genug zum Handeln"],
-      ["Kamera verdeckt oder verstellt","Bemerkt, wenn eine Kamera nicht mehr richtig sieht"],
-      ["Nachweise für Audits","Ein Nachweis, der jederzeit vorgezeigt werden kann"]
-    ]},
-    en:{name:"Whole Site", items:[
-      ["Unauthorised access to areas","Flags someone where they shouldn't be"],
-      ["Early smoke and fire","Catches it early enough to act"],
-      ["Camera blocked or moved","Notices when a camera stops seeing properly"],
-      ["Evidence for audits","A record ready to show, whenever it's needed"]
-    ]}
-  }
-};
-
-let lang = "de";
-let current = null;
-
-const body = document.getElementById("panelBody");
-const zones = Array.from(document.querySelectorAll(".zone"));
-
-function paintStatic(){
-  document.querySelectorAll("[data-t]").forEach(el=>{
-    el.innerHTML = T[lang][el.dataset.t];
-  });
-  document.querySelectorAll("[data-z]").forEach(el=>{
-    el.textContent = Z[el.dataset.z][lang].name;
-  });
-  document.documentElement.lang = lang;
-}
-
-function paintPanel(){
-  if(!current){
-    const isMobile = window.matchMedia("(max-width:860px)").matches;
-    const hintText = isMobile ? T[lang].hintMobile : T[lang].hint;
-    body.innerHTML = '<p class="panel-hint">'+hintText+'</p>';
-    return;
-  }
-  const d = Z[current][lang];
-  const rows = d.items.map(([n,s])=>
-    '<li><span class="n">'+n+'</span><span class="s">'+s+'</span></li>'
-  ).join("");
-  body.innerHTML =
-    '<div class="fade"><h2>'+d.name+'</h2>'+
-    '<p class="kicker">'+T[lang].kicker+'</p>'+
-    '<ul class="items">'+rows+'</ul></div>';
-}
-
-function select(id){
-  current = id;
-  zones.forEach(z=>{
-    const on = z.dataset.zone === id;
-    z.classList.toggle("on", on);
-    z.setAttribute("aria-pressed", on ? "true" : "false");
-  });
-  paintPanel();
-}
-
-zones.forEach(z=>{
-  z.addEventListener("click", ()=>select(z.dataset.zone));
-  z.addEventListener("keydown", e=>{
-    if(e.key === "Enter" || e.key === " "){
-      e.preventDefault();
-      select(z.dataset.zone);
-    }
-  });
-});
-
-function setLang(l){
-  lang = l;
-  document.getElementById("btnDe").classList.toggle("on", l==="de");
-  document.getElementById("btnEn").classList.toggle("on", l==="en");
-  paintStatic();
-  paintPanel();
-}
-
-document.getElementById("btnDe").addEventListener("click", ()=>setLang("de"));
-document.getElementById("btnEn").addEventListener("click", ()=>setLang("en"));
-
-window.matchMedia("(max-width:860px)").addEventListener("change", ()=>{
-  if(!current) paintPanel();
-});
-
-paintStatic();
-paintPanel();
-</script>
-<style>
-  :root{
-    --cyan:#0EA5C4;
-    --cyan-deep:#0B7285;
-    --harbor:#0C3B54;
-    --ink:#1B262C;
-    --grey:#D7E6EA;
-    --paper:#FFFFFF;
-    --plan-bg:#F3FBFC;
-    --box-fill:#FFFFFF;
-    --box-fill-hover:#EAFBFD;
-    --box-fill-on:#D9F5FA;
-    --box-stroke:#BFE4EA;
-    --box-stroke-hover:#7FD4E6;
-    --label:#123B4A;
-    --label-hover:#0B7285;
-    --label-on:#075E73;
-    --lens-stroke:#5FB9CC;
-    --pupil-fill:#0EA5C4;
-  }
-
-  *{box-sizing:border-box;}
-
-  html,body{margin:0;padding:0;}
-
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"IBM Plex Sans",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  .wrap{
-    max-width:1200px;
-    margin:0 auto;
-    padding:40px 24px 48px;
-  }
-
-  /* ---------- header ---------- */
-  .top{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:24px;
-    flex-wrap:wrap;
-    margin-bottom:28px;
-  }
-
-  .eyebrow{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--cyan);
-    margin:0 0 10px;
-  }
-
-  h1{
-    font-family:"Archivo",sans-serif;
-    font-weight:700;
-    font-size:clamp(28px,4vw,44px);
-    line-height:1.02;
-    letter-spacing:-.02em;
-    margin:0 0 10px;
-    color:var(--harbor);
-  }
-
-  .lede{
-    margin:0;
-    font-size:15px;
-    line-height:1.5;
-    color:#55646E;
-    max-width:46ch;
-  }
-
-  .lang{
-    display:flex;
-    border:1px solid var(--grey);
-    flex:0 0 auto;
-  }
-
-  .lang button{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.12em;
-    padding:8px 14px;
-    background:none;
-    border:0;
-    color:#7A8791;
-    cursor:pointer;
-  }
-
-  .lang button.on{background:var(--harbor);color:#fff;}
-  .lang button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
-
-  /* ---------- layout ---------- */
-  .board{
-    display:grid;
-    grid-template-columns:1.55fr 1fr;
-    gap:0;
-    border:1px solid var(--grey);
-  }
-
-  .plan{
-    background:var(--plan-bg);
-    padding:20px;
-    min-width:0;
-    border-right:1px solid var(--grey);
-  }
-
-  .plan svg{display:block;width:100%;height:auto;}
-
-  /* ---------- zones ---------- */
-  .zone{cursor:pointer;}
-  .zone:focus{outline:none;}
-
-  .zone .box{
-    fill:var(--box-fill);
-    stroke:var(--box-stroke);
-    stroke-width:1.25;
-    transition:fill .18s ease,stroke .18s ease;
-  }
-
-  .zone .zlabel{
-    font-family:"Archivo",sans-serif;
-    font-weight:600;
-    font-size:13px;
-    fill:var(--label);
-    transition:fill .18s ease;
-    pointer-events:none;
-  }
-
-  .zone .lens{fill:none;stroke:var(--lens-stroke);stroke-width:1.25;transition:stroke .18s ease;}
-  .zone .pupil{fill:var(--pupil-fill);transition:fill .18s ease;}
-
-  .zone:hover .box,
-  .zone:focus-visible .box{stroke:var(--box-stroke-hover);fill:var(--box-fill-hover);}
-  .zone:hover .zlabel,
-  .zone:focus-visible .zlabel{fill:var(--label-hover);}
-  .zone:focus-visible .box{stroke-width:2;}
-
-  .zone.on .box{fill:var(--box-fill-on);stroke:var(--cyan);stroke-width:2;}
-  .zone.on .zlabel{fill:var(--label-on);}
-  .zone.on .lens{stroke:var(--cyan);}
-  .zone.on .pupil{fill:var(--cyan);}
-
-  .frame{fill:none;stroke:var(--grey);stroke-width:1;}
-  .tick{stroke:var(--box-stroke-hover);stroke-width:1.25;}
-
-  /* scan */
-  .scan{
-    stroke:var(--cyan);
-    stroke-width:1.5;
-    opacity:.5;
-    animation:sweep 9s linear infinite;
-  }
-
-  @keyframes sweep{
-    0%{transform:translateX(0);opacity:0;}
-    6%{opacity:.5;}
-    94%{opacity:.5;}
-    100%{transform:translateX(752px);opacity:0;}
-  }
-
-  .zone .box{animation:none;}
-  .zone.lit .box{animation:blip 9s linear infinite;}
-
-  @keyframes blip{
-    0%,100%{stroke:var(--box-stroke);}
-    1%{stroke:var(--cyan);}
-    5%{stroke:var(--box-stroke);}
-  }
-
-  /* ---------- panel ---------- */
-  .panel{
-    background:var(--paper);
-    padding:26px 26px 28px;
-    display:flex;
-    flex-direction:column;
-    min-width:0;
-  }
-
-  .panel-hint{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:#9AA5AC;
-    margin:0 0 auto;
-    line-height:1.7;
-  }
-
-  .panel h2{
-    font-family:"Archivo",sans-serif;
-    font-weight:700;
-    font-size:24px;
-    letter-spacing:-.01em;
-    color:var(--harbor);
-    margin:0 0 4px;
-  }
-
-  .panel .kicker{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--cyan);
-    margin:0 0 18px;
-  }
-
-  ul.items{list-style:none;margin:0;padding:0;}
-
-  ul.items li{
-    padding:11px 0 11px 18px;
-    border-top:1px solid #EDEFF0;
-    position:relative;
-  }
-
-  ul.items li:first-child{border-top:0;}
-
-  ul.items li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:17px;
-    width:7px;
-    height:7px;
-    background:var(--cyan);
-  }
-
-  ul.items .n{
-    display:block;
-    font-weight:600;
-    font-size:15px;
-    color:var(--ink);
-    line-height:1.3;
-  }
-
-  ul.items .s{
-    display:block;
-    font-size:13.5px;
-    color:#69757D;
-    line-height:1.45;
-    margin-top:2px;
-  }
-
-  .panel-foot{
-    margin-top:22px;
-    padding-top:14px;
-    border-top:1px solid var(--grey);
-    font-size:12.5px;
-    color:#8A949B;
-    line-height:1.5;
-  }
-
-  .fade{animation:fade .22s ease;}
-  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
-
-  /* ---------- legend ---------- */
-  .legend{
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
-    margin-top:14px;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:#98A2A9;
-  }
-
-  .legend span{display:flex;align-items:center;gap:8px;}
-  .swatch{width:10px;height:10px;background:var(--cyan);}
-  .swatch.grey{background:var(--grey);}
-
-  @media (max-width:860px){
-    .wrap{padding:28px 18px 40px;}
-    .board{grid-template-columns:1fr;}
-    .plan{padding:14px;}
-    .panel{padding:22px 20px 24px;}
-    .lede{max-width:none;}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .scan{animation:none;opacity:0;}
-    .zone.lit .box{animation:none;}
-    .fade{animation:none;}
-  }
-</style>
-
-
+    </div>
+  </section>
 
   <!-- ============ COMPARISON ============ -->
   <section class="comparison" id="comparison">
@@ -1631,6 +663,9 @@ paintPanel();
   </div>
 </footer>
 
+
+
+
 <!-- ===== BOOK A CALL — submits to local PHP/MySQL backend ===== -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -1746,6 +781,87 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<script src="https://www.tftus.de/i18n.js"></script>
+<script src="i18n.js"></script>
+
+<!-- ===== SOLUTION MAP ===== -->
+<script>
+(function () {
+  var STORAGE_KEY = 'giic_lang';
+  var current = null;
+  var body = document.getElementById('panelBody');
+  var zones = Array.prototype.slice.call(document.querySelectorAll('.zone'));
+  var mq = window.matchMedia('(max-width:860px)');
+
+  function getCopy() {
+    var dict = window.tftI18n && window.tftI18n.getDict ? window.tftI18n.getDict() : null;
+    return dict && dict.solutionMap ? dict.solutionMap : null;
+  }
+
+  function paintStatic(copy) {
+    document.querySelectorAll('[data-t]').forEach(function (el) {
+      if (copy[el.dataset.t] !== undefined) el.innerHTML = copy[el.dataset.t];
+    });
+    document.querySelectorAll('[data-z]').forEach(function (el) {
+      var zone = copy.zones && copy.zones[el.dataset.z];
+      if (zone) el.textContent = zone.name;
+    });
+  }
+
+  function paintPanel(copy) {
+    if (!body) return;
+    if (!current) {
+      var hintText = mq.matches ? copy.hintMobile : copy.hint;
+      body.innerHTML = '<p class="panel-hint">' + hintText + '</p>';
+      return;
+    }
+    var zone = copy.zones && copy.zones[current];
+    if (!zone) return;
+    var rows = zone.items.map(function (item) {
+      return '<li><span class="n">' + item[0] + '</span><span class="s">' + item[1] + '</span></li>';
+    }).join('');
+    body.innerHTML = '<div class="fade"><h2>' + zone.name + '</h2>' +
+      '<p class="kicker">' + copy.kicker + '</p>' +
+      '<ul class="items">' + rows + '</ul></div>';
+  }
+
+  function syncSolutionMap() {
+    var copy = getCopy();
+    if (!copy) return;
+    paintStatic(copy);
+    paintPanel(copy);
+  }
+
+  function select(id) {
+    current = id;
+    zones.forEach(function (z) {
+      var on = z.dataset.zone === id;
+      z.classList.toggle('on', on);
+      z.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    syncSolutionMap();
+  }
+
+  zones.forEach(function (z) {
+    z.addEventListener('click', function () { select(z.dataset.zone); });
+    z.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        select(z.dataset.zone);
+      }
+    });
+  });
+
+  document.addEventListener('tft:i18n:change', syncSolutionMap);
+  new MutationObserver(syncSolutionMap).observe(document.documentElement, { attributes:true, attributeFilter:['lang'] });
+  window.addEventListener('storage', function (e) {
+    if (e.key === STORAGE_KEY) syncSolutionMap();
+  });
+  mq.addEventListener('change', function () {
+    if (!current) syncSolutionMap();
+  });
+
+  syncSolutionMap();
+})();
+</script>
 </body>
 </html>

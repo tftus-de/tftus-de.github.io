@@ -1,6 +1,13 @@
 (function () {
   var STORAGE_KEY = 'giic_lang';
   var dictCache = {};
+  var activeLang = null;
+  var activeDict = null;
+
+  window.tftI18n = {
+    getLang: function () { return activeLang || localStorage.getItem(STORAGE_KEY) || 'de'; },
+    getDict: function () { return activeDict; }
+  };
 
   function getByPath(obj, path) {
     return path.split('.').reduce(function (acc, key) {
@@ -38,6 +45,8 @@
   }
 
   function finishSetLang(lang, dict) {
+    activeLang = lang;
+    activeDict = dict;
     applyDict(dict);
     if(window._sliderSyncFns) window._sliderSyncFns.forEach(function(fn){ fn(); });
     document.documentElement.setAttribute('lang', lang);
@@ -47,6 +56,7 @@
     var formLang = document.getElementById('formLang');
     if (formLang) formLang.value = lang;
     ckFabSync();
+    document.dispatchEvent(new CustomEvent('tft:i18n:change', { detail: { lang: lang, dict: dict } }));
   }
 
   var CONSENT_KEY = 'giic_cookie_consent_v2';
